@@ -1,54 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:forceDarkAllowed="false"
+    android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nom_ecole"/>
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@color/x_purple100" >
 
-    <TextView
-        android:id="@+id/contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/contact"
-        android:clickable="true"
-        android:focusable="true"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/homepage"
+            android:textSize="30dp"
+            android:textColor="@color/white" />
 
-    <TextView
-        android:id="@+id/aPropos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/propos"
-        android:clickable="true"
-        android:focusable="true"/>
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/classes"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:layout_below="@id/header" >
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/inscription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/inscription"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/connexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/connexion"/>
+                <RelativeLayout
+                    android:id="@+id/coords"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
 
+                    <TextView
+                        android:id="@+id/contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/contact"
+                        android:clickable="true"
+                        android:focusable="true"/>
 
+                    <TextView
+                        android:id="@+id/aPropos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/propos"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="left"
+                        android:layout_below="@id/contact"
+                        android:clickable="true"
+                        android:focusable="true" />
 
+                </RelativeLayout>
 
+                <Button
+                    android:id="@+id/connexion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/connexion"
+                    android:textColor="@color/white"
+                    android:background="@drawable/button_purple_gradient" />
 
-</LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:text="@string/nom_ecole"
+                android:textSize="40dp"
+                android:layout_gravity="center"
+                android:textColor="@color/x_orange150" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/x_orange100"
+                android:textSize="20dp"
+                android:text="@string/classes"/>
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:id="@+id/spinner"/>
+
+            <!-- Suivant la longueur du texte, faire un ScrollView sur la page-->
+            <TextView
+                android:id="@+id/matieres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp" />
+
+            <Button
+                android:id="@+id/inscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginHorizontal="30dp"
+                android:text="@string/inscription"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:background="@drawable/button_purple_gradient" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

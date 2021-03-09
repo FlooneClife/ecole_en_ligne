@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">ecole_en_ligne</string>
-    <string name="nom_ecole">Nom de l école</string>
-    <string name="propos">A propos</string>
+    <string name="nom_ecole">Collège Xerneas</string>
+    <string name="propos">À propos</string>
     <string name="inscription">Inscription</string>
     <string name="connexion">Connexion</string>
-    <string name="eleve">Elève</string>
+    <string name="eleve">Élève</string>
     <string name="parent">Parent</string>
     <string name="enseignant">Enseignant</string>
     <string name="valider">Valider</string>
@@ -15,16 +15,17 @@
 
     <string name="classes">Nos classes : </string>
 
-
-
     <string name="donnees">Saisie de vos données</string>
     <string name="nom">Nom</string>
     <string name="prenom">Prénom</string>
     <string name="login">Login</string>
     <string name="mdp">Mot de passe</string>
     <string name="mail">Email</string>
-    <string name="nb_enfant">Nombre d eleves</string>
+    <string name="nb_enfant">Nombre d\'éleves</string>
     <string name="nb">Entrez un nombre</string>
     <string name="lien">Lien de parenté</string>
     <string name="niveauxScol">Niveau scolaire</string>
+
+    <string name="homepage">Bienvenue</string>
+
 </resources>
