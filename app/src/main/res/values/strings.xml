@@ -1,4 +1,7 @@
 <resources>
+    <!-- Xerneas' fonts! -->
+    <!-- merienda -->
+
     <string name="app_name">ecole_en_ligne</string>
     <string name="nom_ecole">Collège Xerneas</string>
     <string name="propos">À propos</string>

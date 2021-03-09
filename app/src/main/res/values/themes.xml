@@ -8,14 +8,12 @@
         <item name="colorPrimary">@color/x_purple100</item>
         <item name="colorPrimaryVariant">@color/x_purple150</item>
         <item name="colorPrimaryDark">@color/x_purple050</item>
+        <item name="colorOnPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/x_orange150</item>
         <item name="colorSecondaryVariant">@color/x_orange200</item>
-        <item name="colorOnPrimary">@color/white</item>
         <item name="colorOnSecondary">@color/black</item>
-
-        <!-- Customize your theme here. -->
 
     </style>
 
