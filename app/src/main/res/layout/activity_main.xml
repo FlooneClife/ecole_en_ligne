@@ -41,13 +41,14 @@
                 <RelativeLayout
                     android:id="@+id/coords"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/contact"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/contact"
+                        android:textColor="@color/x_purple200"
                         android:clickable="true"
                         android:focusable="true"/>
 
@@ -56,6 +57,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/propos"
+                        android:textColor="@color/x_purple200"
                         android:layout_marginBottom="20dp"
                         android:layout_gravity="left"
                         android:layout_below="@id/contact"
@@ -80,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginVertical="20dp"
+                android:layout_marginTop="20dp"
                 android:theme="@style/Xerneas"
                 android:textStyle="bold"
                 android:text="@string/nom_ecole"
@@ -90,14 +92,26 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:theme="@style/Xerneas"
+                android:textStyle="bold"
+                android:text="@string/desc_ecole"
+                android:textColor="@color/x_orange150"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
                 android:text="@string/classes"
-                android:textColor="@color/x_orange100"
+                android:textColor="@color/x_purple150"
                 android:textSize="20dp" />
 
             <Spinner
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="20dp"
+                android:layout_margin="20dp"
                 android:id="@+id/spinner"/>
 
             <!-- Suivant la longueur du texte, faire un ScrollView sur la page-->

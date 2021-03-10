@@ -23,4 +23,8 @@
         <item name="fontFamily">@font/merienda</item>
     </style>
 
+    <style name="MyAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+    </style>
+
 </resources>

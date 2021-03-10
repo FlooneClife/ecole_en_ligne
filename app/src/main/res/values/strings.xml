@@ -5,7 +5,8 @@
     <!-- heebo -->
 
     <string name="app_name">Xerneas école en ligne</string>
-    <string name="nom_ecole">Collège Xerneas</string>
+    <string name="nom_ecole">Groupe Xerneas</string>
+    <string name="desc_ecole">Service de cours en ligne</string>
     <string name="propos"><u>À propos</u></string>
     <string name="inscription">Inscription</string>
     <string name="connexion">Connexion</string>
