@@ -56,8 +56,7 @@ public class Inscription_eleve extends AppCompatActivity {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent retour = new Intent(Inscription_eleve.this, Indentification_inscription.class);
-                startActivity(retour);
+                finish();
             }
         });
 

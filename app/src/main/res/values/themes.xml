@@ -15,6 +15,12 @@
         <item name="colorSecondaryVariant">@color/x_orange200</item>
         <item name="colorOnSecondary">@color/black</item>
 
+        <item name="fontFamily">@font/heebo</item>
+
+    </style>
+
+    <style name="Xerneas">
+        <item name="fontFamily">@font/merienda</item>
     </style>
 
 </resources>

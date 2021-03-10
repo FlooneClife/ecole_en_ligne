@@ -97,8 +97,7 @@ public class Inscription_parent extends AppCompatActivity {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent retour = new Intent(Inscription_parent.this, Indentification_inscription.class);
-                startActivity(retour);
+                finish();
             }
         });
 

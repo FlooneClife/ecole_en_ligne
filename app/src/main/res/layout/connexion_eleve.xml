@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="30dp"
-            android:text="Entrez vos identifiants :"
+            android:text="@string/connex_eleve"
             android:textSize="20dp"
             android:textColor="@color/x_purple150" />
 
@@ -57,9 +57,17 @@
             android:id="@+id/mdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
             android:hint="@string/mdp"
             android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/forgottenPW"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="@string/forgottenPW"
+            android:clickable="true" />
 
         <Button
             android:id="@+id/valider"

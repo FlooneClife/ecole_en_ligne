@@ -1,10 +1,12 @@
 <resources>
     <!-- Xerneas' fonts! -->
     <!-- merienda -->
+    <!-- kalam -->
+    <!-- heebo -->
 
-    <string name="app_name">ecole_en_ligne</string>
+    <string name="app_name">Xerneas école en ligne</string>
     <string name="nom_ecole">Collège Xerneas</string>
-    <string name="propos">À propos</string>
+    <string name="propos"><u>À propos</u></string>
     <string name="inscription">Inscription</string>
     <string name="connexion">Connexion</string>
     <string name="eleve">Élève</string>
@@ -14,9 +16,9 @@
     <string name="retour">Retour</string>
 
     <string name="aPropos">Projet Android : Alexandra COUNILLE et Aurélie GAYMU</string>
-    <string name="contact">Contactez nous : 01 23 45 67 89 </string>
+    <string name="contact"><u>Contactez nous : 01 23 45 67 89</u></string>
 
-    <string name="classes">Nos classes : </string>
+    <string name="classes">Nos classes :</string>
 
     <string name="donnees">Saisie de vos données</string>
     <string name="nom">Nom</string>
@@ -30,5 +32,9 @@
     <string name="niveauxScol">Niveau scolaire</string>
 
     <string name="homepage">Bienvenue</string>
+    <string name="forgottenPW"><u>Mot de passe oublié ?</u></string>
+    <string name="connex_eleve">Entrez votre identifiant élève :</string>
+    <string name="connex_parent">Entrez votre identifiant parent :</string>
+    <string name="ur">Vous êtes :</string>
 
 </resources>

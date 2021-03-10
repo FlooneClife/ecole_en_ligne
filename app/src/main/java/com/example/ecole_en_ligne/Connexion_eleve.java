@@ -22,8 +22,7 @@ public class Connexion_eleve extends AppCompatActivity {
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent retour = new Intent(Connexion_eleve.this, IndentificationC.class);
-                startActivity(retour);
+                finish();
             }
         });
     }

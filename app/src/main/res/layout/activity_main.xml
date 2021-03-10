@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginVertical="20dp"
-                android:fontFamily="@font/merienda"
+                android:theme="@style/Xerneas"
                 android:textStyle="bold"
                 android:text="@string/nom_ecole"
                 android:textColor="@color/x_orange150"
