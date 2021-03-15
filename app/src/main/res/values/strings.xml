@@ -14,6 +14,7 @@
     <string name="parent">Parent</string>
     <string name="enseignant">Enseignant</string>
     <string name="valider">Valider</string>
+    <string name="Suivant">Suivant</string>
     <string name="retour">Retour</string>
 
     <string name="aPropos">Projet Android : Alexandra COUNILLE et Aurélie GAYMU</string>
@@ -40,5 +41,7 @@
     <string name="ur">Vous êtes :</string>
     <string name="email">email</string>
     <string name="telephone">téléphone</string>
+    
+    <string name="donnees_enf">Données de l\'enfant</string>
 
 </resources>
