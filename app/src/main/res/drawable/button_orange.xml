@@ -6,13 +6,9 @@
         android:radius="10dp" />
 
     <gradient
-        android:centerColor="@color/x_orange150"
-        android:startColor="@color/x_orange150"
-        android:endColor="@color/x_orange150"
+        android:centerColor="@color/x_orange200"
+        android:startColor="@color/x_orange200"
+        android:endColor="@color/x_orange200"
         android:type="linear" />
-
-    <size
-        android:width="200dp"
-        android:height="50dp" />
 
 </shape>

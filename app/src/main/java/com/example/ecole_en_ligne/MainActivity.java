@@ -91,10 +91,9 @@ public class MainActivity extends AppCompatActivity {
         contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri num = Uri.parse("tel: 01 23 45 67 89");
-                Intent appel = new Intent(Intent.ACTION_DIAL,num);
-                startActivity(appel);
-
+                ConstraintLayout root = (ConstraintLayout) findViewById(R.id.root_layout);
+                ActionUtil.showContactPopup(MainActivity.this,
+                        root);
             }
         });
 

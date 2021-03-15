@@ -6,7 +6,7 @@
 
     <string name="app_name">Xerneas école en ligne</string>
     <string name="nom_ecole">Groupe Xerneas</string>
-    <string name="desc_ecole">Service de cours en ligne</string>
+    <string name="desc_ecole">Accompagnement pédagogique pour les classes de la 6ème à la 3ème : Cours en ligne, exercices…</string>
     <string name="propos"><u>À propos</u></string>
     <string name="inscription">Inscription</string>
     <string name="connexion">Connexion</string>
@@ -17,7 +17,8 @@
     <string name="retour">Retour</string>
 
     <string name="aPropos">Projet Android : Alexandra COUNILLE et Aurélie GAYMU</string>
-    <string name="contact"><u>Contactez nous : 01 23 45 67 89</u></string>
+    <string name="contact"><u>Contactez-nous</u></string>
+    <string name="contactTitle">Contactez-nous</string>
 
     <string name="classes">Nos classes :</string>
 
@@ -37,5 +38,7 @@
     <string name="connex_eleve">Entrez votre identifiant élève :</string>
     <string name="connex_parent">Entrez votre identifiant parent :</string>
     <string name="ur">Vous êtes :</string>
+    <string name="email">email</string>
+    <string name="telephone">téléphone</string>
 
 </resources>

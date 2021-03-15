@@ -36,7 +36,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal"
+                android:foregroundGravity="right" >
 
                 <RelativeLayout
                     android:id="@+id/coords"
@@ -48,6 +49,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/contact"
+                        android:layout_gravity="left"
                         android:textColor="@color/x_purple200"
                         android:clickable="true"
                         android:focusable="true"/>
@@ -64,17 +66,18 @@
                         android:clickable="true"
                         android:focusable="true" />
 
-                </RelativeLayout>
+                    <Button
+                        android:id="@+id/connexion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/connexion"
+                        android:textColor="@color/white"
+                        android:background="@drawable/button_purple_gradient" />
 
-                <Button
-                    android:id="@+id/connexion"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingHorizontal="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/connexion"
-                    android:textColor="@color/white"
-                    android:background="@drawable/button_purple_gradient" />
+                </RelativeLayout>
 
             </LinearLayout>
 
@@ -96,9 +99,10 @@
                 android:layout_marginBottom="20dp"
                 android:theme="@style/Xerneas"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 android:text="@string/desc_ecole"
                 android:textColor="@color/x_orange150"
-                android:textSize="20dp" />
+                android:textSize="12dp" />
 
             <TextView
                 android:layout_width="wrap_content"
