@@ -28,15 +28,7 @@ public class Inscription_parent extends AppCompatActivity {
         EditText login = new EditText(this);
         EditText mdp = new EditText(this);
         EditText mail = new EditText(this);
-
-        TextView nb_eleve = new TextView(this);
-        EditText nb = new EditText(this);
-
-        TextView eleve = new TextView(this);
-        EditText nom_eleve = new EditText(this);
-        EditText prenom_eleve = new EditText(this);
-        EditText lien_parente = new EditText(this);
-        EditText niveau_scolaire_eleve = new EditText(this);
+        EditText nb_eleve = new EditText(this);
 
 
         Button valider = new Button(this);
@@ -51,10 +43,9 @@ public class Inscription_parent extends AppCompatActivity {
         mail.setHint(R.string.mail);
         retour.setText(R.string.retour);
         valider.setText(R.string.valider);
-        nb_eleve.setText(R.string.nb_enfant);
         nb_eleve.setGravity(View.TEXT_ALIGNMENT_CENTER);
-        nb.setHint(R.string.nb);
-        nb.setInputType(InputType.TYPE_CLASS_NUMBER);
+        nb_eleve.setHint(R.string.nb_enfant);
+        nb_eleve.setInputType(InputType.TYPE_CLASS_NUMBER);
 
         inscription_parent.addView(Saisie);
         inscription_parent.addView(nom);
@@ -63,29 +54,6 @@ public class Inscription_parent extends AppCompatActivity {
         inscription_parent.addView(mdp);
         inscription_parent.addView(mail);
         inscription_parent.addView(nb_eleve);
-        inscription_parent.addView(nb);
-
-
-        //--------------------------Boucle nombre d'eleve----------------
-        /*if (nb_eleve != null){
-            int nbEleve = Integer.parseInt(nb.getText().toString());
-            for (int i = 0; i<nbEleve;i++){
-                eleve.setText("----- Eleve n°"+(i+1)+" -----");
-                eleve.setGravity(View.TEXT_ALIGNMENT_CENTER);
-                nom_eleve.setHint(R.string.nom);
-                prenom_eleve.setHint(R.string.prenom);
-                lien_parente.setHint(R.string.lien);
-                niveau_scolaire_eleve.setHint(R.string.niveauxScol);
-
-                inscription_parent.addView(eleve);
-                inscription_parent.addView(nom_eleve);
-                inscription_parent.addView(prenom_eleve);
-                inscription_parent.addView(lien_parente);
-                inscription_parent.addView(niveau_scolaire_eleve);
-            }
-        }
-        */
-        //----------------------------------------------------------------
 
         inscription_parent.addView(valider);
         inscription_parent.addView(retour);
@@ -93,6 +61,16 @@ public class Inscription_parent extends AppCompatActivity {
         setContentView(inscription_parent);
 
         //----------------------------------------------------Actions------------------------------------------------------
+
+        valider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent donnees_enf = new Intent(Inscription_parent.this, Ins_donnees_enf.class);
+                donnees_enf.putExtra("nb_eleve",nb_eleve.getText().toString());
+                startActivity(donnees_enf);
+            }
+        });
+
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
