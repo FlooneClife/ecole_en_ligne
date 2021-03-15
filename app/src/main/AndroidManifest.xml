@@ -23,6 +23,7 @@
         <activity android:name=".Inscription_parent"></activity>
         <activity android:name=".Connexion_eleve"></activity>
         <activity android:name=".Connexion_parent"></activity>
+        <activity android:name=".Ins_donnees_enf"></activity>
     </application>
 
 </manifest>
