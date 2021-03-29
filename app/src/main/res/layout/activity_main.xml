@@ -118,6 +118,17 @@
                 android:layout_margin="20dp"
                 android:id="@+id/spinner"/>
 
+            <Button
+                android:id="@+id/valider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginHorizontal="30dp"
+                android:text="@string/valider"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:background="@drawable/button_blue_gradient" />
+
             <!-- Suivant la longueur du texte, faire un ScrollView sur la page-->
             <TextView
                 android:id="@+id/matieres"

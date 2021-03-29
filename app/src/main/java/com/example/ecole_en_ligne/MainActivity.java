@@ -34,17 +34,17 @@ public class MainActivity extends AppCompatActivity {
         TextView propos = (TextView) findViewById(R.id.aPropos);
         TextView contact = (TextView) findViewById(R.id.contact);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        Button valider = (Button) findViewById(R.id.valider);
 
 
 
         //----------------------Liste déroulante---------------------------------
         List classes = new ArrayList();
         classes.add(("--Choisissez une classe--"));
-        classes.add("CP");
-        classes.add("CE1");
-        classes.add("CE2");
-        classes.add("CM1");
-        classes.add("CM2");
+        classes.add("6ème");
+        classes.add("5ème");
+        classes.add("4ème");
+        classes.add("3ème");
 
         ArrayAdapter adapter = new ArrayAdapter(
                 this,
@@ -54,6 +54,32 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        valider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(spinner.getSelectedItem().toString().compareTo("6ème") == 0){
+                    Intent six = new Intent(MainActivity.this,Sixieme.class);
+                    six.putExtra("niveauClasse","6ème");
+                    startActivity(six);
+                }
+                if(spinner.getSelectedItem().toString().compareTo("5ème") == 0){
+                    Intent cinq = new Intent(MainActivity.this,Cinquieme.class);
+                    cinq.putExtra("niveauClasse","5ème");
+                    startActivity(cinq);
+                }
+                if(spinner.getSelectedItem().toString().compareTo("4ème") == 0){
+                    Intent quatre = new Intent(MainActivity.this,Quatrieme.class);
+                    quatre.putExtra("niveauClasse","4ème");
+                    startActivity(quatre);
+                }
+                if(spinner.getSelectedItem().toString().compareTo("3ème") == 0){
+                    Intent trois = new Intent(MainActivity.this,Troisieme.class);
+                    trois.putExtra("niveauClasse","3ème");
+                    startActivity(trois);
+                }
+            }
+        });
 
 
         //--------------------------------Bouttons-----------------------------------

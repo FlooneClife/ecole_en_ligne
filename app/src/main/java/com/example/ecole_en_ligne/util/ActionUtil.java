@@ -74,7 +74,7 @@ public class ActionUtil {
         view.findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               //// ouvrir appplication email
+                //// ouvrir appplication email
             }
         });
 

@@ -23,7 +23,17 @@
     <string name="contact"><u>Contactez-nous</u></string>
     <string name="contactTitle">Contactez-nous</string>
 
+
     <string name="classes">Nos classes :</string>
+    <string name="matieres">Les matières :</string>
+    <string name="Francais">Français</string>
+    <string name="Maths">Mathématiques</string>
+    <string name="Langue_viv1">Langue Vivante 1</string>
+    <string name="Langue_viv2">Langue Vivante 2</string>
+    <string name="Histoire_geo">Histoire - Géographie</string>
+    <string name="SVT">SVT</string>
+    <string name="physique">Physique-Chimie</string>
+    <string name="techno">Technologies</string>
 
     <string name="donnees">Saisie de vos données</string>
     <string name="nom">Nom</string>
