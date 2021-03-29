@@ -8,14 +8,16 @@
     <string name="nom_ecole">Groupe Xerneas</string>
     <string name="desc_ecole">Accompagnement pédagogique pour les classes de la 6ème à la 3ème : Cours en ligne, exercices…</string>
     <string name="propos"><u>À propos</u></string>
-    <string name="inscription">Inscription</string>
-    <string name="connexion">Connexion</string>
-    <string name="eleve">Élève</string>
-    <string name="parent">Parent</string>
-    <string name="enseignant">Enseignant</string>
-    <string name="valider">Valider</string>
-    <string name="Suivant">Suivant</string>
-    <string name="retour">Retour</string>
+
+    <!-- Text button -->
+    <string name="inscription"><b>Inscription</b></string>
+    <string name="connexion"><b>Connexion</b></string>
+    <string name="eleve"><b>Élève</b></string>
+    <string name="parent"><b>Parent</b></string>
+    <string name="enseignant"><b>Enseignant</b></string>
+    <string name="valider"><b>Valider</b></string>
+    <string name="Suivant"><b>Suivant</b></string>
+    <string name="retour"><b>Retour</b></string>
 
     <string name="aPropos">Projet Android : Alexandra COUNILLE et Aurélie GAYMU</string>
     <string name="contact"><u>Contactez-nous</u></string>

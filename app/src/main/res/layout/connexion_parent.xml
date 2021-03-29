@@ -11,7 +11,7 @@
         android:layout_height="80dp"
         android:padding="20dp"
         android:orientation="horizontal"
-        android:background="@color/x_purple100" >
+        android:background="@color/x_blue100" >
 
         <ImageView
             android:id="@+id/retour"
@@ -44,14 +44,15 @@
             android:layout_marginVertical="30dp"
             android:text="@string/connex_parent"
             android:textSize="20dp"
-            android:textColor="@color/x_purple150" />
+            android:textColor="@color/x_blue100" />
 
         <EditText
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:hint="@string/login" />
+            android:hint="@string/login"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/mdp"
@@ -74,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/valider"
-            android:background="@drawable/button_purple_gradient"
+            android:background="@drawable/button_blue_gradient"
             android:textColor="@color/white" />
 
     </LinearLayout>

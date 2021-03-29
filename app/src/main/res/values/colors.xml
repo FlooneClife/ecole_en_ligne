@@ -22,4 +22,10 @@
     <color name="x_purple200">#FF75BA</color>
     <color name="x_purple250">#FFC6E2</color>
 
+    <color name="x_blue050">#00303C</color>
+    <color name="x_blue100">#00809F</color>
+    <color name="x_blue150">#00CCFF</color>
+    <color name="x_blue200">#91E9FF</color>
+    <color name="x_blue250">#D9F8FF</color>
+
 </resources>

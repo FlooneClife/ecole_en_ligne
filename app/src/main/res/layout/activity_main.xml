@@ -11,7 +11,7 @@
         android:layout_height="80dp"
         android:padding="20dp"
         android:orientation="vertical"
-        android:background="@color/x_purple100" >
+        android:background="@color/x_blue100" >
 
         <TextView
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/contact"
                         android:layout_gravity="left"
-                        android:textColor="@color/x_purple200"
+                        android:textColor="@color/x_blue150"
                         android:clickable="true"
                         android:focusable="true"/>
 
@@ -59,7 +59,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/propos"
-                        android:textColor="@color/x_purple200"
+                        android:textColor="@color/x_blue150"
                         android:layout_marginBottom="20dp"
                         android:layout_gravity="left"
                         android:layout_below="@id/contact"
@@ -75,7 +75,7 @@
                         android:layout_alignParentRight="true"
                         android:text="@string/connexion"
                         android:textColor="@color/white"
-                        android:background="@drawable/button_purple_gradient" />
+                        android:background="@drawable/button_blue_gradient" />
 
                 </RelativeLayout>
 
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:text="@string/classes"
-                android:textColor="@color/x_purple150"
+                android:textColor="@color/x_blue100"
                 android:textSize="20dp" />
 
             <Spinner
@@ -134,7 +134,7 @@
                 android:text="@string/inscription"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/white"
-                android:background="@drawable/button_purple_gradient" />
+                android:background="@drawable/button_blue_gradient" />
 
         </LinearLayout>
 

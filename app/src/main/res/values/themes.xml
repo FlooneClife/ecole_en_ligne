@@ -5,9 +5,9 @@
 
         <!-- Primary brand color. -->
 
-        <item name="colorPrimary">@color/x_purple100</item>
-        <item name="colorPrimaryVariant">@color/x_purple150</item>
-        <item name="colorPrimaryDark">@color/x_purple050</item>
+        <item name="colorPrimary">@color/x_blue100</item>
+        <item name="colorPrimaryVariant">@color/x_blue150</item>
+        <item name="colorPrimaryDark">@color/x_blue050</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->

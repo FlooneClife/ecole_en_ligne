@@ -19,7 +19,7 @@ public class ActionUtil {
     public static void showPurplePopup(Context context, String headerTitle, String contentText, String buttonText, ViewGroup root) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context, R.style.MyAlertDialog);
-        View view = LayoutInflater.from(context).inflate(R.layout.popup_purple_custom, root);
+        View view = LayoutInflater.from(context).inflate(R.layout.popup_blue_custom, root);
         builder.setView(view);
         ((TextView) view.findViewById(R.id.titrepopup)).setText(headerTitle);
         ((TextView) view.findViewById(R.id.description)).setText(contentText);
