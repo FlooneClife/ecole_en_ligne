@@ -1,54 +1,38 @@
 package com.example.ecole_en_ligne;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Inscription_eleve extends AppCompatActivity {
+
+    private EditText nom;
+    private EditText prenom;
+    private EditText login;
+    private EditText mdp;
+    private EditText mail;
+    private Button valider;
+    private ImageView retour;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        LinearLayout inscription_eleve = new LinearLayout(this);
-        inscription_eleve.setOrientation(LinearLayout.VERTICAL);
+        setContentView(R.layout.inscription_eleve);
 
 
         //----------------------------------------------Element du Layout--------------------------------------------------
-        TextView Saisie = new TextView(this);
-        EditText nom = new EditText(this);
-        EditText prenom = new EditText(this);
-        EditText login = new EditText(this);
-        EditText mdp = new EditText(this);
-        EditText mail = new EditText(this);
-        Button valider = new Button(this);
-        Button retour = new Button(this);
 
-        Saisie.setText(R.string.donnees);
-        Saisie.setGravity(View.TEXT_ALIGNMENT_CENTER);
-        nom.setHint(R.string.nom);
-        prenom.setHint(R.string.prenom);
-        login.setHint(R.string.login);
-        mdp.setHint(R.string.mdp);
-        mail.setHint(R.string.mail);
-        retour.setText(R.string.retour);
-        valider.setText(R.string.valider);
-
-        inscription_eleve.addView(Saisie);
-        inscription_eleve.addView(nom);
-        inscription_eleve.addView(prenom);
-        inscription_eleve.addView(login);
-        inscription_eleve.addView(mdp);
-        inscription_eleve.addView(mail);
-        inscription_eleve.addView(valider);
-        inscription_eleve.addView(retour);
-
-        setContentView(inscription_eleve);
+        nom = findViewById(R.id.nom);
+        prenom = findViewById(R.id.prenom);
+        login = findViewById(R.id.login);
+        mdp = findViewById(R.id.mdp);
+        mail = findViewById(R.id.mail);
+        valider = findViewById(R.id.valider);
+        retour = findViewById(R.id.retour);
 
 
         //----------------------------------------------------Actions------------------------------------------------------
