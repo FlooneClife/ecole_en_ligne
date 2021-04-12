@@ -55,5 +55,9 @@
     <string name="telephone">téléphone</string>
     
     <string name="donnees_enf">Données de l\'enfant</string>
+    <string name="classe6e">Classe : 6ème</string>
+    <string name="classe5e">Classe : 5ème</string>
+    <string name="classe4e">Classe : 4ème</string>
+    <string name="classe3e">Classe : 3ème</string>
 
 </resources>

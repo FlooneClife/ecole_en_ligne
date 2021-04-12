@@ -24,10 +24,10 @@
         <activity android:name=".Connexion_eleve"></activity>
         <activity android:name=".Connexion_parent"></activity>
         <activity android:name=".Ins_donnees_enf"></activity>
-        <activity android:name=".Sixieme"></activity>
-        <activity android:name=".Cinquieme"></activity>
-        <activity android:name=".Quatrieme"></activity>
-        <activity android:name=".Troisieme"></activity>
+        <activity android:name=".classes.Sixieme"></activity>
+        <activity android:name=".classes.Cinquieme"></activity>
+        <activity android:name=".classes.Quatrieme"></activity>
+        <activity android:name=".classes.Troisieme"></activity>
     </application>
 
 </manifest>

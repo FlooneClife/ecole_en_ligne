@@ -1,20 +1,20 @@
 package com.example.ecole_en_ligne;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.ecole_en_ligne.classes.Cinquieme;
+import com.example.ecole_en_ligne.classes.Quatrieme;
+import com.example.ecole_en_ligne.classes.Sixieme;
+import com.example.ecole_en_ligne.classes.Troisieme;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
 import java.util.ArrayList;
@@ -59,22 +59,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(spinner.getSelectedItem().toString().compareTo("6ème") == 0){
-                    Intent six = new Intent(MainActivity.this,Sixieme.class);
+                    Intent six = new Intent(MainActivity.this, Sixieme.class);
                     six.putExtra("niveauClasse","6ème");
                     startActivity(six);
                 }
                 if(spinner.getSelectedItem().toString().compareTo("5ème") == 0){
-                    Intent cinq = new Intent(MainActivity.this,Cinquieme.class);
+                    Intent cinq = new Intent(MainActivity.this, Cinquieme.class);
                     cinq.putExtra("niveauClasse","5ème");
                     startActivity(cinq);
                 }
                 if(spinner.getSelectedItem().toString().compareTo("4ème") == 0){
-                    Intent quatre = new Intent(MainActivity.this,Quatrieme.class);
+                    Intent quatre = new Intent(MainActivity.this, Quatrieme.class);
                     quatre.putExtra("niveauClasse","4ème");
                     startActivity(quatre);
                 }
                 if(spinner.getSelectedItem().toString().compareTo("3ème") == 0){
-                    Intent trois = new Intent(MainActivity.this,Troisieme.class);
+                    Intent trois = new Intent(MainActivity.this, Troisieme.class);
                     trois.putExtra("niveauClasse","3ème");
                     startActivity(trois);
                 }
