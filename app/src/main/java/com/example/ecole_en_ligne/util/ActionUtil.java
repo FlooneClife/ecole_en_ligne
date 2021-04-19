@@ -74,7 +74,12 @@ public class ActionUtil {
         view.findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //// ouvrir appplication email
+                Intent intentMail = new Intent(Intent.ACTION_SEND);
+                intentMail.setType("plain/text");
+                intentMail.putExtra(Intent.EXTRA_EMAIL, new String[] { "xerneasgroup@example.fr" });
+                intentMail.putExtra(Intent.EXTRA_SUBJECT, "");
+                intentMail.putExtra(Intent.EXTRA_TEXT, "");
+                context.startActivity(Intent.createChooser(intentMail, ""));
             }
         });
 
