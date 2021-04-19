@@ -45,6 +45,8 @@
     <string name="nb">Entrez un nombre</string>
     <string name="lien">Lien de parenté</string>
     <string name="niveauxScol">Niveau scolaire</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="motDePasseOublie">Mot de passe oublié</string>
 
     <string name="homepage">Bienvenue</string>
     <string name="forgottenPW"><u>Mot de passe oublié ?</u></string>
@@ -59,5 +61,6 @@
     <string name="classe5e">Classe : 5ème</string>
     <string name="classe4e">Classe : 4ème</string>
     <string name="classe3e">Classe : 3ème</string>
+    <string name="textMdp">Si vous êtes bien inscrit à notre application, un mail de vérification vous sera envoyé par mail afin de réinitialiser votre mot de passe.</string>
 
 </resources>
