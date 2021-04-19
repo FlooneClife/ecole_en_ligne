@@ -28,6 +28,9 @@
         <activity android:name=".classes.Cinquieme"></activity>
         <activity android:name=".classes.Quatrieme"></activity>
         <activity android:name=".classes.Troisieme"></activity>
+        <activity android:name=".MdpOublie"></activity>
+        <activity android:name=".Changer_mdp"></activity>
+        <activity android:name=".ValidationCode"></activity>
     </application>
 
 </manifest>
