@@ -55,12 +55,19 @@
     <string name="ur">Vous êtes :</string>
     <string name="email">email</string>
     <string name="telephone">téléphone</string>
-    
+
     <string name="donnees_enf">Données de l\'enfant</string>
     <string name="classe6e">Classe : 6ème</string>
     <string name="classe5e">Classe : 5ème</string>
     <string name="classe4e">Classe : 4ème</string>
     <string name="classe3e">Classe : 3ème</string>
     <string name="textMdp">Si vous êtes bien inscrit à notre application, un mail de vérification vous sera envoyé par mail afin de réinitialiser votre mot de passe.</string>
+    <string name="title_activity_espace_eleve">ScrollingActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="espaceEleve">Espace Élève</string>
+    <string name="enTantQue">Connecté(e) en tant que : </string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 
 </resources>

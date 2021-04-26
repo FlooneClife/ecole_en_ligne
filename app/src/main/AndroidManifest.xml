@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecole_en_ligne">
+        <activity
+            android:name=".espaces.eleves.EspaceEleve"
+            android:label="@string/title_activity_espace_eleve"
+            android:theme="@style/Theme.Ecole_en_ligne.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,21 +20,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".Indentification_inscription"></activity>
-        <activity android:name=".IndentificationC"></activity>
-        <activity android:name=".Inscription_eleve"></activity>
-        <activity android:name=".Inscription_parent"></activity>
-        <activity android:name=".Connexion_eleve"></activity>
-        <activity android:name=".Connexion_parent"></activity>
-        <activity android:name=".Ins_donnees_enf"></activity>
-        <activity android:name=".classes.Sixieme"></activity>
-        <activity android:name=".classes.Cinquieme"></activity>
-        <activity android:name=".classes.Quatrieme"></activity>
-        <activity android:name=".classes.Troisieme"></activity>
-        <activity android:name=".MdpOublie"></activity>
-        <activity android:name=".Changer_mdp"></activity>
-        <activity android:name=".ValidationCode"></activity>
+        <activity android:name=".Indentification_inscription" />
+        <activity android:name=".IndentificationC" />
+        <activity android:name=".Inscription_eleve" />
+        <activity android:name=".Inscription_parent" />
+        <activity android:name=".Connexion_eleve" />
+        <activity android:name=".Connexion_parent" />
+        <activity android:name=".Ins_donnees_enf" />
+        <activity android:name=".classes.Sixieme" />
+        <activity android:name=".classes.Cinquieme" />
+        <activity android:name=".classes.Quatrieme" />
+        <activity android:name=".classes.Troisieme" />
+        <activity android:name=".MdpOublie" />
+        <activity android:name=".Changer_mdp" />
+        <activity android:name=".ValidationCode" />
     </application>
 
 </manifest>

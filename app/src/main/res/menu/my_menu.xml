@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/cours_exos"
+        android:title="Cours et Exercices" />
+
+    <item android:id="@+id/cours_live"
+        android:title="Cours en direct" />
+
+    <item android:id="@+id/recommandations"
+        android:title="Recommandations" />
+
+    <item android:id="@+id/progression"
+        android:title="Progression" />
+
+    <item android:id="@+id/activites"
+        android:title="Dernières activités" />
+
+    <item android:id="@+id/deconnexion"
+        android:title="Se déconnecter" />
+
+</menu>
