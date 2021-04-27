@@ -22,6 +22,7 @@
     <string name="aPropos">Projet Android : Alexandra COUNILLE et Aurélie GAYMU</string>
     <string name="contact"><u>Contactez-nous</u></string>
     <string name="contactTitle">Contactez-nous</string>
+    <string name="popupInscription">Où souhaitez-vous vous rediriger ?</string>
 
 
     <string name="classes">Nos classes :</string>

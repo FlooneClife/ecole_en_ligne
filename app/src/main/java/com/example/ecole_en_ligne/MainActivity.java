@@ -119,8 +119,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ConstraintLayout root = (ConstraintLayout) findViewById(R.id.root_layout);
-                ActionUtil.showContactPopup(MainActivity.this,
-                        root);
+                ActionUtil.showContactPopup(MainActivity.this, root);
             }
         });
 

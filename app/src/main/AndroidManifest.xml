@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Indentification_inscription" />
+        <activity android:name=".ValidationInscription" />
         <activity android:name=".IndentificationC" />
         <activity android:name=".Inscription_eleve" />
         <activity android:name=".Inscription_parent" />
@@ -34,6 +35,11 @@
         <activity android:name=".MdpOublie" />
         <activity android:name=".Changer_mdp" />
         <activity android:name=".ValidationCode" />
+        <activity android:name=".elementMenu.Progression" />
+        <activity android:name=".elementMenu.Activites" />
+        <activity android:name=".elementMenu.Cours_Exos" />
+        <activity android:name=".elementMenu.CoursLive" />
+        <activity android:name=".elementMenu.Recommandation" />
     </application>
 
 </manifest>

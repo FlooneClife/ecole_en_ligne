@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +27,9 @@ public class Connexion_eleve extends AppCompatActivity {
         retour = findViewById(R.id.retour);
         valider = findViewById(R.id.valider);
         TextView mdpOublie = (TextView) findViewById(R.id.forgottenPW);
+        EditText login = (EditText) findViewById(R.id.login);
+        EditText mdp = (EditText) findViewById(R.id.mdp);
+        TextView erreurCo = (TextView) findViewById(R.id.erreur);
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +49,13 @@ public class Connexion_eleve extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Intent espace = new Intent(Connexion_eleve.this, com.example.ecole_en_ligne.espaces.eleves.EspaceEleve.class);
-                startActivity(espace);
+                if (Common_bdd.peutSeCo(login.getText().toString(),mdp.getText().toString())){
+                    Intent espace = new Intent(Connexion_eleve.this, com.example.ecole_en_ligne.espaces.eleves.EspaceEleve.class);
+                    espace.putExtra("Login",login.getText().toString());
+                    startActivity(espace);
+                }else{
+                    erreurCo.setText("Mot de passe ou login incorrecte, veuillez réessayer."); //à mettre en rouge
+                }
             }
         });
 

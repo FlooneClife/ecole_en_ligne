@@ -1,5 +1,6 @@
 package com.example.ecole_en_ligne;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.example.ecole_en_ligne.util.ActionUtil;
 
 public class Inscription_eleve extends AppCompatActivity {
 
@@ -36,6 +40,15 @@ public class Inscription_eleve extends AppCompatActivity {
 
 
         //----------------------------------------------------Actions------------------------------------------------------
+        valider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //Ajoute un eleve a la base de donnée puis passe a la page connexion
+                Common_bdd.addEleve(new Eleve(nom.getText().toString(), prenom.getText().toString(), login.getText().toString(), mdp.getText().toString(), mail.getText().toString()));
+
+                Intent connexion = new Intent(Inscription_eleve.this, ValidationInscription.class);
+                startActivity(connexion);
+            }
+        });
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override

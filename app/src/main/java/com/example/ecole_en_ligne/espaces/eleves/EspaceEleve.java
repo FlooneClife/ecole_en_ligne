@@ -1,7 +1,16 @@
 package com.example.ecole_en_ligne.espaces.eleves;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ecole_en_ligne.Common_bdd;
+import com.example.ecole_en_ligne.Connexion_eleve;
+import com.example.ecole_en_ligne.MainActivity;
+import com.example.ecole_en_ligne.elementMenu.Activites;
+import com.example.ecole_en_ligne.elementMenu.CoursLive;
+import com.example.ecole_en_ligne.elementMenu.Cours_Exos;
+import com.example.ecole_en_ligne.elementMenu.Progression;
+import com.example.ecole_en_ligne.elementMenu.Recommandation;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -21,11 +30,12 @@ import com.example.ecole_en_ligne.R;
 public class EspaceEleve extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageView menu;
-    ImageView retour;
+    ImageView deco;
     TextView loginName;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
+    Intent i = getIntent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,16 +47,16 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ////TODO recuperer le nom du login
-//        loginName.put(login);
+        loginName.setText(" " + i.getStringExtra("Login"));
 
         menu = findViewById(R.id.menu);
-        retour = findViewById(R.id.retour);
+        deco = findViewById(R.id.deconnexion);
 
-        retour.setOnClickListener(new View.OnClickListener() {
+        deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent redir = new Intent(EspaceEleve.this, MainActivity.class);
+                startActivity(redir);
             }
         });
 
@@ -65,26 +75,43 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
 
             case R.id.cours_exos: {
                 //ouvrir page des cours et des exercices
+                Intent redir = new Intent(EspaceEleve.this, Cours_Exos.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
                 break;
             }
             case R.id.cours_live: {
                 //ouvrir page des rappels de cours
+                Intent redir = new Intent(EspaceEleve.this, CoursLive.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
                 break;
             }
             case R.id.recommandations: {
                 //ouvrir page des recommandations
+                Intent redir = new Intent(EspaceEleve.this, Recommandation.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
                 break;
             }
             case R.id.progression: {
                 //ouvrir page des progressions et courbes
+                Intent redir = new Intent(EspaceEleve.this, Progression.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
                 break;
             }
             case R.id.activites: {
                 //ouvrir page des dernières activites
+                Intent redir = new Intent(EspaceEleve.this, Activites.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
                 break;
             }
             case R.id.deconnexion: {
-                finish();
+                Intent redir = new Intent(EspaceEleve.this, MainActivity.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
                 break;
             }
         }

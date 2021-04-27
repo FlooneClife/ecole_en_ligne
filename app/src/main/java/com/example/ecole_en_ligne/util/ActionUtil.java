@@ -12,6 +12,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.example.ecole_en_ligne.Connexion_eleve;
+import com.example.ecole_en_ligne.IndentificationC;
+import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
 
 public class ActionUtil {
@@ -108,5 +111,6 @@ public class ActionUtil {
         }
         alertDialog.show();
     }
+
 
 }

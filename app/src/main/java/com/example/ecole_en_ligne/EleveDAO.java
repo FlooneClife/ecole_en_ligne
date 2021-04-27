@@ -48,7 +48,7 @@ public class EleveDAO extends DAOBase {
         value.put(EleveDAO.ELEVE_LOGIN,e.getLogin());
         value.put(EleveDAO.ELEVE_MDP,e.getMdp());
         value.put(EleveDAO.ELEVE_EMAIL,e.getEmail());
-        mDb.update(ELEVE_TABLE_NAME, value, ELEVE_KEY  + " = ?", new String[] {String.valueOf(e.getId())});
+        //mDb.update(ELEVE_TABLE_NAME, value, ELEVE_KEY  + " = ?", new String[] {String.valueOf(e.getId())});
     }
 
     /*public Eleve selectionner(long id){

@@ -8,9 +8,8 @@ public class Eleve {
     private String mdp;
     private String email;
 
-    public Eleve(long id, String nom, String prenom, String login, String mdp, String email) {
+    public Eleve(String nom, String prenom, String login, String mdp, String email) {
         super();
-        this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.login = login;
@@ -18,9 +17,9 @@ public class Eleve {
         this.email = email;
     }
 
-    public long getId() {
+    /*public long getId() {
         return id;
-    }
+    }*/
 
     public void setId(long id) {
         this.id = id;
