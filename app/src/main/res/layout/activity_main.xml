@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -20,7 +20,16 @@
             android:textSize="30dp"
             android:textColor="@color/white" />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/connexion"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/login2"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -66,6 +75,7 @@
                         android:clickable="true"
                         android:focusable="true" />
 
+                    <!--
                     <Button
                         android:id="@+id/connexion"
                         android:layout_width="wrap_content"
@@ -76,6 +86,7 @@
                         android:text="@string/connexion"
                         android:textColor="@color/white"
                         android:background="@drawable/button_blue_gradient" />
+                        -->
 
                 </RelativeLayout>
 

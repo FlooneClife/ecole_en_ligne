@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         //-------------------identification---------------------------------------
         Button inscription = (Button) findViewById(R.id.inscription);
-        Button connexion = (Button) findViewById(R.id.connexion);
+        ImageView connexion = findViewById(R.id.connexion);
         TextView propos = (TextView) findViewById(R.id.aPropos);
         TextView contact = (TextView) findViewById(R.id.contact);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
