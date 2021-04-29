@@ -84,33 +84,57 @@
                     android:text="Progressions :"
                     android:textSize="30dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Maths"
-                    android:textSize="20dp" />
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:rowCount="2"
+                    android:columnCount="2"
+                    android:weightSum="2"
+                    android:layout_below="@id/content" >
 
-                <ImageView
-                    android:id="@+id/courbeMaths"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:src="@drawable/courbe"
-                    android:clickable="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:background="@drawable/border"
+                        android:text="@string/Maths"
+                        android:textSize="20dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Histoire_geo"
-                    android:textSize="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:background="@drawable/border"
+                        android:text="@string/Histoire_geo"
+                        android:textSize="20dp" />
 
-                <ImageView
-                    android:id="@+id/courbeHistoire"
-                    android:layout_width="40dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="30dp"
-                    android:src="@drawable/courbe2"
-                    android:clickable="true" />
+                    <ImageView
+                        android:id="@+id/courbeMaths"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:background="@drawable/border"
+                        android:src="@drawable/courbe"
+                        android:clickable="true" />
+
+                    <ImageView
+                        android:id="@+id/courbeHistoire"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:padding="5dp"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:background="@drawable/border"
+                        android:src="@drawable/courbe2"
+                        android:clickable="true" />
+
+                </GridLayout>
 
             </RelativeLayout>
 

@@ -80,31 +80,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/enTantQue"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginVertical="30dp"
                     android:text="Cours en direct :"
                     android:textSize="30dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/fr"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/content"
+                    android:textColor="@color/x_blue050"
+                    android:textSize="20dp"
                     android:text="@string/Francais"
                     />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/zoom1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/fr"
+                    android:textSize="20dp"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/lienZoomFictif"
                     />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/svt"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/zoom1"
+                    android:textColor="@color/x_blue050"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
                     android:text="@string/SVT"
                     />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/svt"
+                    android:textColor="@color/x_orange150"
+                    android:textSize="18dp"
                     android:text="@string/messagePasCoursLive"
                     />
 
