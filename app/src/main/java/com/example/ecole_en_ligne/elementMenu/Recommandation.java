@@ -45,8 +45,7 @@ public class Recommandation extends AppCompatActivity implements NavigationView.
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent redir = new Intent(Recommandation.this, MainActivity.class);
-                startActivity(redir);
+                finish();
             }
         });
 
