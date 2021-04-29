@@ -117,9 +117,7 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
                 break;
             }
             case R.id.deconnexion: {
-                Intent redir = new Intent(EspaceEleve.this, MainActivity.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                startActivity(redir);
+                finish();
                 break;
             }
         }
