@@ -49,8 +49,7 @@ public class CoursLive extends AppCompatActivity implements NavigationView.OnNav
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent redir = new Intent(CoursLive.this, MainActivity.class);
-                startActivity(redir);
+                finish();
             }
         });
 
