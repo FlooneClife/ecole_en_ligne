@@ -30,7 +30,7 @@ public class Common_bdd {
     }
 
     public static boolean peutSeCo(String login, String mdp_taper){   //Fonction qui permet de vérifier les logins pour se connecter
-        if(getEleveByLogin(login) == null || !getEleveByLogin(login).getMdp().contains(mdp_taper)){
+        if(getEleveByLogin(login) == null || !getEleveByLogin(login).getMdp().contentEquals(mdp_taper)){
             return false;
         }
         return true;
