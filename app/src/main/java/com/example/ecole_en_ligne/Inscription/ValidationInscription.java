@@ -26,6 +26,7 @@ public class ValidationInscription extends AppCompatActivity {
             public void onClick(View v) {
                 Intent connexion = new Intent(ValidationInscription.this, MainActivity.class);
                 startActivity(connexion);
+                finish();
             }
         });
 
@@ -34,6 +35,7 @@ public class ValidationInscription extends AppCompatActivity {
             public void onClick(View v) {
                 Intent connexion = new Intent(ValidationInscription.this, IndentificationC.class);
                 startActivity(connexion);
+                finish();
             }
         });
 

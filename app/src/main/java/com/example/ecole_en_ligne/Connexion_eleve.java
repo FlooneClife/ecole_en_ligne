@@ -50,11 +50,15 @@ public class Connexion_eleve extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (Common_bdd.peutSeCo(login.getText().toString(),mdp.getText().toString())){
+                    login.setBackgroundResource(R.drawable.edit_text);
+                    mdp.setBackgroundResource(R.drawable.edit_text);
                     Intent espace = new Intent(Connexion_eleve.this, com.example.ecole_en_ligne.espaces.eleves.EspaceEleve.class);
                     espace.putExtra("Login",login.getText().toString());
                     startActivity(espace);
                 }else{
-                    erreurCo.setText("Mot de passe ou login incorrecte, veuillez réessayer."); //à mettre en rouge
+                    erreurCo.setText("Mot de passe ou login incorrecte, veuillez réessayer.");
+                    login.setBackgroundResource(R.drawable.edit_text_error);
+                    mdp.setBackgroundResource(R.drawable.edit_text_error);
                 }
             }
         });

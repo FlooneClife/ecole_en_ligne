@@ -50,7 +50,9 @@
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text"
             android:hint="@string/login"
             android:inputType="textPersonName" />
 
@@ -58,9 +60,17 @@
             android:id="@+id/mdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text"
             android:hint="@string/mdp"
             android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/erreur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/errorRed" />
 
         <TextView
             android:id="@+id/forgottenPW"

@@ -64,6 +64,7 @@ public class Inscription_eleve extends AppCompatActivity {
                             mail.getText().toString()));
                     Intent connexion = new Intent(Inscription_eleve.this, ValidationInscription.class);
                     startActivity(connexion);
+                    finish();
                 }
             }
         });
