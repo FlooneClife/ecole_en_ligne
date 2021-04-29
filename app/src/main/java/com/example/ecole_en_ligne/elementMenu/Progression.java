@@ -71,6 +71,7 @@ public class Progression extends AppCompatActivity implements NavigationView.OnN
                 Intent redir = new Intent(Progression.this, EspaceEleve.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
 
@@ -79,6 +80,7 @@ public class Progression extends AppCompatActivity implements NavigationView.OnN
                 Intent redir = new Intent(Progression.this, Cours_Exos.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.cours_live: {
@@ -86,6 +88,7 @@ public class Progression extends AppCompatActivity implements NavigationView.OnN
                 Intent redir = new Intent(Progression.this, CoursLive.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.recommandations: {
@@ -93,6 +96,7 @@ public class Progression extends AppCompatActivity implements NavigationView.OnN
                 Intent redir = new Intent(Progression.this, Recommandation.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.progression: {
@@ -100,6 +104,7 @@ public class Progression extends AppCompatActivity implements NavigationView.OnN
                 Intent redir = new Intent(Progression.this, Progression.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.activites: {
@@ -107,12 +112,11 @@ public class Progression extends AppCompatActivity implements NavigationView.OnN
                 Intent redir = new Intent(Progression.this, Activites.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.deconnexion: {
-                Intent redir = new Intent(Progression.this, MainActivity.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                startActivity(redir);
+                finish();
                 break;
             }
         }
