@@ -84,6 +84,12 @@
                     android:text="Cours et Exercices :"
                     android:textSize="30dp" />
 
+                <ListView
+                    android:id="@+id/liste_matiere"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
             </RelativeLayout>
 
         </androidx.core.widget.NestedScrollView>
