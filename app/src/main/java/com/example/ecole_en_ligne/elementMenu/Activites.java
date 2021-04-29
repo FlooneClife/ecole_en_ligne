@@ -50,8 +50,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent redir = new Intent(Activites.this, MainActivity.class);
-                startActivity(redir);
+                finish();
             }
         });
 
