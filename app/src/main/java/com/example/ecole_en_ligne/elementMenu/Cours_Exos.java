@@ -14,7 +14,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.ecole_en_ligne.R;
@@ -34,6 +36,7 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.cours_exos);
 
+
         i = getIntent();
         loginName = findViewById(R.id.loginName);
 
@@ -45,6 +48,9 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
 
         menu = findViewById(R.id.menu);
         deco = findViewById(R.id.deconnexion);
+
+
+        //------------------------------HEADER------------------------------
 
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +65,21 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 drawerLayout.openDrawer(navigationView);
             }
         });
+
+
+        //------------------------------LISTE DES MATIERES------------------------------
+
+        String[] mat = new String[] {
+                "Mathématiques",
+                "Français",
+                "Anglais",
+                "Histoire"
+        };
+
+        ListView list = (ListView) findViewById(R.id.liste_matiere);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mat);
+        list.setAdapter(adapter);
+
     }
 
     @Override
