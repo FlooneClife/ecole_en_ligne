@@ -56,8 +56,7 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent redir = new Intent(EspaceEleve.this, MainActivity.class);
-                startActivity(redir);
+                finish();
             }
         });
 
