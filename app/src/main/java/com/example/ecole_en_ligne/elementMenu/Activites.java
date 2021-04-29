@@ -72,6 +72,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
                 Intent redir = new Intent(Activites.this, EspaceEleve.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
 
@@ -80,6 +81,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
                 Intent redir = new Intent(Activites.this, Cours_Exos.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.cours_live: {
@@ -87,6 +89,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
                 Intent redir = new Intent(Activites.this, CoursLive.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.recommandations: {
@@ -94,6 +97,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
                 Intent redir = new Intent(Activites.this, Recommandation.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.progression: {
@@ -101,6 +105,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
                 Intent redir = new Intent(Activites.this, Progression.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.activites: {
@@ -108,12 +113,11 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
                 Intent redir = new Intent(Activites.this, Activites.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
+                finish();
                 break;
             }
             case R.id.deconnexion: {
-                Intent redir = new Intent(Activites.this, MainActivity.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                startActivity(redir);
+                finish();
                 break;
             }
         }
