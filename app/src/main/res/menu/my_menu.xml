@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/tableau_bord"
+        android:title="Tableau de bord" />
+
     <item android:id="@+id/cours_exos"
         android:title="Cours et Exercices" />
 

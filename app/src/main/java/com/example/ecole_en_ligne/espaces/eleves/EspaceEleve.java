@@ -34,13 +34,14 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
     TextView loginName;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    ActionBarDrawerToggle toggle;
-    Intent i = getIntent();
+    Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_espace_eleve);
+
+        i = getIntent();
         loginName = findViewById(R.id.loginName);
 
         navigationView = findViewById(R.id.navigation);
@@ -72,6 +73,13 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         ////TODO rediriger sur la page correspondante au bouton
         switch (item.getItemId()) {
+            case R.id.tableau_bord: {
+                //ouvrir page des cours et des exercices
+                Intent redir = new Intent(EspaceEleve.this, EspaceEleve.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
+                break;
+            }
 
             case R.id.cours_exos: {
                 //ouvrir page des cours et des exercices
