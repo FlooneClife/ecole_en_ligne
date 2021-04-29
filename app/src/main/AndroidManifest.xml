@@ -20,11 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Indentification_inscription" />
-        <activity android:name=".ValidationInscription" />
+        <activity android:name=".Inscription.Indentification_inscription" />
+        <activity android:name=".Inscription.ValidationInscription" />
         <activity android:name=".IndentificationC" />
-        <activity android:name=".Inscription_eleve" />
-        <activity android:name=".Inscription_parent" />
+        <activity android:name=".Inscription.Inscription_eleve" />
+        <activity android:name=".Inscription.Inscription_parent" />
         <activity android:name=".Connexion_eleve" />
         <activity android:name=".Connexion_parent" />
         <activity android:name=".Ins_donnees_enf" />

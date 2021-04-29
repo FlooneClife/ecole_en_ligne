@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.ecole_en_ligne.IndentificationC;
-import com.example.ecole_en_ligne.Indentification_inscription;
+import com.example.ecole_en_ligne.Inscription.Indentification_inscription;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.util.ActionUtil;
 

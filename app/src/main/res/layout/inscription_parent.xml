@@ -35,8 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
-        android:layout_marginBottom="10dp"
+        android:paddingHorizontal="30dp"
         android:layout_below="@id/header" >
 
         <TextView
@@ -52,8 +51,10 @@
             android:id="@+id/nom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/nom"
-            android:layout_alignParentLeft="true"
+            android:background="@drawable/edit_text"
             android:gravity="left"
             android:textSize="20dp"
             android:inputType="textPersonName" />
@@ -62,7 +63,10 @@
             android:id="@+id/prenom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/prenom"
+            android:background="@drawable/edit_text"
             android:gravity="left"
             android:textSize="20dp"
             android:inputType="textPersonName" />
@@ -71,7 +75,10 @@
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/login"
+            android:background="@drawable/edit_text"
             android:gravity="left"
             android:textSize="20dp"
             android:inputType="textPersonName" />
@@ -80,7 +87,10 @@
             android:id="@+id/mdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/mdp"
+            android:background="@drawable/edit_text"
             android:gravity="left"
             android:textSize="20dp"
             android:inputType="textPassword" />
@@ -89,16 +99,22 @@
             android:id="@+id/mail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/mail"
+            android:background="@drawable/edit_text"
             android:gravity="left"
             android:textSize="20dp"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/enfants"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
             android:hint="@string/nb_enfant"
+            android:background="@drawable/edit_text"
             android:gravity="left"
             android:textSize="20dp"
             android:inputType="numberDecimal" />

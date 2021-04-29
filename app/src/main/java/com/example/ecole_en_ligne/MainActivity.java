@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.ecole_en_ligne.Inscription.Indentification_inscription;
 import com.example.ecole_en_ligne.classes.Cinquieme;
 import com.example.ecole_en_ligne.classes.Quatrieme;
 import com.example.ecole_en_ligne.classes.Sixieme;

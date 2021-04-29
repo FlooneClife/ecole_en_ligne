@@ -13,19 +13,10 @@
         android:orientation="horizontal"
         android:background="@color/x_blue100" >
 
-        <ImageView
-            android:id="@+id/retour"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="30dp"
-            android:src="@drawable/arrow_back"
-            android:clickable="true" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/inscription"
-            android:layout_toRightOf="@id/retour"
+            android:text="@string/inscriptionComplete"
             android:textSize="30dp"
             android:textColor="@color/white" />
 
@@ -35,15 +26,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingHorizontal="20dp"
+        android:paddingHorizontal="30dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@id/header" >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="30dp"
-            android:text="Votre inscription a bien été effectué, où souhaitez-vous vous rediriger ?"
+            android:layout_marginVertical="50dp"
+            android:text="@string/inscriptionMsgComplete"
             android:gravity="center"
             android:textSize="20dp"
             android:textColor="@color/x_blue100" />
@@ -51,18 +42,22 @@
 
         <Button
             android:id="@+id/acceuil"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Acceuil"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/accueil"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white"
             android:background="@drawable/button_blue_gradient" />
 
         <Button
             android:id="@+id/connexion"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Connexion"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="30dp"
+            android:text="@string/connexion"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white"
             android:background="@drawable/button_blue_gradient" />

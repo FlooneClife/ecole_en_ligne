@@ -1,4 +1,4 @@
-package com.example.ecole_en_ligne;
+package com.example.ecole_en_ligne.Inscription;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ecole_en_ligne.R;
 
 public class Indentification_inscription extends AppCompatActivity {
 

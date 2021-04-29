@@ -70,5 +70,8 @@
     <string name="enTantQue">Connecté(e) en tant que : </string>
     <string name="drawer_open">open</string>
     <string name="drawer_close">close</string>
+    <string name="accueil">Accueil</string>
+    <string name="inscriptionComplete">Inscription terminée</string>
+    <string name="inscriptionMsgComplete">Votre inscription a bien été effectuée. Où souhaitez-vous vous rediriger ?</string>
 
 </resources>

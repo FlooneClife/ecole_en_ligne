@@ -8,7 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -110,6 +112,17 @@ public class ActionUtil {
             alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         }
         alertDialog.show();
+    }
+
+    public static boolean verifEmptyEdit(Context context, EditText editText) {
+        String text = editText.getText().toString();
+        if(text.isEmpty()) {
+            editText.setBackgroundResource(R.drawable.edit_text_error);
+            return true;
+        } else {
+            editText.setBackgroundResource(R.drawable.edit_text);
+        }
+        return false;
     }
 
 

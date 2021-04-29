@@ -1,4 +1,4 @@
-package com.example.ecole_en_ligne;
+package com.example.ecole_en_ligne.Inscription;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,10 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.ecole_en_ligne.Common_bdd;
+import com.example.ecole_en_ligne.Eleve;
+import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
 public class Inscription_eleve extends AppCompatActivity {
@@ -43,10 +47,24 @@ public class Inscription_eleve extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //Ajoute un eleve a la base de donnée puis passe a la page connexion
-                Common_bdd.addEleve(new Eleve(nom.getText().toString(), prenom.getText().toString(), login.getText().toString(), mdp.getText().toString(), mail.getText().toString()));
-
-                Intent connexion = new Intent(Inscription_eleve.this, ValidationInscription.class);
-                startActivity(connexion);
+                if(
+                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, nom) |
+                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, prenom) |
+                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, login) |
+                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, mdp) |
+                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, mail)
+                ) {
+                    Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Common_bdd.addEleve(new Eleve(
+                            nom.getText().toString(),
+                            prenom.getText().toString(),
+                            login.getText().toString(),
+                            mdp.getText().toString(),
+                            mail.getText().toString()));
+                    Intent connexion = new Intent(Inscription_eleve.this, ValidationInscription.class);
+                    startActivity(connexion);
+                }
             }
         });
 
