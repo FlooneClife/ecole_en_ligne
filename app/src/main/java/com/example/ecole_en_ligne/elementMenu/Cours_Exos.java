@@ -49,8 +49,7 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent redir = new Intent(Cours_Exos.this, MainActivity.class);
-                startActivity(redir);
+                finish();
             }
         });
 
