@@ -77,5 +77,8 @@
     <string name="messagePasCoursLive">Il n\'y a pas de cours diffusé pour le moment.</string>
     <string name="lienZoomFictif">https://cours-fr.zoom.us/j/87518680026?pwd=VERVL05JYVhucXlCREQx</string>
     <string name="codeValidation">Code de validation</string>
+    
+    <string name="cours">Vos cours :</string>
+    <string name="exercices">Vos exercices :</string>
 
 </resources>
