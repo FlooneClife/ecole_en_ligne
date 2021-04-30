@@ -40,6 +40,10 @@
         <activity android:name=".elementMenu.Cours_Exos" />
         <activity android:name=".elementMenu.CoursLive" />
         <activity android:name=".elementMenu.Recommandation" />
+        <activity android:name=".matieres.Maths" />
+        <activity android:name=".matieres.Français" />
+        <activity android:name=".matieres.Histoire" />
+        <activity android:name=".matieres.Anglais" />
     </application>
 
 </manifest>
