@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="20dp"
+        android:orientation="horizontal"
+        android:background="@color/x_blue100"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/retour"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/arrow_back"
+            android:clickable="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Maths"
+            android:layout_toRightOf="@id/retour"
+            android:textSize="30dp"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:layout_below="@id/header" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/header"
+            android:orientation="vertical"
+            android:padding="50dp"
+            tools:layout_editor_absoluteX="-27dp"
+            tools:layout_editor_absoluteY="-110dp"
+            >
+
+
+
+
+                <TextView
+                    android:id="@+id/Cours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/cours"
+                    android:textSize="30dp" />
+
+                <!-- Ajout pdf, videos.. -->
+                <!-- PDF -->
+                <ImageView
+                    android:id="@+id/cours1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/Cours"
+                    android:layout_marginRight="30dp"
+                    android:src="@drawable/image_pdf" />
+
+                <TextView
+                    android:id="@+id/T1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Cours"
+                    android:layout_marginTop="7dp"
+                    android:layout_toRightOf="@id/cours1"
+                    android:text="Cours 1 : Les fonctions."
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/cours2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/cours1"
+                    android:layout_marginRight="30dp"
+                    android:src="@drawable/image_pdf" />
+
+                <TextView
+                    android:id="@+id/T2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cours1"
+                    android:layout_marginTop="7dp"
+                    android:layout_toRightOf="@id/cours2"
+                    android:text="Cours 2 : Les probabilités."
+                    android:textSize="15dp" />
+
+
+                <ImageView
+                    android:id="@+id/cours3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/cours2"
+                    android:layout_marginRight="30dp"
+                    android:src="@drawable/image_pdf" />
+
+                <TextView
+                    android:id="@+id/T3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cours2"
+                    android:layout_marginTop="7dp"
+                    android:layout_toRightOf="@id/cours3"
+                    android:text="Cours 3 : Les statistiques."
+                    android:textSize="15dp"
+
+                    />
+
+
+                <!-- VIDEOS -->
+
+
+
+                <TextView
+                    android:id="@+id/Exercices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/T3"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/exercices"
+                    android:textSize="30dp" />
+
+                <!-- Ajout QCM, questions/réponses.. -->
+                <TextView
+                    android:id="@+id/questionQCM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/Exercices"
+                    android:text="Quel est la solution de cette équation : 2x + 6 = 0 ?" />
+
+                <CheckBox
+                    android:id="@+id/check1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/questionQCM"
+                    android:text="-3" />
+
+                <CheckBox
+                    android:id="@+id/check2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check1"
+                    android:text="48" />
+
+                <CheckBox
+                    android:id="@+id/check3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/check2"
+                    android:text="12" />
+                <TextView
+                    android:id="@+id/erreur1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
+                    android:layout_below="@id/check3"/>
+
+                <Button
+                    android:id="@+id/valider1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valider"
+                    android:background="@drawable/button_blue_gradient"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/erreur1"/>
+
+                <TextView
+                    android:id="@+id/q2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quel est la formule du théorème de Pythagore pour un triangle ABC, avec AB l'hypothénus ?"
+                    android:layout_below="@id/valider1"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/reponseQ2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Entrez votre réponse.."
+                    android:layout_below="@id/q2"
+                    android:padding="8dp"
+                    android:layout_marginBottom="20dp"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/edit_text"
+                    />
+
+                <TextView
+                    android:id="@+id/erreur2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
+                    android:layout_below="@id/reponseQ2"/>
+
+
+                <Button
+                    android:id="@+id/valider2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valider"
+                    android:background="@drawable/button_blue_gradient"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/erreur2"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
