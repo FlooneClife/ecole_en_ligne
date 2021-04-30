@@ -51,7 +51,7 @@ public class Maths extends AppCompatActivity {
             public void onClick(View v) {
                 if (c1.isChecked() && !c2.isChecked() && !c3.isChecked()){
                     //message bonne reponse
-                    t1.setText("Votre réponse est correcte, félicitation !");
+                    t1.setText("Votre réponse est correcte, félicitations !");
                 }else{
                     //message mauvaise réponse
                     t1.setText("Votre réponse est fausse, réessayez !");
@@ -68,7 +68,7 @@ public class Maths extends AppCompatActivity {
             public void onClick(View v) {
                 if (rep.getText().toString().equals("AB2 = AC2 + BC2")){
                     //message bonne reponse
-                    t2.setText("Votre réponse est correcte, félicitation !");
+                    t2.setText("Votre réponse est correcte, félicitations !");
                 }else{
                     //message mauvaise réponse
                     t2.setText("Votre réponse est fausse, réessayez !");

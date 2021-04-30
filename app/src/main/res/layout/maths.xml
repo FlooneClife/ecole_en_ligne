@@ -204,7 +204,7 @@
                     android:id="@+id/erreur2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/x_blue100"
+                    android:textColor="@color/errorRed"
                     android:layout_below="@id/reponseQ2"/>
 
 
