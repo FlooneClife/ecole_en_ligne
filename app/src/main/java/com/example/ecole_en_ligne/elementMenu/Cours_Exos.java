@@ -3,8 +3,10 @@ package com.example.ecole_en_ligne.elementMenu;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.ecole_en_ligne.MainActivity;
+import com.example.ecole_en_ligne.Connexion_eleve;
+import com.example.ecole_en_ligne.MdpOublie;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
+import com.example.ecole_en_ligne.matieres.Maths;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -73,12 +76,29 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 "Mathématiques",
                 "Français",
                 "Anglais",
-                "Histoire"
+                "Histoire",
+                "SVT",
+                "Technologie"
         };
 
         ListView list = (ListView) findViewById(R.id.liste_matiere);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mat);
         list.setAdapter(adapter);
+
+                     ///------------ELEMENT CLIQUABLE LISTE------------///
+
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
+                    if (position == 0){  //Si c'est l'onglet Mathématiques qui est selectionné (se trouve a la position 0 dans la liste)
+                        Intent redir = new Intent(Cours_Exos.this, Maths.class);
+                        startActivity(redir);
+                    }
+
+                }
+            }
+        );
 
     }
 
