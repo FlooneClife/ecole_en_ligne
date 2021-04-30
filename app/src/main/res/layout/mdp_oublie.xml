@@ -42,12 +42,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
+            android:textColor="@color/x_blue100"
             android:text="@string/textMdp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text"
             android:hint="@string/nom"
             />
 
@@ -55,6 +59,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text"
             android:hint="@string/prenom"
             />
 
@@ -63,6 +70,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text"
             android:hint="@string/mail"
             />
 
