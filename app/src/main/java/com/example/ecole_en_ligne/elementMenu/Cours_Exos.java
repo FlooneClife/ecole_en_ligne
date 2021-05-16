@@ -31,7 +31,6 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
     TextView loginName;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    ActionBarDrawerToggle toggle;
     Intent i;
 
     @Override
