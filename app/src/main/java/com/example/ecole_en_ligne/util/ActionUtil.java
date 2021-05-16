@@ -11,14 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.example.ecole_en_ligne.Connexion_eleve;
-import com.example.ecole_en_ligne.IndentificationC;
-import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ActionUtil {
 
@@ -115,7 +114,7 @@ public class ActionUtil {
         alertDialog.show();
     }
 
-    public static boolean verifEmptyEdit(Context context, EditText editText) {
+    public static boolean verifEmptyEdit(EditText editText) {
         String text = editText.getText().toString();
         if(text.isEmpty()) {
             editText.setBackgroundResource(R.drawable.edit_text_error);
@@ -126,7 +125,7 @@ public class ActionUtil {
         return false;
     }
 
-    public static boolean verifEmptySpinner(Context context, Spinner spinner, String defaultText) {
+    public static boolean verifEmptySpinner(Spinner spinner, String defaultText) {
         String text = spinner.getSelectedItem().toString();
         if(text.equals(defaultText)) {
             spinner.setBackgroundResource(R.drawable.edit_text_error);
@@ -137,5 +136,22 @@ public class ActionUtil {
         return false;
     }
 
+    public static boolean verifEmailFormat(EditText editText) {
+        String email = editText.getText().toString();
+//        if(email.isEmpty()) {
+//            editText.setBackgroundResource(R.drawable.edit_text_error);
+//            return true;
+//        }
+        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+        if(!matcher.matches()) {
+            editText.setBackgroundResource(R.drawable.edit_text_error);
+            return true;
+        } else {
+            editText.setBackgroundResource(R.drawable.edit_text);
+        }
+        return false;
+    }
 
 }

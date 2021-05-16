@@ -47,12 +47,12 @@ public class Inscription_parent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(
-                    ActionUtil.verifEmptyEdit(Inscription_parent.this, nom) |
-                    ActionUtil.verifEmptyEdit(Inscription_parent.this, prenom) |
-                    ActionUtil.verifEmptyEdit(Inscription_parent.this, login) |
-                    ActionUtil.verifEmptyEdit(Inscription_parent.this, mdp) |
-                    ActionUtil.verifEmptyEdit(Inscription_parent.this, mail) |
-                    ActionUtil.verifEmptyEdit(Inscription_parent.this, nb_eleve)
+                    ActionUtil.verifEmptyEdit(nom) |
+                    ActionUtil.verifEmptyEdit(prenom) |
+                    ActionUtil.verifEmptyEdit(login) |
+                    ActionUtil.verifEmptyEdit(mdp) |
+                    ActionUtil.verifEmailFormat(mail) |
+                    ActionUtil.verifEmptyEdit(nb_eleve)
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
                 } else {

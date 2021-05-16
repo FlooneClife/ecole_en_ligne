@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.ecole_en_ligne.Common_bdd;
 import com.example.ecole_en_ligne.Eleve;
@@ -48,11 +47,11 @@ public class Inscription_eleve extends AppCompatActivity {
             @Override
             public void onClick(View v) { //Ajoute un eleve a la base de donnée puis passe a la page connexion
                 if(
-                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, nom) |
-                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, prenom) |
-                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, login) |
-                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, mdp) |
-                    ActionUtil.verifEmptyEdit(Inscription_eleve.this, mail)
+                    ActionUtil.verifEmptyEdit(nom) |
+                    ActionUtil.verifEmptyEdit(prenom) |
+                    ActionUtil.verifEmptyEdit(login) |
+                    ActionUtil.verifEmptyEdit(mdp) |
+                    ActionUtil.verifEmailFormat(mail)
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
                 } else {

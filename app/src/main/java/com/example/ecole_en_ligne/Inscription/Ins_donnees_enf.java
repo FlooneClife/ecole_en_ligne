@@ -150,12 +150,12 @@ public class Ins_donnees_enf extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (
-                    ActionUtil.verifEmptyEdit(Ins_donnees_enf.this, nom_enf) |
-                    ActionUtil.verifEmptyEdit(Ins_donnees_enf.this, prenom_enf) |
-                    ActionUtil.verifEmptySpinner(Ins_donnees_enf.this, annee_scol, defaultAnnee) |
-                    ActionUtil.verifEmptySpinner(Ins_donnees_enf.this, lien_parents, defaultLien) |
-                    ActionUtil.verifEmptySpinner(Ins_donnees_enf.this, niveau_scol, defaultNiveau) |
-                    ActionUtil.verifEmptySpinner(Ins_donnees_enf.this, formule, defaultFormule)
+                    ActionUtil.verifEmptyEdit(nom_enf) |
+                    ActionUtil.verifEmptyEdit(prenom_enf) |
+                    ActionUtil.verifEmptySpinner(annee_scol, defaultAnnee) |
+                    ActionUtil.verifEmptySpinner(lien_parents, defaultLien) |
+                    ActionUtil.verifEmptySpinner(niveau_scol, defaultNiveau) |
+                    ActionUtil.verifEmptySpinner(formule, defaultFormule)
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
                 } else {
