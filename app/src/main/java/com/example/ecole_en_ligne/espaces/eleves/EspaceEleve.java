@@ -3,26 +3,22 @@ package com.example.ecole_en_ligne.espaces.eleves;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.ecole_en_ligne.Common_bdd;
-import com.example.ecole_en_ligne.Connexion_eleve;
-import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.elementMenu.Activites;
 import com.example.ecole_en_ligne.elementMenu.CoursLive;
 import com.example.ecole_en_ligne.elementMenu.Cours_Exos;
 import com.example.ecole_en_ligne.elementMenu.Progression;
 import com.example.ecole_en_ligne.elementMenu.Recommandation;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.ecole_en_ligne.R;
@@ -66,6 +62,35 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
                 drawerLayout.openDrawer(navigationView);
             }
         });
+
+        //------------------------------LISTE PROFIL------------------------------
+
+        String[] profil = new String[] {
+                "Mes matières",
+                "Mes résultats",
+                "Récapitulatifs d'inscription",
+                "Mon abonnement"
+        };
+
+        ListView listP = (ListView) findViewById(R.id.liste_profilE);
+        final ArrayAdapter<String> adapterP = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, profil);
+        listP.setAdapter(adapterP);
+
+        //TODO.....
+        /*
+        listP.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
+                    if (position == 0){  //Si c'est l'eleve 1 qui est selectionné (se trouve a la position 0 dans la liste)
+                        Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                        startActivity(redir);
+                    }
+
+                }
+            }
+        );*/
+
+
     }
 
     @Override
