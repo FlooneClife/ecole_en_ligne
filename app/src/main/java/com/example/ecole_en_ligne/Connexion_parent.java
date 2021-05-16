@@ -46,6 +46,7 @@ public class Connexion_parent extends AppCompatActivity {
             }
         });
 
+        /*
         valider.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -61,6 +62,15 @@ public class Connexion_parent extends AppCompatActivity {
                     login.setBackgroundResource(R.drawable.edit_text_error);
                     mdp.setBackgroundResource(R.drawable.edit_text_error);
                 }
+            }
+        });*/
+
+        valider.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent espace = new Intent(Connexion_parent.this, com.example.ecole_en_ligne.espaces.parents.EspaceParents.class);
+                //espace.putExtra("Login",login.getText().toString());
+                startActivity(espace);
             }
         });
 
