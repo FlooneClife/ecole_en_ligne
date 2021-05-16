@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -121,6 +122,17 @@ public class ActionUtil {
             return true;
         } else {
             editText.setBackgroundResource(R.drawable.edit_text);
+        }
+        return false;
+    }
+
+    public static boolean verifEmptySpinner(Context context, Spinner spinner, String defaultText) {
+        String text = spinner.getSelectedItem().toString();
+        if(text.equals(defaultText)) {
+            spinner.setBackgroundResource(R.drawable.edit_text_error);
+            return true;
+        } else {
+            spinner.setBackgroundResource(R.drawable.edit_text);
         }
         return false;
     }

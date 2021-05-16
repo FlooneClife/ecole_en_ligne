@@ -27,7 +27,7 @@
         <activity android:name=".Inscription.Inscription_parent" />
         <activity android:name=".Connexion_eleve" />
         <activity android:name=".Connexion_parent" />
-        <activity android:name=".Ins_donnees_enf" />
+        <activity android:name=".Inscription.Ins_donnees_enf" />
         <activity android:name=".classes.Sixieme" />
         <activity android:name=".classes.Cinquieme" />
         <activity android:name=".classes.Quatrieme" />
