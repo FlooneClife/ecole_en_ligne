@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:id="@+id/tableau_bordP"
+        android:title="Tableau de bord" />
+
+    <item android:id="@+id/momentCO"
+        android:title="Les moments de connexion" />
+
+    <item android:id="@+id/cours_exos_fait"
+        android:title="Cours et Exercices réalisés" />
+
+    <item android:id="@+id/courbes_progressionP"
+        android:title="Courbes de  progression" />
+
+    <item android:id="@+id/recommandationsP"
+        android:title="Recommandations" />
+
+    <item android:id="@+id/rappel"
+        android:title="Définir un rappel" />
+
+    <item android:id="@+id/activitesP"
+        android:title="Durée d'activité" />
+
+    <item android:id="@+id/deconnexion"
+        android:title="Se déconnecter" />
+
+</menu>
