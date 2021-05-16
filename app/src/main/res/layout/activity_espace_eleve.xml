@@ -84,6 +84,22 @@
                     android:text="Tableau de bord :"
                     android:textSize="30dp" />
 
+                <TextView
+                    android:id="@+id/monProfilE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/content"
+                    android:text="Mon Profil :"
+                    android:textSize="15dp" />
+
+                <ListView
+                    android:id="@+id/liste_profilE"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/monProfilE"
+                    android:clickable="true"/>
+
+
             </RelativeLayout>
 
         </androidx.core.widget.NestedScrollView>
