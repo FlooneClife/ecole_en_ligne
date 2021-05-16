@@ -6,11 +6,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.Ins_donnees_enf;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.util.ActionUtil;
 
 public class Inscription_parent extends AppCompatActivity {
 
@@ -45,9 +47,21 @@ public class Inscription_parent extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent donnees_enf = new Intent(Inscription_parent.this, Ins_donnees_enf.class);
-                donnees_enf.putExtra("nb_eleve",nb_eleve.getText().toString());
-                startActivity(donnees_enf);
+                if(
+                    ActionUtil.verifEmptyEdit(Inscription_parent.this, nom) |
+                    ActionUtil.verifEmptyEdit(Inscription_parent.this, prenom) |
+                    ActionUtil.verifEmptyEdit(Inscription_parent.this, login) |
+                    ActionUtil.verifEmptyEdit(Inscription_parent.this, mdp) |
+                    ActionUtil.verifEmptyEdit(Inscription_parent.this, mail) |
+                    ActionUtil.verifEmptyEdit(Inscription_parent.this, nb_eleve)
+                ) {
+                    Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent donnees_enf = new Intent(Inscription_parent.this, Ins_donnees_enf.class);
+                    donnees_enf.putExtra("nb_eleve",nb_eleve.getText().toString());
+                    donnees_enf.putExtra("nb_eleve_total",nb_eleve.getText().toString());
+                    startActivity(donnees_enf);
+                }
             }
         });
 

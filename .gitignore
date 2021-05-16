@@ -66,3 +66,6 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 .idea/vcs.xml
+.idea/compiler.xml
+.idea/misc.xml
+.idea/runConfigurations.xml
