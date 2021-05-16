@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Common_bdd.addEleve(new Eleve("admin", "admin", "admin", "admin", "admin"));
+        Common_bdd.addEleve(new Eleve("admin", "admin", "admin", "admin", "admin","admin","admin","admin"));
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         //-------------------identification---------------------------------------

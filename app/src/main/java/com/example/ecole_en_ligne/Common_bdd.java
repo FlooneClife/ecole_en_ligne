@@ -29,8 +29,24 @@ public class Common_bdd {
         return null;
     }
 
+    private static Parent getParentByLogin(String login){
+        for (Parent p : bddParent) {
+            if (p.getLogin().equals(login)){
+                return p;
+            }
+        }
+        return null;
+    }
+
     public static boolean peutSeCo(String login, String mdp_taper){   //Fonction qui permet de vérifier les logins pour se connecter
         if(getEleveByLogin(login) == null || !getEleveByLogin(login).getMdp().contentEquals(mdp_taper)){
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean peutSeCoParent(String login, String mdp_taper){   //Fonction qui permet de vérifier les logins pour se connecter
+        if(getParentByLogin(login) == null || !getParentByLogin(login).getMdp().contentEquals(mdp_taper)){
             return false;
         }
         return true;

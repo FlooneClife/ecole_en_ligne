@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ecole_en_ligne.Common_bdd;
+import com.example.ecole_en_ligne.Eleve;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
@@ -26,6 +28,8 @@ public class Ins_donnees_enf extends AppCompatActivity {
     private TextView donneesEnfant;
     private EditText nom_enf;
     private EditText prenom_enf;
+    private EditText email_enf;
+    private EditText mdp_enf;
     private Spinner annee_scol;
     private Spinner lien_parents;
     private Spinner niveau_scol;
@@ -57,6 +61,8 @@ public class Ins_donnees_enf extends AppCompatActivity {
         donneesEnfant = findViewById(R.id.donneesEnfant);
         nom_enf = findViewById(R.id.nomEnfant);
         prenom_enf = findViewById(R.id.prenomEnfant);
+        email_enf = findViewById(R.id.emailEnfant);
+        mdp_enf = findViewById(R.id.mdpEnfant);
         annee_scol = findViewById(R.id.anneeScolaire);
         lien_parents = findViewById(R.id.lienParentee);
         niveau_scol = findViewById(R.id.niveauScolaire);
@@ -152,6 +158,8 @@ public class Ins_donnees_enf extends AppCompatActivity {
                 if (
                     ActionUtil.verifEmptyEdit(nom_enf) |
                     ActionUtil.verifEmptyEdit(prenom_enf) |
+                    ActionUtil.verifEmptyEdit(mdp_enf) |
+                    ActionUtil.verifEmptyEdit(email_enf) |
                     ActionUtil.verifEmptySpinner(annee_scol, defaultAnnee) |
                     ActionUtil.verifEmptySpinner(lien_parents, defaultLien) |
                     ActionUtil.verifEmptySpinner(niveau_scol, defaultNiveau) |
@@ -162,6 +170,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
                     //generate login (sous la forme nom + 2 premières lettres prénom
                     autoLogin = nom_enf.getText().toString() + prenom_enf.getText().charAt(0) + prenom_enf.getText().charAt(1);
                     System.out.println(autoLogin);
+                    Common_bdd.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,mdp_enf.getText().toString(),email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString()));
                     //--------------
                     if (nbEnfRestant > 0) {
                         //test
@@ -170,7 +179,8 @@ public class Ins_donnees_enf extends AppCompatActivity {
                         intent.putExtra("nb_eleve_total", String.valueOf(nb_enf_total));
                         startActivity(intent);
                     } else {
-                        //TODO: rediriger vers la page de confirmation sans oublier d'ajouter l'enfant à la bdd
+                        Intent intent = new Intent(Ins_donnees_enf.this, ValidationInscription.class);
+                        startActivity(intent);
                         Toast.makeText(Ins_donnees_enf.this, "Terminé !", Toast.LENGTH_SHORT).show();
                     }
                 }

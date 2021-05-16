@@ -7,19 +7,37 @@ public class Eleve {
     private String login;
     private String mdp;
     private String email;
+    private String formule;
+    private String nivScol;
+    private String anneeScol;
 
-    public Eleve(String nom, String prenom, String login, String mdp, String email) {
+    public Eleve(String nom, String prenom, String login, String mdp, String email, String formule, String nivScol, String anneeScol) {
         super();
         this.nom = nom;
         this.prenom = prenom;
         this.login = login;
         this.mdp = mdp;
         this.email = email;
+        this.formule = formule;
+        this.nivScol = nivScol;
+        this.anneeScol = anneeScol;
     }
 
-    /*public long getId() {
-        return id;
-    }*/
+    public String getFormule() {
+        return formule;
+    }
+
+    public void setFormule(String formule) {
+        this.formule = formule;
+    }
+
+    public String getNivScol() {
+        return nivScol;
+    }
+
+    public void setNivScol(String nivScol) {
+        this.nivScol = nivScol;
+    }
 
     public void setId(long id) {
         this.id = id;

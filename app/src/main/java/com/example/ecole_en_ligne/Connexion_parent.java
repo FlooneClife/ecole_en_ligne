@@ -46,33 +46,24 @@ public class Connexion_parent extends AppCompatActivity {
             }
         });
 
-        /*
+
         valider.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                //bdd pour parents
-                if (false) { //Common_bdd.peutSeCo(login.getText().toString(),mdp.getText().toString())){
-//                    login.setBackgroundResource(R.drawable.edit_text);
-//                    mdp.setBackgroundResource(R.drawable.edit_text);
-//                    Intent espace = new Intent(Connexion_parent.this, com.example.ecole_en_ligne.espaces.parents.EspaceParent.class);
-//                    espace.putExtra("Login",login.getText().toString());
-//                    startActivity(espace);
+                if (Common_bdd.peutSeCoParent(login.getText().toString(),mdp.getText().toString())) {
+                    login.setBackgroundResource(R.drawable.edit_text);
+                    mdp.setBackgroundResource(R.drawable.edit_text);
+                    Intent espace = new Intent(Connexion_parent.this, com.example.ecole_en_ligne.espaces.Parents.EspaceParents.class);
+                    espace.putExtra("Login",login.getText().toString());
+                    startActivity(espace);
                 }else{
                     erreurCo.setText("Mot de passe ou login incorrecte, veuillez réessayer.");
                     login.setBackgroundResource(R.drawable.edit_text_error);
                     mdp.setBackgroundResource(R.drawable.edit_text_error);
                 }
             }
-        });*/
-
-        valider.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent espace = new Intent(Connexion_parent.this, com.example.ecole_en_ligne.espaces.parents.EspaceParents.class);
-                //espace.putExtra("Login",login.getText().toString());
-                startActivity(espace);
-            }
         });
+
 
     }
 }

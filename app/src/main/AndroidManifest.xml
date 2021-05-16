@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.ecole_en_ligne">
 
     <application
@@ -14,9 +15,10 @@
             android:label="@string/title_activity_espace_eleve"
             android:theme="@style/Theme.Ecole_en_ligne.NoActionBar"></activity>
         <activity
-            android:name=".espaces.parents.EspaceParents"
+            android:name=".espaces.Parents.EspaceParents"
             android:label="@string/title_activity_espace_parents"
-            android:theme="@style/Theme.Ecole_en_ligne.NoActionBar"/>
+            android:theme="@style/Theme.Ecole_en_ligne.NoActionBar"
+            tools:ignore="MissingClass" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
