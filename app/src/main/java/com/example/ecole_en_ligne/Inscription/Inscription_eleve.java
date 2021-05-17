@@ -30,12 +30,10 @@ public class Inscription_eleve extends AppCompatActivity {
     private Button valider;
     private ImageView retour;
     private Spinner annee_scol;
-    private Spinner lien_parents;
     private Spinner niveau_scol;
     private Spinner formule;
 
     private String defaultAnnee;
-    private String defaultLien;
     private String defaultNiveau;
     private String defaultFormule;
 
@@ -128,7 +126,6 @@ public class Inscription_eleve extends AppCompatActivity {
                     ActionUtil.verifEmptyEdit(mdp) |
                     ActionUtil.verifEmailFormat(mail)|
                     ActionUtil.verifEmptySpinner(annee_scol, defaultAnnee) |
-                    ActionUtil.verifEmptySpinner(lien_parents, defaultLien) |
                     ActionUtil.verifEmptySpinner(niveau_scol, defaultNiveau) |
                     ActionUtil.verifEmptySpinner(formule, defaultFormule)
                 ) {

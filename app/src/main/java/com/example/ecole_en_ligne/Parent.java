@@ -9,7 +9,7 @@ public class Parent {
     private String email;
     private int nbEnfant;
 
-    public Parent(long id, String nom, String prenom, String login, String mdp, String email, int nbEnfant) {
+    public Parent(String nom, String prenom, String login, String mdp, String email, int nbEnfant) {
         super();
         this.id = id;
         this.nom = nom;

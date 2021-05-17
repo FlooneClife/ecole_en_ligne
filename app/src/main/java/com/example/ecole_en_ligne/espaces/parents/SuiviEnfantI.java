@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.espaces.Parents.EspaceParents;
 import com.google.android.material.navigation.NavigationView;
 
 public class SuiviEnfantI extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

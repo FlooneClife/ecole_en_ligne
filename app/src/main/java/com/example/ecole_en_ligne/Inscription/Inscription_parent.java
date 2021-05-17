@@ -58,7 +58,7 @@ public class Inscription_parent extends AppCompatActivity {
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
                 } else {
-                    Common_bdd.addParent(new Parent(nom.getText().toString(),prenom.getText().toString(),login.getText().toString(),mdp.getText().toString(),mail.getText().toString(),nb_eleve.getText().toString()));
+                    Common_bdd.addParent(new Parent(nom.getText().toString(),prenom.getText().toString(),login.getText().toString(),mdp.getText().toString(),mail.getText().toString(),Integer.parseInt(nb_eleve.getText().toString())));
                     Intent donnees_enf = new Intent(Inscription_parent.this, Ins_donnees_enf.class);
                     donnees_enf.putExtra("nb_eleve",nb_eleve.getText().toString());
                     donnees_enf.putExtra("nb_eleve_total",nb_eleve.getText().toString());

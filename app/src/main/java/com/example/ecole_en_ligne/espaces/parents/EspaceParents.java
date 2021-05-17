@@ -1,4 +1,4 @@
-package com.example.ecole_en_ligne.espaces.parents;
+package com.example.ecole_en_ligne.espaces.Parents;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -114,7 +114,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
             }
 
             case R.id.momentCO: {
-                i = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                i = new Intent(EspaceParents.this, com.example.ecole_en_ligne.espaces.parents.SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
                 i.putExtra("Content","Moment de connexion");
                 startActivity(i);
@@ -123,7 +123,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
             }
 
             case R.id.courbes_progressionP: {
-                i = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                i = new Intent(EspaceParents.this, com.example.ecole_en_ligne.espaces.parents.SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
                 i.putExtra("Content","Courbes de progressions");
                 startActivity(i);
@@ -131,7 +131,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                 break;
             }
             case R.id.recommandationsP: {
-                i = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                i = new Intent(EspaceParents.this, com.example.ecole_en_ligne.espaces.parents.SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
                 i.putExtra("Content","Recommandation");
                 startActivity(i);
@@ -139,7 +139,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                 break;
             }
             case R.id.rappel: {
-                i = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                i = new Intent(EspaceParents.this, com.example.ecole_en_ligne.espaces.parents.SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
                 i.putExtra("Content","Définir un rappel");
                 startActivity(i);
@@ -147,7 +147,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                 break;
             }
             case R.id.activitesP: {
-                i = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                i = new Intent(EspaceParents.this, com.example.ecole_en_ligne.espaces.parents.SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
                 i.putExtra("Content","Activités de l'enfant");
                 startActivity(i);
