@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.Common_bdd;
-import com.example.ecole_en_ligne.Eleve;
+import com.example.ecole_en_ligne.bdd.Eleve;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.util.ActionUtil;
 

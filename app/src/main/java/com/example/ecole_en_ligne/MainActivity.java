@@ -13,6 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ecole_en_ligne.Inscription.Indentification_inscription;
+import com.example.ecole_en_ligne.bdd.Eleve;
+import com.example.ecole_en_ligne.bdd.TestBDD;
 import com.example.ecole_en_ligne.classes.Cinquieme;
 import com.example.ecole_en_ligne.classes.Quatrieme;
 import com.example.ecole_en_ligne.classes.Sixieme;
@@ -28,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Common_bdd.addEleve(new Eleve("admin", "admin", "admin", "admin", "admin","admin","admin","admin"));
+//        Common_bdd.addEleve(new Eleve("admin", "admin", "admin", "admin", "admin","admin","admin","admin"));
 //        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         //-------------------identification---------------------------------------
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         TextView contact = (TextView) findViewById(R.id.contact);
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         Button valider = (Button) findViewById(R.id.valider);
+
+        Button testbdd = (Button) findViewById(R.id.testBDD);
 
 
 
@@ -91,6 +95,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent inscription = new Intent(MainActivity.this, Indentification_inscription.class);
+                startActivity(inscription);
+            }
+        });
+
+        testbdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent inscription = new Intent(MainActivity.this, TestBDD.class);
                 startActivity(inscription);
             }
         });
