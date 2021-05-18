@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ecole_en_ligne.Common_bdd;
 import com.example.ecole_en_ligne.bdd.Eleve;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
 import java.util.ArrayList;
@@ -56,6 +57,8 @@ public class Inscription_eleve extends AppCompatActivity {
         niveau_scol = findViewById(R.id.niveauScolaire);
         formule = findViewById(R.id.formule);
 
+        EleveManager em = new EleveManager(this);
+
 
         //----------------------Listes déroulantes---------------------------------
         List annee = new ArrayList();
@@ -94,7 +97,7 @@ public class Inscription_eleve extends AppCompatActivity {
         form.add("Un cours par année");
         form.add("Deux cours par année");
         form.add("Trois cours par année");
-        form.add("Tout les cours par année");
+        form.add("Tous les cours par année");
 
 
         ArrayAdapter adapter4 = new ArrayAdapter(
@@ -119,6 +122,7 @@ public class Inscription_eleve extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) { //Ajoute un eleve a la base de donnée puis passe a la page connexion
+                em.open();
                 if(
                     ActionUtil.verifEmptyEdit(nom) |
                     ActionUtil.verifEmptyEdit(prenom) |
@@ -130,18 +134,25 @@ public class Inscription_eleve extends AppCompatActivity {
                     ActionUtil.verifEmptySpinner(formule, defaultFormule)
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
+                    em.close();
                 } else {
-                    Common_bdd.addEleve(new Eleve(nom.getText().toString(),
+                    if(em.addEleve(new Eleve(nom.getText().toString(),
                                                   prenom.getText().toString(),
                                                   login.getText().toString(),
                                                   mdp.getText().toString(),
                                                   mail.getText().toString(),
                                                   formule.getSelectedItem().toString(),
                                                   niveau_scol.getSelectedItem().toString(),
-                                                  annee_scol.getSelectedItem().toString()));
-                    Intent connexion = new Intent(Inscription_eleve.this, ValidationInscription.class);
-                    startActivity(connexion);
-                    finish();
+                                                  annee_scol.getSelectedItem().toString())) == -1) {
+                        login.setBackgroundResource(R.drawable.edit_text_error);
+                        Toast.makeText(getApplicationContext(), "Login déjà utilisé. Veuillez en choisir un autre.", Toast.LENGTH_SHORT).show();
+                        em.close();
+                    } else{
+                        Intent connexion = new Intent(Inscription_eleve.this, ValidationInscription.class);
+                        em.close();
+                        startActivity(connexion);
+                        finish();
+                    }
                 }
             }
         });

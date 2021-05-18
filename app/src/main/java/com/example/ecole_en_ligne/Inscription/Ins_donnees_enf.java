@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ecole_en_ligne.Common_bdd;
 import com.example.ecole_en_ligne.bdd.Eleve;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
 import java.util.ArrayList;
@@ -53,6 +54,8 @@ public class Ins_donnees_enf extends AppCompatActivity {
         int nb_enf_total = Integer.parseInt(i.getStringExtra("nb_eleve_total"));
         nbEnfRestant = nb_enf - 1;
         numEnfCourant = nb_enf_total - nbEnfRestant;
+
+        EleveManager em = new EleveManager(this);
 
 
         //----------------------------------------------Element du Layout--------------------------------------------------
@@ -155,6 +158,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
             //----- email : même que le parent
             @Override
             public void onClick(View v) {
+                em.open();
                 if (
                     ActionUtil.verifEmptyEdit(nom_enf) |
                     ActionUtil.verifEmptyEdit(prenom_enf) |
@@ -166,22 +170,24 @@ public class Ins_donnees_enf extends AppCompatActivity {
                     ActionUtil.verifEmptySpinner(formule, defaultFormule)
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
+                    em.close();
                 } else {
                     //generate login (sous la forme nom + 2 premières lettres prénom
                     autoLogin = nom_enf.getText().toString() + prenom_enf.getText().charAt(0) + prenom_enf.getText().charAt(1);
                     System.out.println(autoLogin);
-                    Common_bdd.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,mdp_enf.getText().toString(),email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString()));
+                    em.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,mdp_enf.getText().toString(),email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString()));
                     //--------------
                     if (nbEnfRestant > 0) {
                         //test
                         Intent intent = new Intent(Ins_donnees_enf.this, Ins_donnees_enf.class);
                         intent.putExtra("nb_eleve", String.valueOf(nbEnfRestant));
                         intent.putExtra("nb_eleve_total", String.valueOf(nb_enf_total));
+                        em.close();
                         startActivity(intent);
                     } else {
                         Intent intent = new Intent(Ins_donnees_enf.this, ValidationInscription.class);
+                        em.close();
                         startActivity(intent);
-                        Toast.makeText(Ins_donnees_enf.this, "Terminé !", Toast.LENGTH_SHORT).show();
                     }
                 }
             }

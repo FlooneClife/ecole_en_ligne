@@ -162,18 +162,6 @@
                 android:textColor="@color/white"
                 android:background="@drawable/button_blue_gradient" />
 
-            <Button
-                android:id="@+id/testBDD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginVertical="30dp"
-                android:text="TEST BDD"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@color/white"
-                android:background="@drawable/button_blue_gradient" />
-
         </LinearLayout>
 
     </ScrollView>

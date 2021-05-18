@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.ecole_en_ligne.Common_bdd;
-import com.example.ecole_en_ligne.Parent;
+import com.example.ecole_en_ligne.bdd.Parent;
 import com.example.ecole_en_ligne.R;
 import com.google.android.material.navigation.NavigationView;
 

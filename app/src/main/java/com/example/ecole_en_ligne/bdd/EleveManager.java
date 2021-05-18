@@ -89,7 +89,7 @@ public class EleveManager {
     public Eleve getEleve(String login) {
         Eleve a=new Eleve("","","","","","","","");
 
-        Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGIN+"="+login, null);
+        Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGIN+"=\""+login + "\"", null);
         if (c.moveToFirst()) {
 //            a.setId(c.getInt(c.getColumnIndex(ELEVE_KEY)));
             a.setNom(c.getString(c.getColumnIndex(ELEVE_NOM)));
@@ -108,6 +108,18 @@ public class EleveManager {
     // sélection de tous les enregistrements de la table
     public Cursor getAllEleve() {
         return db.rawQuery("SELECT * FROM " + ELEVE_TABLE_NAME, null);
+    }
+
+    public boolean peutSeCo(String login, String mdp_taper){   //Fonction qui permet de vérifier les logins pour se connecter
+        Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGIN+"=\""+login + "\"", null);
+        if (c.moveToFirst()) {
+            if (getEleve(login).getMdp().contentEquals(mdp_taper)) {
+                c.close();
+                return true;
+            }
+            c.close();
+        }
+        return false;
     }
 
 }

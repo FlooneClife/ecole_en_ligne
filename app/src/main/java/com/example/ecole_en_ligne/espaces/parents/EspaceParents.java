@@ -33,7 +33,8 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.acceuil_parents);
 
         i = getIntent();
-        loginName = findViewById(R.id.loginNameP);
+        loginName = findViewById(R.id.loginName);
+        System.out.println(i.getStringExtra("Login"));
         loginName.setText(" "+i.getStringExtra("Login"));
 
         navigationView = findViewById(R.id.navigationP);

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layoutP"
     android:fitsSystemWindows="true"
-    tools:context=".espaces.parents.EspaceParents">
+    tools:context=".espaces.Parents.EspaceParents">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
             android:layout_below="@id/header"
             android:layout_margin="20dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".espaces.parents.EspaceParents"
+            tools:context=".espaces.Parents.EspaceParents"
             tools:showIn="@layout/acceuil_parents">
 
             <RelativeLayout

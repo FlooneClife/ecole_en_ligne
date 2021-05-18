@@ -1,6 +1,7 @@
 package com.example.ecole_en_ligne;
 
 import com.example.ecole_en_ligne.bdd.Eleve;
+import com.example.ecole_en_ligne.bdd.Parent;
 
 import java.util.ArrayList;
 

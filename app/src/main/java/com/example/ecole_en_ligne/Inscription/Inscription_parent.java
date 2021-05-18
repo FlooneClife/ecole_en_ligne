@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ecole_en_ligne.Common_bdd;
-import com.example.ecole_en_ligne.Parent;
+import com.example.ecole_en_ligne.bdd.Parent;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.ParentManager;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
 public class Inscription_parent extends AppCompatActivity {
@@ -43,11 +43,14 @@ public class Inscription_parent extends AppCompatActivity {
         retour = findViewById(R.id.retour);
         nb_eleve = findViewById(R.id.enfants);
 
+        ParentManager pm = new ParentManager(this);
+
         //----------------------------------------------------Actions------------------------------------------------------
 
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pm.open();
                 if(
                     ActionUtil.verifEmptyEdit(nom) |
                     ActionUtil.verifEmptyEdit(prenom) |
@@ -57,12 +60,24 @@ public class Inscription_parent extends AppCompatActivity {
                     ActionUtil.verifEmptyEdit(nb_eleve)
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
+                    pm.close();
                 } else {
-                    Common_bdd.addParent(new Parent(nom.getText().toString(),prenom.getText().toString(),login.getText().toString(),mdp.getText().toString(),mail.getText().toString(),Integer.parseInt(nb_eleve.getText().toString())));
-                    Intent donnees_enf = new Intent(Inscription_parent.this, Ins_donnees_enf.class);
-                    donnees_enf.putExtra("nb_eleve",nb_eleve.getText().toString());
-                    donnees_enf.putExtra("nb_eleve_total",nb_eleve.getText().toString());
-                    startActivity(donnees_enf);
+                    if(pm.addParent(new Parent(nom.getText().toString(),
+                            prenom.getText().toString(),
+                            login.getText().toString(),
+                            mdp.getText().toString(),
+                            mail.getText().toString(),
+                            Integer.parseInt(nb_eleve.getText().toString()))) == -1) {
+                        login.setBackgroundResource(R.drawable.edit_text_error);
+                        Toast.makeText(getApplicationContext(), "Login déjà utilisé. Veuillez en choisir un autre.", Toast.LENGTH_SHORT).show();
+                        pm.close();
+                    } else {
+                        Intent donnees_enf = new Intent(Inscription_parent.this, Ins_donnees_enf.class);
+                        donnees_enf.putExtra("nb_eleve", nb_eleve.getText().toString());
+                        donnees_enf.putExtra("nb_eleve_total", nb_eleve.getText().toString());
+                        pm.close();
+                        startActivity(donnees_enf);
+                    }
                 }
             }
         });
