@@ -20,7 +20,7 @@ public class Common_bdd {
         bddParent.add(p);
     }
 
-    private static Eleve getEleveByLogin(String login){
+    public static Eleve getEleveByLogin(String login){
         for (Eleve e : bddEleve) {
             if (e.getLogin().equals(login)){
                 return e;
@@ -29,7 +29,7 @@ public class Common_bdd {
         return null;
     }
 
-    private static Parent getParentByLogin(String login){
+    public static Parent getParentByLogin(String login){
         for (Parent p : bddParent) {
             if (p.getLogin().equals(login)){
                 return p;

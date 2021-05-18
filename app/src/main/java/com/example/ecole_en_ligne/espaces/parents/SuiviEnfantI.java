@@ -1,4 +1,4 @@
-package com.example.ecole_en_ligne.espaces.parents;
+package com.example.ecole_en_ligne.espaces.Parents;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.ecole_en_ligne.Common_bdd;
+import com.example.ecole_en_ligne.Parent;
 import com.example.ecole_en_ligne.R;
-import com.example.ecole_en_ligne.espaces.Parents.EspaceParents;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class SuiviEnfantI extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     NavigationView navigationView;
@@ -23,6 +26,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
     ImageView menu;
     ImageView deco;
     Intent i;
+    TextView loginName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.parents_enfanti);
 
         i = getIntent();
+        loginName = findViewById(R.id.loginNameP);
 
         TextView content = findViewById(R.id.contentS);
         content.setText(i.getStringExtra("Content"));
@@ -38,6 +43,8 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layoutS);
 
         navigationView.setNavigationItemSelectedListener(this);
+
+        //loginName.setText(" " + i.getStringExtra("Login"));
 
         menu = findViewById(R.id.menu);
         deco = findViewById(R.id.deconnexion);
@@ -62,15 +69,15 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
 
         //------------------------------LISTE DE SUIVI------------------------------
 
-        String[] mat = new String[] {
-                "Enfant 1",
-                "Enfant 2",
-                "Enfant 3",
-                "Enfant 4"
-        };
+        Parent p = Common_bdd.getParentByLogin(i.getStringExtra("Login"));
+        ArrayList<String> listEnf = new ArrayList<String>();
+
+        for (int i = 0; i<p.getNbEnfant();i++){
+            listEnf.add("Enfant " + (i+1));
+        }
 
         ListView list = (ListView) findViewById(R.id.liste_enfant);
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mat);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listEnf);
         list.setAdapter(adapter);
 
         //TODO......
@@ -98,72 +105,72 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.tableau_bordP: {
-                    i = new Intent(SuiviEnfantI.this, EspaceParents.class);
-                    //redir.putExtra("Login",i.getStringExtra("Login"));
-                    startActivity(i);
-                    finish();
-                    break;
-                }
-
-
-                case R.id.cours_exos_fait: {
-                    i = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    //redir.putExtra("Login",i.getStringExtra("Login"));
-                    i.putExtra("Content","Cours et Exercices effectués");
-                    startActivity(i);
-                    finish();
-                    break;
-                }
-
-                case R.id.momentCO: {
-                    i = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    //redir.putExtra("Login",i.getStringExtra("Login"));
-                    i.putExtra("Content","Moment de connexion");
-                    startActivity(i);
-                    finish();
-                    break;
-                }
-
-                case R.id.courbes_progressionP: {
-                    i = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    //redir.putExtra("Login",i.getStringExtra("Login"));
-                    i.putExtra("Content","Courbes de progressions");
-                    startActivity(i);
-                    finish();
-                    break;
-                }
-                case R.id.recommandationsP: {
-                    i = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    //redir.putExtra("Login",i.getStringExtra("Login"));
-                    i.putExtra("Content","Recommandation");
-                    startActivity(i);
-                    finish();
-                    break;
-                }
-                case R.id.rappel: {
-                    i = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    //redir.putExtra("Login",i.getStringExtra("Login"));
-                    i.putExtra("Content","Définir un rappel");
-                    startActivity(i);
-                    finish();
-                    break;
-                }
-                case R.id.activitesP: {
-                    i = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    //redir.putExtra("Login",i.getStringExtra("Login"));
-                    i.putExtra("Content","Activités de l'enfant");
-                    startActivity(i);
-                    finish();
-                    break;
-                }
-
-                case R.id.deconnexion: {
-                    finish();
-                    break;
-                }
+        switch (item.getItemId()) {
+            case R.id.tableau_bordP: {
+                Intent redir = new Intent(SuiviEnfantI.this, EspaceParents.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
+                finish();
+                break;
             }
+
+
+            case R.id.cours_exos_fait: {
+                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                //redir.putExtra("Login",i.getStringExtra("Login"));
+                redir.putExtra("Content","Cours et Exercices effectués");
+                startActivity(redir);
+                finish();
+                break;
+            }
+
+            case R.id.momentCO: {
+                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                //redir.putExtra("Login",i.getStringExtra("Login"));
+                redir.putExtra("Content","Moment de connexion");
+                startActivity(redir);
+                finish();
+                break;
+            }
+
+            case R.id.courbes_progressionP: {
+                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                //redir.putExtra("Login",i.getStringExtra("Login"));
+                redir.putExtra("Content","Courbes de progressions");
+                startActivity(redir);
+                finish();
+                break;
+            }
+            case R.id.recommandationsP: {
+                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                //redir.putExtra("Login",i.getStringExtra("Login"));
+                redir.putExtra("Content","Recommandation");
+                startActivity(redir);
+                finish();
+                break;
+            }
+            case R.id.rappel: {
+                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                //redir.putExtra("Login",i.getStringExtra("Login"));
+                redir.putExtra("Content","Définir un rappel");
+                startActivity(redir);
+                finish();
+                break;
+            }
+            case R.id.activitesP: {
+                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                //redir.putExtra("Login",i.getStringExtra("Login"));
+                redir.putExtra("Content","Activités de l'enfant");
+                startActivity(redir);
+                finish();
+                break;
+            }
+
+            case R.id.deconnexion: {
+                finish();
+                break;
+            }
+        }
         //close navigation drawer
         drawerLayout.closeDrawers();
         return true;

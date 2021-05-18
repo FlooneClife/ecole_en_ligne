@@ -10,11 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecole_en_ligne">
-        <activity android:name=".bdd.TestBDD"></activity>
         <activity
             android:name=".espaces.eleves.EspaceEleve"
             android:label="@string/title_activity_espace_eleve"
-            android:theme="@style/Theme.Ecole_en_ligne.NoActionBar" />
+            android:theme="@style/Theme.Ecole_en_ligne.NoActionBar"></activity>
         <activity
             android:name=".espaces.Parents.EspaceParents"
             android:label="@string/title_activity_espace_parents"
@@ -51,7 +50,10 @@
         <activity android:name=".matieres.Français" />
         <activity android:name=".matieres.Histoire" />
         <activity android:name=".matieres.Anglais" />
-        <activity android:name=".espaces.parents.SuiviEnfantI" />
+        <activity android:name=".espaces.Parents.SuiviEnfantI"/>
+        <activity android:name=".espaces.Parents.ListeTableauBord.Abonnement"/>
+        <activity android:name=".espaces.Parents.ListeTableauBord.LesEnfants"/>
+        <activity android:name=".espaces.Parents.ListeTableauBord.RecapInscription"/>
     </application>
 
 </manifest>
