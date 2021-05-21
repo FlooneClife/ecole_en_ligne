@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
-    tools:context=".elementMenu.CoursLive">
+    tools:context=".espaces.eleves.elementMenu.CoursLive">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
             android:layout_below="@id/header"
             android:layout_margin="20dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".elementMenu.CoursLive"
+            tools:context=".espaces.eleves.elementMenu.CoursLive"
             tools:showIn="@layout/cours_live">
 
             <RelativeLayout

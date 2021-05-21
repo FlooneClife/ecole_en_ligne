@@ -41,15 +41,15 @@
         <activity android:name=".MdpOublie" />
         <activity android:name=".Changer_mdp" />
         <activity android:name=".ValidationCode" />
-        <activity android:name=".elementMenu.Progression" />
-        <activity android:name=".elementMenu.Activites" />
-        <activity android:name=".elementMenu.Cours_Exos" />
-        <activity android:name=".elementMenu.CoursLive" />
-        <activity android:name=".elementMenu.Recommandation" />
-        <activity android:name=".matieres.Maths" />
-        <activity android:name=".matieres.Français" />
-        <activity android:name=".matieres.Histoire" />
-        <activity android:name=".matieres.Anglais" />
+        <activity android:name=".espaces.eleves.elementMenu.Progression" />
+        <activity android:name=".espaces.eleves.elementMenu.Activites" />
+        <activity android:name=".espaces.eleves.elementMenu.Cours_Exos" />
+        <activity android:name=".espaces.eleves.elementMenu.CoursLive" />
+        <activity android:name=".espaces.eleves.elementMenu.Recommandation" />
+        <activity android:name=".espaces.eleves.matieres.Maths" />
+        <activity android:name=".espaces.eleves.matieres.Français" />
+        <activity android:name=".espaces.eleves.matieres.Histoire" />
+        <activity android:name=".espaces.eleves.matieres.Anglais" />
         <activity android:name=".espaces.Parents.SuiviEnfantI"/>
         <activity android:name=".espaces.Parents.ListeTableauBord.Abonnement"/>
         <activity android:name=".espaces.Parents.ListeTableauBord.LesEnfants"/>
@@ -57,6 +57,11 @@
         <activity android:name=".Paiement.Paiement_carte"/>
         <activity android:name=".Paiement.Paiement_prelev"/>
         <activity android:name=".Paiement.Choix_paiement"/>
+        <activity android:name=".espaces.eleves.ListeTableauBord.MesMatieres" />
+        <activity android:name=".espaces.eleves.ListeTableauBord.MesRappels" />
+        <activity android:name=".espaces.eleves.ListeTableauBord.MesResultats" />
+        <activity android:name=".espaces.eleves.ListeTableauBord.RecapInscription" />
+        <activity android:name=".espaces.eleves.ListeTableauBord.Tchat" />
     </application>
 
 </manifest>

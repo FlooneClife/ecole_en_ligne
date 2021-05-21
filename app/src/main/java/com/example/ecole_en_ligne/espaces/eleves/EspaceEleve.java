@@ -3,11 +3,14 @@ package com.example.ecole_en_ligne.espaces.eleves;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.ecole_en_ligne.elementMenu.Activites;
-import com.example.ecole_en_ligne.elementMenu.CoursLive;
-import com.example.ecole_en_ligne.elementMenu.Cours_Exos;
-import com.example.ecole_en_ligne.elementMenu.Progression;
-import com.example.ecole_en_ligne.elementMenu.Recommandation;
+import com.example.ecole_en_ligne.espaces.Parents.EspaceParents;
+import com.example.ecole_en_ligne.espaces.eleves.ListeTableauBord.MesMatieres;
+import com.example.ecole_en_ligne.espaces.eleves.ListeTableauBord.MesRappels;
+import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Activites;
+import com.example.ecole_en_ligne.espaces.eleves.elementMenu.CoursLive;
+import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Cours_Exos;
+import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Progression;
+import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Recommandation;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +19,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -69,26 +73,35 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
                 "Mes matières",
                 "Mes résultats",
                 "Récapitulatifs d'inscription",
-                "Mon abonnement"
+                "Mes rappels",
+                "Tchat"
         };
 
         ListView listP = (ListView) findViewById(R.id.liste_profilE);
         final ArrayAdapter<String> adapterP = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, profil);
         listP.setAdapter(adapterP);
 
-        //TODO.....
-        /*
+
         listP.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
-                    if (position == 0){  //Si c'est l'eleve 1 qui est selectionné (se trouve a la position 0 dans la liste)
-                        Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                    if (position == 0){
+                        Intent redir = new Intent(EspaceEleve.this, MesMatieres.class);
+                        redir.putExtra("Login",i.getStringExtra("Login"));
+                        startActivity(redir);
+                    }else if (position == 3){
+                        Intent redir = new Intent(EspaceEleve.this, MesRappels.class);
+                        redir.putExtra("Login",i.getStringExtra("Login"));
+                        startActivity(redir);
+                    }else if (position == 4){
+                        Intent redir = new Intent(EspaceEleve.this, MesMatieres.class);
+                        redir.putExtra("Login",i.getStringExtra("Login"));
                         startActivity(redir);
                     }
 
                 }
             }
-        );*/
+        );
 
 
     }
