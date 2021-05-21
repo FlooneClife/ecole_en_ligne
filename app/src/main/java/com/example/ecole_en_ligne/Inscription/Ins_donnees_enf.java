@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.Common_bdd;
+import com.example.ecole_en_ligne.Paiement.Choix_paiement;
 import com.example.ecole_en_ligne.bdd.Eleve;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.EleveManager;
@@ -185,7 +186,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
                         em.close();
                         startActivity(intent);
                     } else {
-                        Intent intent = new Intent(Ins_donnees_enf.this, ValidationInscription.class);
+                        Intent intent = new Intent(Ins_donnees_enf.this, Choix_paiement.class);
                         em.close();
                         startActivity(intent);
                     }

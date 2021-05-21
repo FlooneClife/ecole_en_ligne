@@ -47,11 +47,13 @@ public class Maths extends AppCompatActivity {
 
         Button valider1 = (Button) findViewById(R.id.valider1);
         valider1.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
                 if (c1.isChecked() && !c2.isChecked() && !c3.isChecked()){
                     //message bonne reponse
                     t1.setText("Votre réponse est correcte, félicitations !");
+                    t1.setTextColor(R.color.x_blue100);
                 }else{
                     //message mauvaise réponse
                     t1.setText("Votre réponse est fausse, réessayez !");
@@ -64,11 +66,13 @@ public class Maths extends AppCompatActivity {
         TextView t2 = (TextView) findViewById(R.id.erreur2);
 
         valider2.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
                 if (rep.getText().toString().equals("AB2 = AC2 + BC2")){
                     //message bonne reponse
                     t2.setText("Votre réponse est correcte, félicitations !");
+                    t2.setTextColor(R.color.x_blue100);
                 }else{
                     //message mauvaise réponse
                     t2.setText("Votre réponse est fausse, réessayez !");

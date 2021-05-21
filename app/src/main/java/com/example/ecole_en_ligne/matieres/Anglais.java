@@ -13,13 +13,10 @@ public class Anglais extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.changement_mdp);
+        setContentView(R.layout.anglais);
 
         Button valider = (Button) findViewById(R.id.valider);
         ImageView retour = (ImageView) findViewById(R.id.retour);
-
-
-
 
 
         retour.setOnClickListener(new View.OnClickListener() {

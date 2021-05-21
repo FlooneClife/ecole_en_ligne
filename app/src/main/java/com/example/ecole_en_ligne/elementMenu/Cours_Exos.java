@@ -6,6 +6,9 @@ import android.os.Bundle;
 import com.example.ecole_en_ligne.Connexion_eleve;
 import com.example.ecole_en_ligne.MdpOublie;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
+import com.example.ecole_en_ligne.matieres.Anglais;
+import com.example.ecole_en_ligne.matieres.Français;
+import com.example.ecole_en_ligne.matieres.Histoire;
 import com.example.ecole_en_ligne.matieres.Maths;
 import com.google.android.material.navigation.NavigationView;
 
@@ -75,9 +78,7 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 "Mathématiques",
                 "Français",
                 "Anglais",
-                "Histoire",
-                "SVT",
-                "Technologie"
+                "Histoire"
         };
 
         ListView list = (ListView) findViewById(R.id.liste_matiere);
@@ -92,6 +93,15 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
                     if (position == 0){  //Si c'est l'onglet Mathématiques qui est selectionné (se trouve a la position 0 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Maths.class);
+                        startActivity(redir);
+                    }else if (position == 1){  //Si c'est l'onglet Français qui est selectionné (se trouve a la position 0 dans la liste)
+                        Intent redir = new Intent(Cours_Exos.this, Français.class);
+                        startActivity(redir);
+                    }else if (position == 2){  //Si c'est l'onglet Anglais qui est selectionné (se trouve a la position 0 dans la liste)
+                        Intent redir = new Intent(Cours_Exos.this, Anglais.class);
+                        startActivity(redir);
+                    }else if (position == 3){  //Si c'est l'onglet Histoire qui est selectionné (se trouve a la position 0 dans la liste)
+                        Intent redir = new Intent(Cours_Exos.this, Histoire.class);
                         startActivity(redir);
                     }
 

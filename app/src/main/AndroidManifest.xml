@@ -54,6 +54,9 @@
         <activity android:name=".espaces.Parents.ListeTableauBord.Abonnement"/>
         <activity android:name=".espaces.Parents.ListeTableauBord.LesEnfants"/>
         <activity android:name=".espaces.Parents.ListeTableauBord.RecapInscription"/>
+        <activity android:name=".Paiement.Paiement_carte"/>
+        <activity android:name=".Paiement.Paiement_prelev"/>
+        <activity android:name=".Paiement.Choix_paiement"/>
     </application>
 
 </manifest>

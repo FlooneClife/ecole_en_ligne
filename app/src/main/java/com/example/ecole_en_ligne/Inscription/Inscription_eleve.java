@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.Common_bdd;
+import com.example.ecole_en_ligne.Paiement.Choix_paiement;
 import com.example.ecole_en_ligne.bdd.Eleve;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.EleveManager;
@@ -148,7 +149,7 @@ public class Inscription_eleve extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Login déjà utilisé. Veuillez en choisir un autre.", Toast.LENGTH_SHORT).show();
                         em.close();
                     } else{
-                        Intent connexion = new Intent(Inscription_eleve.this, ValidationInscription.class);
+                        Intent connexion = new Intent(Inscription_eleve.this, Choix_paiement.class);
                         em.close();
                         startActivity(connexion);
                         finish();
