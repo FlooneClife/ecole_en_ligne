@@ -75,6 +75,7 @@ public class Inscription_parent extends AppCompatActivity {
                         Intent donnees_enf = new Intent(Inscription_parent.this, Ins_donnees_enf.class);
                         donnees_enf.putExtra("nb_eleve", nb_eleve.getText().toString());
                         donnees_enf.putExtra("nb_eleve_total", nb_eleve.getText().toString());
+                        donnees_enf.putExtra("loginParent", login.getText().toString());
                         pm.close();
                         startActivity(donnees_enf);
                     }

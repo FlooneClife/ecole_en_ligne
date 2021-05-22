@@ -10,8 +10,10 @@ public class Eleve {
     private String formule;
     private String nivScol;
     private String anneeScol;
+    private String loginParent;
+    private String lastTimeOnline;
 
-    public Eleve(String nom, String prenom, String login, String mdp, String email, String formule, String nivScol, String anneeScol) {
+    public Eleve(String nom, String prenom, String login, String mdp, String email, String formule, String nivScol, String anneeScol, String loginParent, String lastTimeOnline) {
 //        this.id = id;
         super();
         this.nom = nom;
@@ -22,6 +24,8 @@ public class Eleve {
         this.formule = formule;
         this.nivScol = nivScol;
         this.anneeScol = anneeScol;
+        this.loginParent = loginParent;
+        this.lastTimeOnline = lastTimeOnline;
     }
 
 //    public long getId() {
@@ -94,5 +98,21 @@ public class Eleve {
 
     public void setAnneeScol(String anneeScol) {
         this.anneeScol = anneeScol;
+    }
+
+    public String getLoginParent() {
+        return loginParent;
+    }
+
+    public void setLoginParent(String loginParent) {
+        this.loginParent = loginParent;
+    }
+
+    public String getLastTimeOnline() {
+        return lastTimeOnline;
+    }
+
+    public void setLastTimeOnline(String lastTimeOnline) {
+        this.lastTimeOnline = lastTimeOnline;
     }
 }

@@ -16,6 +16,8 @@ public class EleveManager {
     public static final String ELEVE_FORMULE = "formule";
     public static final String ELEVE_NIVEAU = "nivScol";
     public static final String ELEVE_ANNEE = "anneeScol";
+    public static final String ELEVE_LOGINPARENT = "loginParent";
+    public static final String ELEVE_LASTTIMEONLINE = "lastTimeOnline";
 
     public static final String ELEVE_TABLE_CREATE =
             "CREATE TABLE " + ELEVE_TABLE_NAME + " ("+
@@ -27,7 +29,9 @@ public class EleveManager {
                     ELEVE_EMAIL + " TEXT, "+
                     ELEVE_FORMULE + " TEXT, "+
                     ELEVE_NIVEAU + " TEXT, "+
-                    ELEVE_ANNEE + " TEXT);";
+                    ELEVE_ANNEE + " TEXT, "+
+                    ELEVE_LOGINPARENT + " TEXT, "+
+                    ELEVE_LASTTIMEONLINE + " DATE);";
 
     private MySQLite mDb;
     private SQLiteDatabase db;
@@ -60,6 +64,8 @@ public class EleveManager {
         value.put(ELEVE_FORMULE, e.getFormule());
         value.put(ELEVE_NIVEAU, e.getNivScol());
         value.put(ELEVE_ANNEE, e.getAnneeScol());
+        value.put(ELEVE_LOGINPARENT, e.getLoginParent());
+        value.put(ELEVE_LASTTIMEONLINE, e.getLastTimeOnline());
         return db.insert(ELEVE_TABLE_NAME,null,value);
     }
 
@@ -82,12 +88,22 @@ public class EleveManager {
         value.put(ELEVE_FORMULE,e.getFormule());
         value.put(ELEVE_NIVEAU,e.getNivScol());
         value.put(ELEVE_ANNEE,e.getAnneeScol());
+        value.put(ELEVE_LOGINPARENT,e.getLoginParent());
+        value.put(ELEVE_LASTTIMEONLINE,e.getLastTimeOnline());
+        return db.update(ELEVE_TABLE_NAME, value, where, whereArgs);
+    }
+
+    public int modDate(String login, String date){
+        ContentValues value = new ContentValues();
+        String where = ELEVE_LOGIN+" = ?";
+        String[] whereArgs = {login+""};
+        value.put(ELEVE_LASTTIMEONLINE,date);
         return db.update(ELEVE_TABLE_NAME, value, where, whereArgs);
     }
 
     // Retourne l'element dont l'id est passé en paramètre
     public Eleve getEleve(String login) {
-        Eleve a=new Eleve("","","","","","","","");
+        Eleve a=new Eleve("","","","","","","","", "", "");
 
         Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGIN+"=\""+login + "\"", null);
         if (c.moveToFirst()) {
@@ -100,6 +116,8 @@ public class EleveManager {
             a.setFormule(c.getString(c.getColumnIndex(ELEVE_FORMULE)));
             a.setNivScol(c.getString(c.getColumnIndex(ELEVE_NIVEAU)));
             a.setAnneeScol(c.getString(c.getColumnIndex(ELEVE_ANNEE)));
+            a.setLoginParent(c.getString(c.getColumnIndex(ELEVE_LOGINPARENT)));
+            a.setLastTimeOnline(c.getString(c.getColumnIndex(ELEVE_LASTTIMEONLINE)));
             c.close();
         }
         return a;

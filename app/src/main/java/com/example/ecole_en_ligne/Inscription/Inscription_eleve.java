@@ -144,7 +144,8 @@ public class Inscription_eleve extends AppCompatActivity {
                                                   mail.getText().toString(),
                                                   formule.getSelectedItem().toString(),
                                                   niveau_scol.getSelectedItem().toString(),
-                                                  annee_scol.getSelectedItem().toString())) == -1) {
+                                                  annee_scol.getSelectedItem().toString(),
+                                                  "", "")) == -1) {
                         login.setBackgroundResource(R.drawable.edit_text_error);
                         Toast.makeText(getApplicationContext(), "Login déjà utilisé. Veuillez en choisir un autre.", Toast.LENGTH_SHORT).show();
                         em.close();

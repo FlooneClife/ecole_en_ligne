@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.bdd.EleveManager;
-import com.example.ecole_en_ligne.classes.Sixieme;
 
-import org.w3c.dom.Text;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Connexion_eleve extends AppCompatActivity {
 
@@ -54,6 +54,9 @@ public class Connexion_eleve extends AppCompatActivity {
             public void onClick(View v) {
                 em.open();
                 if (em.peutSeCo(login.getText().toString(),mdp.getText().toString())){
+                    java.util.Date date=new java.util.Date();
+                    System.out.println(date);
+                    em.modDate(login.getText().toString(), String.valueOf(date));
                     login.setBackgroundResource(R.drawable.edit_text);
                     mdp.setBackgroundResource(R.drawable.edit_text);
                     Intent espace = new Intent(Connexion_eleve.this, com.example.ecole_en_ligne.espaces.eleves.EspaceEleve.class);

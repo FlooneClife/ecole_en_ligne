@@ -53,6 +53,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
         Intent i = getIntent();
         int nb_enf = Integer.parseInt(i.getStringExtra("nb_eleve"));
         int nb_enf_total = Integer.parseInt(i.getStringExtra("nb_eleve_total"));
+        String loginParent = i.getStringExtra("loginParent");
         nbEnfRestant = nb_enf - 1;
         numEnfCourant = nb_enf_total - nbEnfRestant;
 
@@ -176,13 +177,14 @@ public class Ins_donnees_enf extends AppCompatActivity {
                     //generate login (sous la forme nom + 2 premières lettres prénom
                     autoLogin = nom_enf.getText().toString() + prenom_enf.getText().charAt(0) + prenom_enf.getText().charAt(1);
                     System.out.println(autoLogin);
-                    em.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,mdp_enf.getText().toString(),email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString()));
+                    em.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,mdp_enf.getText().toString(),email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString(), loginParent,""));
                     //--------------
                     if (nbEnfRestant > 0) {
                         //test
                         Intent intent = new Intent(Ins_donnees_enf.this, Ins_donnees_enf.class);
                         intent.putExtra("nb_eleve", String.valueOf(nbEnfRestant));
                         intent.putExtra("nb_eleve_total", String.valueOf(nb_enf_total));
+                        intent.putExtra("loginParent", String.valueOf(loginParent));
                         em.close();
                         startActivity(intent);
                     } else {
