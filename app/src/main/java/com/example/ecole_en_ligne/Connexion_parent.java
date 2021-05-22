@@ -20,7 +20,7 @@ public class Connexion_parent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.connexion_eleve);
+        setContentView(R.layout.connexion_parent);
 
         retour = findViewById(R.id.retour);
         valider = findViewById(R.id.valider);
