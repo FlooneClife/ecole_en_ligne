@@ -14,8 +14,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.ecole_en_ligne.Common_bdd;
+import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.bdd.Parent;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.ParentManager;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -49,6 +51,9 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         menu = findViewById(R.id.menu);
         deco = findViewById(R.id.deconnexion);
 
+        ParentManager pm = new ParentManager(this);
+        EleveManager em = new EleveManager(this);
+
 
         //------------------------------HEADER------------------------------
 
@@ -69,12 +74,16 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
 
         //------------------------------LISTE DE SUIVI------------------------------
 
-        Parent p = Common_bdd.getParentByLogin(i.getStringExtra("Login"));
+        pm.open();
+        //em.open();
+        Parent p = pm.getParent(i.getStringExtra("Login"));
         ArrayList<String> listEnf = new ArrayList<String>();
 
         for (int i = 0; i<p.getNbEnfant();i++){
-            listEnf.add("Enfant " + (i+1));
+            listEnf.add("Enfant " + (i+1)); //em.getNomEleveLoginParent(...)
         }
+
+        pm.close();
 
         ListView list = (ListView) findViewById(R.id.liste_enfant);
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listEnf);

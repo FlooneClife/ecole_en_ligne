@@ -123,6 +123,48 @@ public class EleveManager {
         return a;
     }
 
+    public String getNomEleveLoginParent(String login){
+        Eleve a=new Eleve("","","","","","","","", "", "");
+
+        Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGINPARENT+"=\""+login + "\"", null);
+        if (c.moveToFirst()) {
+//            a.setId(c.getInt(c.getColumnIndex(ELEVE_KEY)));
+            a.setNom(c.getString(c.getColumnIndex(ELEVE_NOM)));
+            a.setPrenom(c.getString(c.getColumnIndex(ELEVE_PRENOM)));
+            a.setLogin(c.getString(c.getColumnIndex(ELEVE_LOGIN)));
+            a.setMdp(c.getString(c.getColumnIndex(ELEVE_MDP)));
+            a.setEmail(c.getString(c.getColumnIndex(ELEVE_EMAIL)));
+            a.setFormule(c.getString(c.getColumnIndex(ELEVE_FORMULE)));
+            a.setNivScol(c.getString(c.getColumnIndex(ELEVE_NIVEAU)));
+            a.setAnneeScol(c.getString(c.getColumnIndex(ELEVE_ANNEE)));
+            a.setLoginParent(c.getString(c.getColumnIndex(ELEVE_LOGINPARENT)));
+            a.setLastTimeOnline(c.getString(c.getColumnIndex(ELEVE_LASTTIMEONLINE)));
+            c.close();
+        }
+        return a.getNom();
+    }
+
+    public String getPrenomEleveLoginParent(String login){
+        Eleve a=new Eleve("","","","","","","","", "", "");
+
+        Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGINPARENT+"=\""+login + "\"", null);
+        if (c.moveToFirst()) {
+//            a.setId(c.getInt(c.getColumnIndex(ELEVE_KEY)));
+            a.setNom(c.getString(c.getColumnIndex(ELEVE_NOM)));
+            a.setPrenom(c.getString(c.getColumnIndex(ELEVE_PRENOM)));
+            a.setLogin(c.getString(c.getColumnIndex(ELEVE_LOGIN)));
+            a.setMdp(c.getString(c.getColumnIndex(ELEVE_MDP)));
+            a.setEmail(c.getString(c.getColumnIndex(ELEVE_EMAIL)));
+            a.setFormule(c.getString(c.getColumnIndex(ELEVE_FORMULE)));
+            a.setNivScol(c.getString(c.getColumnIndex(ELEVE_NIVEAU)));
+            a.setAnneeScol(c.getString(c.getColumnIndex(ELEVE_ANNEE)));
+            a.setLoginParent(c.getString(c.getColumnIndex(ELEVE_LOGINPARENT)));
+            a.setLastTimeOnline(c.getString(c.getColumnIndex(ELEVE_LASTTIMEONLINE)));
+            c.close();
+        }
+        return a.getPrenom();
+    }
+
     // sélection de tous les enregistrements de la table
     public Cursor getAllEleve() {
         return db.rawQuery("SELECT * FROM " + ELEVE_TABLE_NAME, null);

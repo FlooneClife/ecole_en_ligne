@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.ecole_en_ligne.Paiement.Paiement_prelev;
+
 public class ParentManager {
     private static final String PARENT_TABLE_NAME = "Parent";
     public static final String PARENT_NOM = "nom";
@@ -92,6 +94,8 @@ public class ParentManager {
         }
         return a;
     }
+
+
 
     // sélection de tous les enregistrements de la table
     public Cursor getAllParent() {

@@ -77,17 +77,17 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
         //TODO.....
 
         listP.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                         @Override
-                                         public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
-                                             if (position == 0){  //Si c'est l'eleve 1 qui est selectionné (se trouve a la position 0 dans la liste)
-                                                 Intent redir = new Intent(EspaceParents.this, LesEnfants.class);
-                                                 redir.putExtra("Login",i.getStringExtra("Login"));
-                                                 startActivity(redir);
-                                                 finish();
-                                             }
+                 @Override
+                 public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
+                     if (position == 0){  //Si c'est l'eleve 1 qui est selectionné (se trouve a la position 0 dans la liste)
+                         Intent redir = new Intent(EspaceParents.this, LesEnfants.class);
+                         redir.putExtra("Login",i.getStringExtra("Login"));
+                         startActivity(redir);
+                         finish();
+                     }
 
-                                         }
-                                     }
+                 }
+             }
         );
 
 
