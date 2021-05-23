@@ -91,7 +91,7 @@ public class ExerciceManager {
 
     public int nbExosFait(String login){
         int cpt =0 ;
-        Cursor c = db.rawQuery("SELECT * FROM " + EXERCICE_TABLE_NAME+ " WHERE " + EXERCICE_TERMINE + "=" + 1 + " AND " + EXERCICE_LOGINELEVE +"="+ login, null);
+        Cursor c = db.rawQuery("SELECT * FROM " + EXERCICE_TABLE_NAME+ " WHERE " + EXERCICE_TERMINE + "=" + 1 + " AND " + EXERCICE_LOGINELEVE +"=\"" + login + "\"", null);
         if (c.moveToFirst()) {
             do {
                 cpt ++;
@@ -103,7 +103,7 @@ public class ExerciceManager {
 
     public int nbExosTotal(String login){
         int cpt =0 ;
-        Cursor c = db.rawQuery("SELECT * FROM " + EXERCICE_TABLE_NAME+ " WHERE " + EXERCICE_LOGINELEVE + "=" + login, null);
+        Cursor c = db.rawQuery("SELECT * FROM " + EXERCICE_TABLE_NAME+ " WHERE " + EXERCICE_LOGINELEVE + "=\"" + login + "\"", null);
         if (c.moveToFirst()) {
             do {
                 cpt ++;

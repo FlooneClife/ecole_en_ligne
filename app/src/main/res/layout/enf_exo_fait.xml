@@ -77,8 +77,8 @@
                     android:textSize="30dp" />
 
                 <TextView
-                    android:id="@+id/texte"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/texte_exo_fait"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/content"/>
 

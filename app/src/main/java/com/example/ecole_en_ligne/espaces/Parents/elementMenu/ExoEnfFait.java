@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.ExerciceManager;
 
-import org.w3c.dom.Text;
 
 public class ExoEnfFait extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class ExoEnfFait extends AppCompatActivity {
         TextView loginName = findViewById(R.id.loginName);
         loginName.setText(" " + i.getStringExtra("login"));
 
-        TextView texte = findViewById(R.id.texte);
+        TextView texte = findViewById(R.id.texte_exo_fait);
 
         String text ="";
 
@@ -36,7 +35,6 @@ public class ExoEnfFait extends AppCompatActivity {
         text += "Exercice effectué : " + nbExoFait + "/"+nbExoTotal;
 
         texte.setText(text);
-
 
 
 
