@@ -26,12 +26,13 @@ import com.example.ecole_en_ligne.R;
 
 public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    ImageView menu;
-    ImageView deco;
-    TextView loginName;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Intent i;
+    private ImageView menu;
+    private ImageView deco;
+    private TextView loginName;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Intent i;
+    private String myLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +41,14 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
 
 
         i = getIntent();
+        myLogin = i.getStringExtra("Login");
         loginName = findViewById(R.id.loginName);
 
         navigationView = findViewById(R.id.navigation);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loginName.setText(" " + i.getStringExtra("Login"));
+        loginName.setText(" " + myLogin);
 
         menu = findViewById(R.id.menu);
         deco = findViewById(R.id.deconnexion);
@@ -90,15 +92,19 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
                     if (position == 0){  //Si c'est l'onglet Mathématiques qui est selectionné (se trouve a la position 0 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Maths.class);
+                        redir.putExtra("Login",myLogin);
                         startActivity(redir);
                     }else if (position == 1){  //Si c'est l'onglet Français qui est selectionné (se trouve a la position 0 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Français.class);
+                        redir.putExtra("Login",myLogin);
                         startActivity(redir);
                     }else if (position == 2){  //Si c'est l'onglet Anglais qui est selectionné (se trouve a la position 0 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Anglais.class);
+                        redir.putExtra("Login",myLogin);
                         startActivity(redir);
                     }else if (position == 3){  //Si c'est l'onglet Histoire qui est selectionné (se trouve a la position 0 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Histoire.class);
+                        redir.putExtra("Login",myLogin);
                         startActivity(redir);
                     }
 

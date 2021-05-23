@@ -57,7 +57,7 @@
             android:layout_height="match_parent"
             android:layout_below="@id/header"
             android:orientation="vertical"
-            android:padding="50dp"
+            android:padding="10dp"
             tools:layout_editor_absoluteX="-27dp"
             tools:layout_editor_absoluteY="-110dp"
             >
@@ -145,6 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Exercices"
+                    android:textColor="@color/x_blue100"
                     android:text="Quel est la solution de cette équation : 2x + 6 = 0 ?" />
 
                 <CheckBox
@@ -187,6 +188,7 @@
                     android:id="@+id/q2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
                     android:text="Quel est la formule du théorème de Pythagore pour un triangle ABC, avec AB l'hypothénus ?"
                     android:layout_below="@id/valider1"
                     android:layout_marginTop="10dp"/>
