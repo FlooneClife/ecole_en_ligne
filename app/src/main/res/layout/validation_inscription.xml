@@ -33,12 +33,44 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="50dp"
-            android:text="@string/inscriptionMsgComplete"
+            android:layout_marginTop="50dp"
+            android:text="@string/inscriptionFiniMsg"
             android:gravity="center"
             android:textSize="20dp"
             android:textColor="@color/x_blue100" />
 
+
+        <TextView
+            android:id="@+id/idUtilisateur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/TexteIdEnfant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/x_blue100" />
+
+        <TextView
+            android:id="@+id/idEnf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/inscriptionRedirection"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/x_blue100" />
 
         <Button
             android:id="@+id/acceuil"

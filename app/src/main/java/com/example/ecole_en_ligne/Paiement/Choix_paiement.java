@@ -21,6 +21,9 @@ public class Choix_paiement extends AppCompatActivity {
         Button prelev = findViewById(R.id.prelevement);
         ImageView retour = findViewById(R.id.retour);
 
+        Intent i = getIntent();
+
+
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +35,7 @@ public class Choix_paiement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent redir = new Intent(Choix_paiement.this, Paiement_carte.class);
+                redir.putExtra("loginParent", i.getStringExtra("loginParent"));
                 startActivity(redir);
             }
         });
@@ -40,6 +44,9 @@ public class Choix_paiement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent redir = new Intent(Choix_paiement.this, Paiement_prelev.class);
+                redir.putExtra("loginParent", i.getStringExtra("loginParent"));
+                redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
+                redir.putExtra("variable", i.getStringExtra("variable"));
                 startActivity(redir);
             }
         });

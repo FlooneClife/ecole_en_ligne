@@ -151,6 +151,8 @@ public class Inscription_eleve extends AppCompatActivity {
                         em.close();
                     } else{
                         Intent connexion = new Intent(Inscription_eleve.this, Choix_paiement.class);
+                        connexion.putExtra("loginEleve", login.getText().toString());
+                        connexion.putExtra("variable", "eleve");
                         em.close();
                         startActivity(connexion);
                         finish();

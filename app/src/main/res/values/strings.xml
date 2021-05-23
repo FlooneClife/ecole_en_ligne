@@ -74,7 +74,9 @@
     <string name="drawer_close">close</string>
     <string name="accueil">Accueil</string>
     <string name="inscriptionComplete">Inscription terminée</string>
-    <string name="inscriptionMsgComplete">Votre inscription a bien été effectuée. Où souhaitez-vous vous rediriger ?</string>
+    <string name="inscriptionFiniMsg">Votre inscription a bien été effectuée. Voici votre identifiant :</string>
+    <string name="inscriptionidEnf">Voici les identifiants de vos enfants :</string>
+    <string name="inscriptionRedirection"> Où souhaitez-vous vous rediriger ?</string>
     <string name="messageCoursLive">Votre cours a commencé, suivez ce lien pour y assister :</string>
     <string name="messagePasCoursLive">Il n\'y a pas de cours diffusé pour le moment.</string>
     <string name="lienZoomFictif">https://cours-fr.zoom.us/j/87518680026?pwd=VERVL05JYVhucXlCREQx</string>

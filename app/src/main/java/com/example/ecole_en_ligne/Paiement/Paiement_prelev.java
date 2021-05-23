@@ -17,6 +17,8 @@ public class Paiement_prelev extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.paiement_prelev);
 
+        Intent i = getIntent();
+
         ImageView retour = findViewById(R.id.retour);
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +32,9 @@ public class Paiement_prelev extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent redir = new Intent(Paiement_prelev.this, ValidationInscription.class);
+                redir.putExtra("loginParent", i.getStringExtra("loginParent"));
+                redir.putExtra("variable", i.getStringExtra("variable"));
+                redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
                 startActivity(redir);
                 finish();
             }

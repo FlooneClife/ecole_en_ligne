@@ -85,12 +85,11 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         //------------------------------LISTE DE SUIVI------------------------------
 
         pm.open();
-        //em.open();
         Parent p = pm.getParent(i.getStringExtra("Login"));
         ArrayList<String> listEnf = new ArrayList<String>();
 
         for (int i = 0; i<p.getNbEnfant();i++){
-            listEnf.add("Enfant " + (i+1)); //em.getNomEleveLoginParent(...)
+            listEnf.add(listNom.get(i) + " "+listPrenom.get(i)); //em.getNomEleveLoginParent(...)
         }
 
         pm.close();

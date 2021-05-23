@@ -189,6 +189,8 @@ public class Ins_donnees_enf extends AppCompatActivity {
                         startActivity(intent);
                     } else {
                         Intent intent = new Intent(Ins_donnees_enf.this, Choix_paiement.class);
+                        intent.putExtra("loginParent", String.valueOf(loginParent));
+                        intent.putExtra("variable", "parent");
                         em.close();
                         startActivity(intent);
                     }
