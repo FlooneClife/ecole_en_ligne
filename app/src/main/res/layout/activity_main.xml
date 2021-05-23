@@ -92,11 +92,16 @@
 
             </LinearLayout>
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@mipmap/ic_xerneas" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:theme="@style/Xerneas"
                 android:textStyle="bold"
                 android:text="@string/nom_ecole"
@@ -149,7 +154,7 @@
                 android:id="@+id/matieres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="50dp" />
+                android:layout_marginBottom="20dp" />
 
             <Button
                 android:id="@+id/inscription"
