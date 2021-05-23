@@ -18,6 +18,7 @@ import com.example.ecole_en_ligne.Paiement.Choix_paiement;
 import com.example.ecole_en_ligne.bdd.Eleve;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.EleveManager;
+import com.example.ecole_en_ligne.bdd.ParentManager;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
     private int nbEnfRestant;
     private int numEnfCourant;
     private String autoLogin;
+    private String lastLogin;
 
     private String defaultAnnee;
     private String defaultLien;
@@ -56,8 +58,10 @@ public class Ins_donnees_enf extends AppCompatActivity {
         String loginParent = i.getStringExtra("loginParent");
         nbEnfRestant = nb_enf - 1;
         numEnfCourant = nb_enf_total - nbEnfRestant;
+        lastLogin = i.getStringExtra("loginEleve");
 
         EleveManager em = new EleveManager(this);
+        ParentManager pm = new ParentManager(this);
 
 
         //----------------------------------------------Element du Layout--------------------------------------------------
@@ -154,10 +158,6 @@ public class Ins_donnees_enf extends AppCompatActivity {
         //----------------------------------------------Actions--------------------------------------------------
 
         suivant.setOnClickListener(new View.OnClickListener() {
-            //TODO: pour chaque validation, enregistrer les données de l'enfant dans la bdd
-            //----- générer un login automatique basé sur son nom et prénom
-            //----- mot de passe : meme que le nom ? ou générer aléatoirement et l'afficher à la fin (plus dur...)
-            //----- email : même que le parent
             @Override
             public void onClick(View v) {
                 em.open();
@@ -185,6 +185,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
                         intent.putExtra("nb_eleve", String.valueOf(nbEnfRestant));
                         intent.putExtra("nb_eleve_total", String.valueOf(nb_enf_total));
                         intent.putExtra("loginParent", String.valueOf(loginParent));
+                        intent.putExtra("loginEleve", String.valueOf(autoLogin));
                         em.close();
                         startActivity(intent);
                     } else {
@@ -199,10 +200,17 @@ public class Ins_donnees_enf extends AppCompatActivity {
         });
 
         retour.setOnClickListener(new View.OnClickListener() {
-            //TODO: si un retour arrière est fait, supprimer l'enfant précédent de la bdd
-            //----- (garder son login après validation pour le retrouver dans le tableau ?)
             @Override
             public void onClick(View v) {
+                if(lastLogin != null) {
+                    em.open();
+                    em.suppEleve(em.getEleve(lastLogin));
+                    em.close();
+                } else {
+                    pm.open();
+                    pm.suppParent(pm.getParent(loginParent));
+                    pm.close();
+                }
                 finish();
             }
         });

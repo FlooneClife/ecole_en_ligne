@@ -66,6 +66,7 @@
                     android:id="@+id/Cours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/cours"
                     android:textSize="30dp" />
 
@@ -85,7 +86,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Cours"
                     android:layout_toRightOf="@id/cours1"
-                    android:text="Cours 1 : Les modaux."
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/cours1en"
                     android:textSize="15dp" />
 
 
@@ -95,6 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/T1"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/exercices"
                     android:textSize="30dp" />
 
@@ -103,8 +106,9 @@
                     android:id="@+id/questionQCM"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
                     android:layout_below="@id/Exercices"
-                    android:text="--- Aucun exercices ---" />
+                    android:text="@string/aucunExo" />
 
 
             </RelativeLayout>

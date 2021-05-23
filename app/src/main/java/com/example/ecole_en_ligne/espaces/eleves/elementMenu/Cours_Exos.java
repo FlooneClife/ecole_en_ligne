@@ -3,6 +3,7 @@ package com.example.ecole_en_ligne.espaces.eleves.elementMenu;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
 import com.example.ecole_en_ligne.espaces.eleves.matieres.Anglais;
 import com.example.ecole_en_ligne.espaces.eleves.matieres.Français;
@@ -27,12 +28,17 @@ import com.example.ecole_en_ligne.R;
 public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ImageView menu;
-    private ImageView deco;
+    private ImageView retour;
     private TextView loginName;
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
     private Intent i;
     private String myLogin;
+
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +57,18 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
         loginName.setText(" " + myLogin);
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.deconnexion);
+        retour = findViewById(R.id.retour);
 
 
         //------------------------------HEADER------------------------------
 
-        deco.setOnClickListener(new View.OnClickListener() {
+        retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("Login",myLogin);
+                startActivity(intent);
                 finish();
             }
         });
@@ -94,51 +104,42 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                         Intent redir = new Intent(Cours_Exos.this, Maths.class);
                         redir.putExtra("Login",myLogin);
                         startActivity(redir);
-                    }else if (position == 1){  //Si c'est l'onglet Français qui est selectionné (se trouve a la position 0 dans la liste)
+                    }else if (position == 1){  //Si c'est l'onglet Français qui est selectionné (se trouve a la position 1 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Français.class);
                         redir.putExtra("Login",myLogin);
                         startActivity(redir);
-                    }else if (position == 2){  //Si c'est l'onglet Anglais qui est selectionné (se trouve a la position 0 dans la liste)
+                    }else if (position == 2){  //Si c'est l'onglet Anglais qui est selectionné (se trouve a la position 2 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Anglais.class);
                         redir.putExtra("Login",myLogin);
                         startActivity(redir);
-                    }else if (position == 3){  //Si c'est l'onglet Histoire qui est selectionné (se trouve a la position 0 dans la liste)
+                    }else if (position == 3){  //Si c'est l'onglet Histoire qui est selectionné (se trouve a la position 3 dans la liste)
                         Intent redir = new Intent(Cours_Exos.this, Histoire.class);
                         redir.putExtra("Login",myLogin);
                         startActivity(redir);
                     }
-
                 }
             }
         );
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        ////TODO rediriger sur la page correspondante au bouton
         switch (item.getItemId()) {
             case R.id.tableau_bord: {
-                //ouvrir page des cours et des exercices
-                Intent redir = new Intent(Cours_Exos.this, EspaceEleve.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                startActivity(redir);
                 finish();
                 break;
             }
-
             case R.id.cours_exos: {
-                //ouvrir page des cours et des exercices
-                Intent redir = new Intent(Cours_Exos.this, Cours_Exos.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                startActivity(redir);
-                finish();
                 break;
             }
             case R.id.cours_live: {
                 //ouvrir page des rappels de cours
                 Intent redir = new Intent(Cours_Exos.this, CoursLive.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 finish();
                 break;
@@ -147,6 +148,10 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 //ouvrir page des recommandations
                 Intent redir = new Intent(Cours_Exos.this, Recommandation.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 finish();
                 break;
@@ -155,6 +160,10 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 //ouvrir page des progressions et courbes
                 Intent redir = new Intent(Cours_Exos.this, Progression.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 finish();
                 break;
@@ -163,11 +172,18 @@ public class Cours_Exos extends AppCompatActivity implements NavigationView.OnNa
                 //ouvrir page des dernières activites
                 Intent redir = new Intent(Cours_Exos.this, Activites.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 finish();
                 break;
             }
             case R.id.deconnexion: {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 finish();
                 break;
             }

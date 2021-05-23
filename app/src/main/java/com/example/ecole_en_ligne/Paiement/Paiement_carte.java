@@ -2,6 +2,7 @@ package com.example.ecole_en_ligne.Paiement;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -11,12 +12,19 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.Inscription.ValidationInscription;
+import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.ParentManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Paiement_carte extends AppCompatActivity {
+
+    private ParentManager pm;
+    private String loginParent;
+    private String loginEleve;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +32,9 @@ public class Paiement_carte extends AppCompatActivity {
 
         Intent i = getIntent();
         int var = i.getIntExtra("variable", 2);
-        System.out.println("Carte :" + var);
+        pm = new ParentManager(this);
+        loginParent = i.getStringExtra("loginParent");
+        loginEleve = i.getStringExtra("loginEleve");
 
         ImageView retour = findViewById(R.id.retour);
         retour.setOnClickListener(new View.OnClickListener() {
@@ -39,11 +49,14 @@ public class Paiement_carte extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent redir = new Intent(Paiement_carte.this, ValidationInscription.class);
-                redir.putExtra("loginParent", i.getStringExtra("loginParent"));
-                redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
+                redir.putExtra("loginParent", loginParent);
+                redir.putExtra("loginEleve", loginEleve);
                 redir.putExtra("variable", var);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
-                finish();
+                finish();   //this page
             }
         });
 
@@ -89,10 +102,6 @@ public class Paiement_carte extends AppCompatActivity {
         );
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mois.setAdapter(adapter2);
-
-
-
-
 
     }
 }

@@ -9,8 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".espaces.eleves.matieres.Français">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -66,6 +64,7 @@
                     android:id="@+id/Cours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/cours"
                     android:textSize="30dp" />
 
@@ -85,7 +84,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Cours"
                     android:layout_toRightOf="@id/cours1"
-                    android:text="Cours 1 : Grammaire."
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/cours1fr"
                     android:textSize="15dp" />
 
                 <ImageView
@@ -104,7 +104,8 @@
                     android:layout_below="@id/cours1"
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/cours2"
-                    android:text="Cours 2 : Conjugaison."
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/cours2fr"
                     android:textSize="15dp" />
 
 
@@ -115,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/T2"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/exercices"
                     android:textSize="30dp" />
 
@@ -122,6 +124,7 @@
                     android:id="@+id/q2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
                     android:text="Conjuguer le verbe être à l'imparfait à la première personne du s'ingulier."
                     android:layout_below="@id/Exercices"
                     android:layout_marginTop="10dp"/>
@@ -133,7 +136,8 @@
                     android:hint="Entrez votre réponse.."
                     android:layout_below="@id/q2"
                     android:padding="8dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginHorizontal="20dp"
                     android:inputType="textPersonName"
                     android:background="@drawable/edit_text"
                     />
@@ -142,6 +146,7 @@
                     android:id="@+id/erreur2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/errorRed"
                     android:layout_below="@id/reponseQ2"/>
 
 
@@ -149,6 +154,7 @@
                     android:id="@+id/valider2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
                     android:text="@string/valider"
                     android:background="@drawable/button_blue_gradient"
                     android:textColor="@color/white"
@@ -156,6 +162,7 @@
 
 
             </RelativeLayout>
+
         </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>

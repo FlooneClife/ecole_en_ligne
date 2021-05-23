@@ -16,6 +16,7 @@ import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.bdd.Exercice;
 import com.example.ecole_en_ligne.bdd.ExerciceManager;
+import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
 
 public class Histoire extends AppCompatActivity {
 
@@ -94,7 +95,6 @@ public class Histoire extends AppCompatActivity {
                 }else{
                     //message mauvaise réponse
                     t1.setText("Votre réponse est fausse, réessayez !");
-                    t1.setTextColor(R.color.errorRed);
                 }
             }
         });

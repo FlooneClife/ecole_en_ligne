@@ -14,7 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.ecole_en_ligne.Common_bdd;
 import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.bdd.Parent;
 import com.example.ecole_en_ligne.R;
@@ -57,7 +56,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         //loginName.setText(" " + myLogin);
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.deconnexion);
+        deco = findViewById(R.id.retour);
 
         ParentManager pm = new ParentManager(this);
         EleveManager em = new EleveManager(this);
@@ -191,7 +190,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                 break;
             }
 
-            case R.id.deconnexion: {
+            case R.id.retour: {
                 finish();
                 break;
             }

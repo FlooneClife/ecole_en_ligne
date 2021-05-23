@@ -57,7 +57,10 @@ public class Connexion_parent extends AppCompatActivity {
                     Intent espace = new Intent(Connexion_parent.this, com.example.ecole_en_ligne.espaces.Parents.EspaceParents.class);
                     espace.putExtra("Login",login.getText().toString());
                     pm.close();
+                    espace.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    espace.putExtra("exit", true);
                     startActivity(espace);
+                    finish();
                 }else{
                     erreurCo.setText("Mot de passe ou login incorrecte, veuillez réessayer.");
                     login.setBackgroundResource(R.drawable.edit_text_error);

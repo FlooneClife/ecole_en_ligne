@@ -47,7 +47,7 @@ public class MesMatieres extends AppCompatActivity implements NavigationView.OnN
         loginName.setText(" " + i.getStringExtra("Login"));
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.deconnexion);
+        deco = findViewById(R.id.retour);
 
         //------------------------------HEADER------------------------------
 
@@ -159,7 +159,7 @@ public class MesMatieres extends AppCompatActivity implements NavigationView.OnN
                 finish();
                 break;
             }
-            case R.id.deconnexion: {
+            case R.id.retour: {
                 finish();
                 break;
             }

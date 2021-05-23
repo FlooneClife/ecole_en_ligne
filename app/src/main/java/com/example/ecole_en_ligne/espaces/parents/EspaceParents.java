@@ -1,7 +1,6 @@
 package com.example.ecole_en_ligne.espaces.Parents;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,11 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.ecole_en_ligne.R;
-import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.espaces.Parents.ListeTableauBord.LesEnfants;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.ArrayList;
 
 public class EspaceParents extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -32,9 +28,14 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
     private Intent i;
 
     @Override
+    public void onBackPressed() {
+        //do nothing
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acceuil_parents);
+        setContentView(R.layout.accueil_parents);
 
         i = getIntent();
         loginName = findViewById(R.id.loginName);
@@ -48,7 +49,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.deconnexion);
+        deco = findViewById(R.id.retour);
 
         //------------------------------HEADER------------------------------
 
@@ -161,7 +162,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                 break;
             }
 
-            case R.id.deconnexion: {
+            case R.id.retour: {
                 finish();
                 break;
             }

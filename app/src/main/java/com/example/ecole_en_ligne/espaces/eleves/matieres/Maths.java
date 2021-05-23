@@ -24,8 +24,7 @@ import com.example.ecole_en_ligne.bdd.Exercice;
 import com.example.ecole_en_ligne.bdd.ExerciceManager;
 
 public class Maths extends AppCompatActivity {
-    private VideoView mVideoView;
-    private MediaController mediaController;
+
     private ExerciceManager exoM;
     private EleveManager em;
     private String myLogin;
@@ -107,7 +106,6 @@ public class Maths extends AppCompatActivity {
                 }else{
                     //message mauvaise réponse
                     t1.setText("Votre réponse est fausse, réessayez !");
-                    t1.setTextColor(R.color.errorRed);
                 }
             }
         });
@@ -140,7 +138,6 @@ public class Maths extends AppCompatActivity {
                 }else{
                     //message mauvaise réponse
                     t2.setText("Votre réponse est fausse, réessayez !");
-                    t2.setTextColor(R.color.errorRed);
                 }
             }
         });

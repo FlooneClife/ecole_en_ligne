@@ -36,7 +36,7 @@ public class LesEnfants extends AppCompatActivity implements NavigationView.OnNa
         navigationView.setNavigationItemSelectedListener(this);
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.deconnexion);
+        deco = findViewById(R.id.retour);
 
 
         //------------------------------HEADER------------------------------
@@ -121,7 +121,7 @@ public class LesEnfants extends AppCompatActivity implements NavigationView.OnNa
                 break;
             }
 
-            case R.id.deconnexion: {
+            case R.id.retour: {
                 finish();
                 break;
             }

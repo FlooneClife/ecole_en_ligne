@@ -3,9 +3,8 @@ package com.example.ecole_en_ligne.espaces.eleves;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.ecole_en_ligne.espaces.Parents.EspaceParents;
-import com.example.ecole_en_ligne.espaces.eleves.ListeTableauBord.MesMatieres;
-import com.example.ecole_en_ligne.espaces.eleves.ListeTableauBord.MesRappels;
+import com.example.ecole_en_ligne.MainActivity;
+import com.example.ecole_en_ligne.espaces.eleves.ListeTableauBord.Tchat;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Activites;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.CoursLive;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Cours_Exos;
@@ -29,17 +28,22 @@ import com.example.ecole_en_ligne.R;
 
 public class EspaceEleve extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    ImageView menu;
-    ImageView deco;
-    TextView loginName;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Intent i;
+    private ImageView menu;
+    private ImageView deco;
+    private TextView loginName;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Intent i;
+
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_espace_eleve);
+        setContentView(R.layout.accueil_eleves);
 
         i = getIntent();
         loginName = findViewById(R.id.loginName);
@@ -51,11 +55,14 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
         loginName.setText(" " + i.getStringExtra("Login"));
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.deconnexion);
+        deco = findViewById(R.id.retour);
 
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 finish();
             }
         });
@@ -70,11 +77,11 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
         //------------------------------LISTE PROFIL------------------------------
 
         String[] profil = new String[] {
-                "Mes matières",
-                "Mes résultats",
-                "Récapitulatifs d'inscription",
-                "Mes rappels",
-                "Tchat"
+                "Mes cours et exercices",   //0
+                "Mes cours en direct",  //1
+                "Ma progression",   //2
+                "Recommandations",  //3
+                "Accéder au tchat"  //4
         };
 
         ListView listP = (ListView) findViewById(R.id.liste_profilE);
@@ -85,39 +92,45 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
         listP.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
-                    if (position == 0){
-                        Intent redir = new Intent(EspaceEleve.this, MesMatieres.class);
-                        redir.putExtra("Login",i.getStringExtra("Login"));
-                        startActivity(redir);
-                    }else if (position == 3){
-                        Intent redir = new Intent(EspaceEleve.this, MesRappels.class);
-                        redir.putExtra("Login",i.getStringExtra("Login"));
-                        startActivity(redir);
-                    }else if (position == 4){
-                        Intent redir = new Intent(EspaceEleve.this, MesMatieres.class);
-                        redir.putExtra("Login",i.getStringExtra("Login"));
-                        startActivity(redir);
+                    switch (position) {
+                        case 0 : {
+                            Intent redir = new Intent(EspaceEleve.this, Cours_Exos.class);
+                            redir.putExtra("Login", i.getStringExtra("Login"));
+                            startActivity(redir);
+                            break;
+                        } case 1 : {
+                            Intent redir = new Intent(EspaceEleve.this, CoursLive.class);
+                            redir.putExtra("Login", i.getStringExtra("Login"));
+                            startActivity(redir);
+                            break;
+                        } case 2 : {
+                            Intent redir = new Intent(EspaceEleve.this, Progression.class);
+                            redir.putExtra("Login", i.getStringExtra("Login"));
+                            startActivity(redir);
+                            break;
+                        } case 3 : {
+                            Intent redir = new Intent(EspaceEleve.this, Recommandation.class);
+                            redir.putExtra("Login", i.getStringExtra("Login"));
+                            startActivity(redir);
+                            break;
+                        } case 4 : {
+                            Intent redir = new Intent(EspaceEleve.this, Tchat.class);
+                            redir.putExtra("Login", i.getStringExtra("Login"));
+                            startActivity(redir);
+                            break;
+                        }
                     }
-
                 }
             }
         );
-
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        ////TODO rediriger sur la page correspondante au bouton
         switch (item.getItemId()) {
             case R.id.tableau_bord: {
-                //ouvrir page des cours et des exercices
-                Intent redir = new Intent(EspaceEleve.this, EspaceEleve.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                startActivity(redir);
                 break;
             }
-
             case R.id.cours_exos: {
                 //ouvrir page des cours et des exercices
                 Intent redir = new Intent(EspaceEleve.this, Cours_Exos.class);
@@ -154,6 +167,9 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
                 break;
             }
             case R.id.deconnexion: {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 finish();
                 break;
             }

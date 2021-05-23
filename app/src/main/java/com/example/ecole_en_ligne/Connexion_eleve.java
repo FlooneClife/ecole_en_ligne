@@ -63,6 +63,7 @@ public class Connexion_eleve extends AppCompatActivity {
                     espace.putExtra("Login",login.getText().toString());
                     em.close();
                     startActivity(espace);
+                    finish();
                 }else{
                     erreurCo.setText("Mot de passe ou login incorrecte, veuillez réessayer.");
                     login.setBackgroundResource(R.drawable.edit_text_error);

@@ -44,7 +44,7 @@ public class MesRappels extends AppCompatActivity implements NavigationView.OnNa
         loginName.setText(" " + i.getStringExtra("Login"));
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.deconnexion);
+        deco = findViewById(R.id.retour);
 
         //------------------------------HEADER------------------------------
 
@@ -118,7 +118,7 @@ public class MesRappels extends AppCompatActivity implements NavigationView.OnNa
                 finish();
                 break;
             }
-            case R.id.deconnexion: {
+            case R.id.retour: {
                 finish();
                 break;
             }

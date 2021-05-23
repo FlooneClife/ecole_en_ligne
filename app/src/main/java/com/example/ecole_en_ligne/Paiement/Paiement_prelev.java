@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.Inscription.ValidationInscription;
+import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
 
 public class Paiement_prelev extends AppCompatActivity {
@@ -19,7 +20,6 @@ public class Paiement_prelev extends AppCompatActivity {
 
         Intent i = getIntent();
         int var = i.getIntExtra("variable", 2);
-        System.out.println("Prelev :" + var);
 
         ImageView retour = findViewById(R.id.retour);
         retour.setOnClickListener(new View.OnClickListener() {
@@ -36,12 +36,13 @@ public class Paiement_prelev extends AppCompatActivity {
                 Intent redir = new Intent(Paiement_prelev.this, ValidationInscription.class);
                 redir.putExtra("loginParent", i.getStringExtra("loginParent"));
                 redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
-                redir.putExtra("variable", var);
+                redir.putExtra("variable", var);Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 finish();
             }
         });
-
 
     }
 }

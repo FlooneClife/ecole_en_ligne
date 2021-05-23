@@ -9,25 +9,20 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="errorRed">#FF0000</color>
+    <color name="errorRedSemilight">#FF5555</color>
     <color name="errorRedLight">#FFEEEE</color>
 
     <!-- Xerneas' colors! -->
-    <color name="x_orange050">#402600</color>
-    <color name="x_orange100">#9F6000</color>
-    <color name="x_orange150">#FF9900</color>
-    <color name="x_orange200">#FFB03C</color>
-    <color name="x_orange250">#FFEACA</color>
+    <color name="x_cyan050">#006064</color>
+    <color name="x_cyan100">#0097A7</color>
+    <color name="x_cyan150">#00BCD4</color>
+    <color name="x_cyan200">#80DEEA</color>
+    <color name="x_cyan250">#E0F7FA</color>
 
-    <color name="x_purple050">#3C001E</color>
-    <color name="x_purple100">#800040</color>
-    <color name="x_purple150">#F20079</color>
-    <color name="x_purple200">#FF75BA</color>
-    <color name="x_purple250">#FFC6E2</color>
-
-    <color name="x_blue050">#00303C</color>
-    <color name="x_blue100">#00809F</color>
-    <color name="x_blue150">#00CCFF</color>
-    <color name="x_blue200">#91E9FF</color>
-    <color name="x_blue250">#D9F8FF</color>
+    <color name="x_blue050">#1A237E</color>
+    <color name="x_blue100">#303F9F</color>
+    <color name="x_blue150">#3F51B5</color>
+    <color name="x_blue200">#9FA8DA</color>
+    <color name="x_blue250">#E8EAF6</color>
 
 </resources>

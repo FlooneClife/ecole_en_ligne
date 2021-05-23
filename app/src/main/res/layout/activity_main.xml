@@ -24,7 +24,7 @@
             android:id="@+id/connexion"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/login2"
+            android:src="@drawable/login"
             android:layout_alignParentEnd="true"
             android:clickable="true"
             android:layout_alignParentRight="true" />
@@ -100,7 +100,7 @@
                 android:theme="@style/Xerneas"
                 android:textStyle="bold"
                 android:text="@string/nom_ecole"
-                android:textColor="@color/x_orange150"
+                android:textColor="@color/x_cyan150"
                 android:textSize="40dp" />
 
             <TextView
@@ -112,7 +112,7 @@
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:text="@string/desc_ecole"
-                android:textColor="@color/x_orange150"
+                android:textColor="@color/x_cyan150"
                 android:textSize="12dp" />
 
             <TextView
@@ -131,7 +131,7 @@
                 android:padding="8dp"
                 android:gravity="left"
                 android:textSize="20dp"
-                android:background="@drawable/spinner_orange"/>
+                android:background="@drawable/spinner"/>
 
             <Button
                 android:id="@+id/valider"

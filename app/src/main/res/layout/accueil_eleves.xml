@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
-    tools:context=".espaces.eleves.ListeTableauBord.MesRappels">
+    tools:context=".espaces.eleves.EspaceEleve">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +46,6 @@
                 android:clickable="true"
                 android:layout_alignParentRight="true" />
 
-
         </RelativeLayout>
 
         <androidx.core.widget.NestedScrollView
@@ -55,8 +54,8 @@
             android:layout_below="@id/header"
             android:layout_margin="20dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".espaces.eleves.ListeTableauBord.MesRappels"
-            tools:showIn="@layout/mes_rappels">
+            tools:context=".espaces.eleves.EspaceEleve"
+            tools:showIn="@layout/accueil_eleves">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -66,6 +65,7 @@
                     android:id="@+id/enTantQue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
                     android:text="@string/enTantQue"
                     android:textSize="20dp" />
 
@@ -73,6 +73,7 @@
                     android:id="@+id/loginName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
                     android:layout_toRightOf="@id/enTantQue"
                     android:textSize="20dp" />
 
@@ -81,11 +82,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/enTantQue"
+                    android:textColor="@color/x_blue100"
                     android:layout_marginTop="30dp"
-                    android:text="Mes rappels:"
+                    android:text="Tableau de bord :"
                     android:textSize="30dp" />
 
-                <!--TODO-->
+                <TextView
+                    android:id="@+id/monProfilE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/content"
+                    android:textColor="@color/x_blue100"
+                    android:text="@string/monprofil"
+                    android:textSize="15dp" />
+
+                <ListView
+                    android:id="@+id/liste_profilE"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/monProfilE"
+                    android:clickable="true"/>
+
 
             </RelativeLayout>
 

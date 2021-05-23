@@ -22,7 +22,7 @@
             android:background="@color/x_blue100" >
 
             <ImageView
-                android:id="@+id/deconnexion"
+                android:id="@+id/retour"
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/espaceEleve"
-                android:layout_toRightOf="@id/deconnexion"
+                android:layout_toRightOf="@id/retour"
                 android:textSize="30dp"
                 android:textColor="@color/white" />
 
@@ -104,6 +104,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="end"
         app:headerLayout="@layout/menu_header"
-        app:menu="@menu/my_menu" />
+        app:menu="@menu/menu_eleve" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

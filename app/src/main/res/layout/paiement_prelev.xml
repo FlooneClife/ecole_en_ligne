@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/inscription"
+            android:text="@string/paiement"
             android:layout_toRightOf="@id/retour"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -47,7 +47,7 @@
 
         <EditText
             android:id="@+id/IBAN"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:layout_marginBottom="10dp"
@@ -60,7 +60,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vous acceptez de recevoir les identifiants de votre/vos enfant(s) : *"
+            android:text="@string/vousAcceptez"
+            android:layout_marginBottom="10dp"
             android:textSize="20dp"
             android:textColor="@color/x_blue100" />
 
@@ -80,17 +81,17 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="* Au moins un choix obligatoire parmi ceux proposés."
-            android:textSize="10dp"
-            android:layout_marginTop="10dp"/>
-
+            android:text="@string/choixObligatoire"
+            android:textColor="@color/x_cyan150"
+            android:textSize="12dp"
+            android:layout_marginBottom="20dp"/>
 
         <Button
             android:id="@+id/valider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/valider"
-            android:background="@drawable/button_blue_gradient"
+            android:text="@string/terminer"
+            android:background="@drawable/button_cyan_gradient"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
 

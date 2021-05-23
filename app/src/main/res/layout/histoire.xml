@@ -9,8 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".espaces.eleves.matieres.Histoire">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -66,6 +64,7 @@
                     android:id="@+id/Cours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/cours"
                     android:textSize="30dp" />
 
@@ -85,7 +84,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Cours"
                     android:layout_toRightOf="@id/cours1"
-                    android:text="Cours 1 : 1ère Guerre Mondiale."
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/cours1histoire"
                     android:textSize="15dp" />
 
                 <ImageView
@@ -102,9 +102,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cours1"
+                    android:textColor="@color/x_cyan100"
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/cours2"
-                    android:text="Cours 2 : 2ème Guerre Mondiale."
+                    android:text="@string/cours2histoire"
                     android:textSize="15dp" />
 
 
@@ -115,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/T2"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/exercices"
                     android:textSize="30dp" />
 
@@ -124,13 +126,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Exercices"
-                    android:text="Quelle l'année de debut de la 1ère guerre mondiale, ainsi que sa date de fin ?" />
+                    android:textColor="@color/x_blue100"
+                    android:text="@string/q1histoire" />
 
                 <CheckBox
                     android:id="@+id/check1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/questionQCM"
+                    android:layout_marginHorizontal="20dp"
+                    android:textColor="@color/x_cyan100"
                     android:text="1914 - 1918" />
 
                 <CheckBox
@@ -138,25 +143,31 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/check1"
-                    android:text="1912-1916" />
+                    android:layout_marginHorizontal="20dp"
+                    android:textColor="@color/x_cyan100"
+                    android:text="1912 - 1916" />
 
                 <CheckBox
                     android:id="@+id/check3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/check2"
-                    android:text="1914-1935" />
+                    android:layout_marginHorizontal="20dp"
+                    android:textColor="@color/x_cyan100"
+                    android:text="1914 - 1935" />
 
                 <TextView
                     android:id="@+id/erreur1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/errorRed"
                     android:layout_below="@id/check3"/>
 
                 <Button
                     android:id="@+id/valider1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
                     android:text="@string/valider"
                     android:background="@drawable/button_blue_gradient"
                     android:textColor="@color/white"

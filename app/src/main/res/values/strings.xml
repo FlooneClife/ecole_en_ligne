@@ -10,14 +10,14 @@
     <string name="propos"><u>À propos</u></string>
 
     <!-- Text button -->
-    <string name="inscription"><b>Inscription</b></string>
-    <string name="connexion"><b>Connexion</b></string>
-    <string name="eleve"><b>Élève</b></string>
-    <string name="parent"><b>Parent</b></string>
-    <string name="enseignant"><b>Enseignant</b></string>
-    <string name="valider"><b>Valider</b></string>
-    <string name="Suivant"><b>Suivant</b></string>
-    <string name="retour"><b>Retour</b></string>
+    <string name="inscription">Inscription</string>
+    <string name="connexion">Connexion</string>
+    <string name="eleve">Élève</string>
+    <string name="parent">Parent</string>
+    <string name="enseignant">Enseignant</string>
+    <string name="valider">Valider</string>
+    <string name="Suivant">Suivant</string>
+    <string name="retour">Retour</string>
 
     <string name="aPropos">Projet Android : Alexandra COUNILLE et Aurélie GAYMU</string>
     <string name="contact"><u>Contactez-nous</u></string>
@@ -53,7 +53,7 @@
     <string name="forgottenPW"><u>Mot de passe oublié ?</u></string>
     <string name="connex_eleve">Entrez votre identifiant élève :</string>
     <string name="connex_parent">Entrez votre identifiant parent :</string>
-    <string name="ur">Vous êtes :</string>
+    <string name="ur">Je suis :</string>
     <string name="email">email</string>
     <string name="telephone">téléphone</string>
 
@@ -82,7 +82,30 @@
     <string name="lienZoomFictif">https://cours-fr.zoom.us/j/87518680026?pwd=VERVL05JYVhucXlCREQx</string>
     <string name="codeValidation">Code de validation</string>
 
-    <string name="cours">Vos cours :</string>
-    <string name="exercices">Vos exercices :</string>
+    <string name="cours">Mes cours</string>
+    <string name="exercices">Mes exercices</string>
+    <string name="vousAcceptez">Vous acceptez de recevoir les identifiants de votre/vos enfant(s) : *</string>
+    <string name="choixObligatoire">* Au moins un choix obligatoire parmi ceux proposés.</string>
+    <string name="paiement">Paiement</string>
+    <string name="accesRapide">Accès rapide</string>
+    <string name="monprofil">Mon profil</string>
+    <string name="terminer">Payer et terminer</string>
+    <string name="coursETexercices">Cours et exercices</string>
+    <string name="cours1maths">Cours 1 : Les fonctions.</string>
+    <string name="cours2maths">Cours 2 : Les probabilités.</string>
+    <string name="cours3maths">Cours 3 : Les statistiques.</string>
+    <string name="q1maths">Quel est la solution de cette équation : 2x + 6 = 0 ?</string>
+    <string name="q2maths">Quelle est la formule du théorème de Pythagore pour un triangle ABC, avec AB l\'hypothénus ?</string>
+    <string name="cours1fr">Cours 1 : Grammaire.</string>
+    <string name="cours2fr">Cours 2 : Conjugaison.</string>
+    <string name="q1histoire">Quelle l\'année de debut de la 1ère guerre mondiale, ainsi que sa date de fin ?</string>
+    <string name="cours2histoire">Cours 2 : 2ème Guerre Mondiale.</string>
+    <string name="cours1histoire">Cours 1 : 1ère Guerre Mondiale.</string>
+    <string name="cours1en">Cours 1 : Les modaux.</string>
+    <string name="aucunExo">--- Aucun exercices ---</string>
+    <string name="coursendirect">Cours en direct</string>
+    <string name="progression">Progressions</string>
+    <string name="recommandations">Recommandations</string>
+    <string name="activitesRecentes">Activitées récentes</string>
 
 </resources>

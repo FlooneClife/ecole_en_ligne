@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/drawer_layoutP"
     android:fitsSystemWindows="true"
-    tools:context=".espaces.eleves.ListeTableauBord.MesRappels">
+    tools:context=".espaces.Parents.EspaceParents">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/espaceEleve"
+                android:text="@string/espaceParent"
                 android:layout_toRightOf="@id/retour"
                 android:textSize="30dp"
                 android:textColor="@color/white" />
@@ -55,8 +55,8 @@
             android:layout_below="@id/header"
             android:layout_margin="20dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".espaces.eleves.ListeTableauBord.MesRappels"
-            tools:showIn="@layout/mes_rappels">
+            tools:context=".espaces.Parents.EspaceParents"
+            tools:showIn="@layout/accueil_parents">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -82,10 +82,23 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/enTantQue"
                     android:layout_marginTop="30dp"
-                    android:text="Mes rappels:"
+                    android:text="Tableau de bord :"
                     android:textSize="30dp" />
 
-                <!--TODO-->
+                <TextView
+                    android:id="@+id/monProfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/content"
+                    android:text="Mon Profil :"
+                    android:textSize="15dp" />
+
+                <ListView
+                    android:id="@+id/liste_profil"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_below="@id/monProfil"
+                    android:clickable="true"/>
 
             </RelativeLayout>
 
@@ -94,11 +107,11 @@
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation"
+        android:id="@+id/navigationP"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"
         app:headerLayout="@layout/menu_header"
-        app:menu="@menu/menu_eleve" />
+        app:menu="@menu/menu_parents" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

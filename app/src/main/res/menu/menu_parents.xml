@@ -23,7 +23,7 @@
     <item android:id="@+id/activitesP"
         android:title="Durée d'activité" />
 
-    <item android:id="@+id/deconnexion"
+    <item android:id="@+id/retour"
         android:title="Se déconnecter" />
 
 </menu>

@@ -16,6 +16,7 @@ import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.bdd.Exercice;
 import com.example.ecole_en_ligne.bdd.ExerciceManager;
+import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
 
 public class Français extends AppCompatActivity {
 
@@ -83,7 +84,6 @@ public class Français extends AppCompatActivity {
                 }else{
                     //message mauvaise réponse
                     t2.setText("Votre réponse est fausse, réessayez !");
-                    t2.setTextColor(R.color.errorRed);
                 }
             }
         });

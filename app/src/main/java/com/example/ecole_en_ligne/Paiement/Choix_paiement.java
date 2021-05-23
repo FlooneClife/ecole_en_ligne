@@ -10,8 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ecole_en_ligne.Connexion_eleve;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.EleveManager;
+import com.example.ecole_en_ligne.bdd.ParentManager;
 
 public class Choix_paiement extends AppCompatActivity {
+
+    private EleveManager em;
+    String loginEleve;
+    String loginParent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +29,17 @@ public class Choix_paiement extends AppCompatActivity {
         ImageView retour = findViewById(R.id.retour);
 
         Intent i = getIntent();
-        int var = i.getIntExtra("variable", 2);
-        System.out.println("Choix :" + var);
-
+        int var = i.getIntExtra("variable", 2);    //1 = eleve, 0 = parent
+        loginEleve = i.getStringExtra("loginEleve");
+        loginParent = i.getStringExtra("loginParent");
+        em = new EleveManager(this);
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                em.open();
+                em.suppEleve(em.getEleve(loginEleve));
+                em.close();
                 finish();
             }
         });
@@ -37,8 +48,8 @@ public class Choix_paiement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent redir = new Intent(Choix_paiement.this, Paiement_carte.class);
-                redir.putExtra("loginParent", i.getStringExtra("loginParent"));
-                redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
+                redir.putExtra("loginParent", loginParent);
+                redir.putExtra("loginEleve", loginEleve);
                 redir.putExtra("variable", var);
                 startActivity(redir);
             }
@@ -48,13 +59,12 @@ public class Choix_paiement extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent redir = new Intent(Choix_paiement.this, Paiement_prelev.class);
-                redir.putExtra("loginParent", i.getStringExtra("loginParent"));
-                redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
+                redir.putExtra("loginParent", loginParent);
+                redir.putExtra("loginEleve", loginEleve);
                 redir.putExtra("variable", var);
                 startActivity(redir);
             }
         });
-
 
 
     }

@@ -9,8 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".espaces.eleves.matieres.Maths">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -43,29 +41,29 @@
 
         </RelativeLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/header"
-        android:layout_margin="20dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".espaces.eleves.matieres.Maths"
-        tools:showIn="@layout/maths">
-
-        <RelativeLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/header"
-            android:orientation="vertical"
-            android:padding="10dp"
-            tools:layout_editor_absoluteX="-27dp"
-            tools:layout_editor_absoluteY="-110dp"
-            >
+            android:layout_margin="20dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".espaces.eleves.matieres.Maths"
+            tools:showIn="@layout/maths">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/header"
+                android:orientation="vertical"
+                android:padding="10dp"
+                tools:layout_editor_absoluteX="-27dp"
+                tools:layout_editor_absoluteY="-110dp" >
 
                 <TextView
                     android:id="@+id/Cours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/cours"
                     android:textSize="30dp" />
 
@@ -85,7 +83,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Cours"
                     android:layout_toRightOf="@id/cours1"
-                    android:text="Cours 1 : Les fonctions."
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/cours1maths"
                     android:textSize="15dp" />
 
                 <ImageView
@@ -104,7 +103,8 @@
                     android:layout_below="@id/cours1"
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/cours2"
-                    android:text="Cours 2 : Les probabilités."
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/cours2maths"
                     android:textSize="15dp" />
 
 
@@ -124,7 +124,8 @@
                     android:layout_below="@id/cours2"
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/cours3"
-                    android:text="Cours 3 : Les statistiques."
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/cours3maths"
                     android:textSize="15dp"
 
                     />
@@ -136,6 +137,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/T3"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/x_blue100"
                     android:text="@string/exercices"
                     android:textSize="30dp" />
 
@@ -146,27 +148,33 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/Exercices"
                     android:textColor="@color/x_blue100"
-                    android:text="Quel est la solution de cette équation : 2x + 6 = 0 ?" />
+                    android:text="@string/q1maths" />
 
                 <CheckBox
                     android:id="@+id/check1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_below="@id/questionQCM"
+                    android:textColor="@color/x_cyan100"
                     android:text="-3" />
 
                 <CheckBox
                     android:id="@+id/check2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_below="@id/check1"
+                    android:textColor="@color/x_cyan100"
                     android:text="48" />
 
                 <CheckBox
                     android:id="@+id/check3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_below="@id/check2"
+                    android:textColor="@color/x_cyan100"
                     android:text="12" />
                 <TextView
                     android:id="@+id/erreur1"
@@ -179,6 +187,8 @@
                     android:id="@+id/valider1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="30dp"
                     android:text="@string/valider"
                     android:background="@drawable/button_blue_gradient"
                     android:textColor="@color/white"
@@ -189,7 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/x_blue100"
-                    android:text="Quel est la formule du théorème de Pythagore pour un triangle ABC, avec AB l'hypothénus ?"
+                    android:text="@string/q2maths"
                     android:layout_below="@id/valider1"
                     android:layout_marginTop="10dp"/>
 
@@ -200,7 +210,8 @@
                     android:hint="Entrez votre réponse.."
                     android:layout_below="@id/q2"
                     android:padding="8dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginHorizontal="20dp"
                     android:inputType="textPersonName"
                     android:background="@drawable/edit_text"
                     />
@@ -212,18 +223,20 @@
                     android:textColor="@color/errorRed"
                     android:layout_below="@id/reponseQ2"/>
 
-
                 <Button
                     android:id="@+id/valider2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="30dp"
                     android:text="@string/valider"
                     android:background="@drawable/button_blue_gradient"
                     android:textColor="@color/white"
                     android:layout_below="@id/erreur2"/>
 
-        </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
 

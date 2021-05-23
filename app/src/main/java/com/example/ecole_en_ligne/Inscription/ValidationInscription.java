@@ -25,7 +25,7 @@ public class ValidationInscription extends AppCompatActivity {
 
         Intent i = getIntent();
 
-        Button acceuil = (Button) findViewById(R.id.acceuil);
+        Button accueil = (Button) findViewById(R.id.acceuil);
         Button connexion = (Button) findViewById(R.id.connexion);
 
         TextView idUtilisateur = findViewById(R.id.idUtilisateur);
@@ -61,11 +61,12 @@ public class ValidationInscription extends AppCompatActivity {
         }
 
 
-        acceuil.setOnClickListener(new View.OnClickListener() {
+        accueil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent connexion = new Intent(ValidationInscription.this, MainActivity.class);
-                startActivity(connexion);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 finish();
             }
         });
@@ -74,6 +75,9 @@ public class ValidationInscription extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent connexion = new Intent(ValidationInscription.this, IndentificationC.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(connexion);
                 finish();
             }

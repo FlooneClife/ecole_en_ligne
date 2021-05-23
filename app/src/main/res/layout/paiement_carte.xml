@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/inscription"
+            android:text="@string/paiement"
             android:layout_toRightOf="@id/retour"
             android:textSize="30dp"
             android:textColor="@color/white" />
@@ -41,13 +41,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Paiement :"
-            android:textSize="20dp"
+            android:text="@string/paiement"
+            android:textAlignment="center"
+            android:textSize="23dp"
             android:textColor="@color/x_blue100" />
 
         <EditText
             android:id="@+id/IBAN"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:layout_marginBottom="10dp"
@@ -92,7 +93,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vous acceptez de recevoir les identifiants de votre/vos enfant(s) : *"
+            android:layout_marginBottom="10dp"
+            android:text="@string/vousAcceptez"
             android:textSize="20dp"
             android:textColor="@color/x_blue100" />
 
@@ -112,17 +114,18 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="* Au moins un choix obligatoire parmi ceux proposés."
-            android:textSize="10dp"
-            android:layout_marginTop="10dp"/>
+            android:text="@string/choixObligatoire"
+            android:textSize="12dp"
+            android:textColor="@color/x_cyan150"
+            android:layout_marginBottom="20dp"/>
 
 
         <Button
             android:id="@+id/valider"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/valider"
-            android:background="@drawable/button_blue_gradient"
+            android:text="@string/terminer"
+            android:background="@drawable/button_cyan_gradient"
             android:textColor="@color/white"
             android:layout_marginTop="10dp"/>
 

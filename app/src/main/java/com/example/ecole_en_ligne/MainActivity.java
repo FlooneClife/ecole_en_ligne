@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,11 +13,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ecole_en_ligne.Inscription.Indentification_inscription;
-import com.example.ecole_en_ligne.bdd.EleveManager;
-import com.example.ecole_en_ligne.classes.Cinquieme;
-import com.example.ecole_en_ligne.classes.Quatrieme;
-import com.example.ecole_en_ligne.classes.Sixieme;
-import com.example.ecole_en_ligne.classes.Troisieme;
 import com.example.ecole_en_ligne.util.ActionUtil;
 
 import java.util.ArrayList;
@@ -41,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         //----------------------Liste déroulante---------------------------------
         List classes = new ArrayList();
-        classes.add(("--Choisissez une classe--"));
+        String defaut = "--Choisissez une classe--";
+        classes.add(defaut);
         classes.add("6ème");
         classes.add("5ème");
         classes.add("4ème");
@@ -59,25 +54,22 @@ public class MainActivity extends AppCompatActivity {
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, ClasseAccueil.class);
                 if(spinner.getSelectedItem().toString().compareTo("6ème") == 0){
-                    Intent six = new Intent(MainActivity.this, Sixieme.class);
-                    six.putExtra("niveauClasse","6ème");
-                    startActivity(six);
+                    i.putExtra("niveauClasse","6ème");
+                    startActivity(i);
                 }
                 if(spinner.getSelectedItem().toString().compareTo("5ème") == 0){
-                    Intent cinq = new Intent(MainActivity.this, Cinquieme.class);
-                    cinq.putExtra("niveauClasse","5ème");
-                    startActivity(cinq);
+                    i.putExtra("niveauClasse","5ème");
+                    startActivity(i);
                 }
                 if(spinner.getSelectedItem().toString().compareTo("4ème") == 0){
-                    Intent quatre = new Intent(MainActivity.this, Quatrieme.class);
-                    quatre.putExtra("niveauClasse","4ème");
-                    startActivity(quatre);
+                    i.putExtra("niveauClasse","4ème");
+                    startActivity(i);
                 }
                 if(spinner.getSelectedItem().toString().compareTo("3ème") == 0){
-                    Intent trois = new Intent(MainActivity.this, Troisieme.class);
-                    trois.putExtra("niveauClasse","3ème");
-                    startActivity(trois);
+                    i.putExtra("niveauClasse","3ème");
+                    startActivity(i);
                 }
             }
         });
@@ -107,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ConstraintLayout root = (ConstraintLayout) findViewById(R.id.root_layout);
-                ActionUtil.showOrangePopup(MainActivity.this,
+                ActionUtil.showCyanPopup(MainActivity.this,
                         getResources().getString(R.string.propos),
                         getResources().getString(R.string.aPropos),
                         getResources().getString(R.string.retour),
