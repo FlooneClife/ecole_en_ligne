@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.ecole_en_ligne.Inscription.Indentification_inscription;
+import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.classes.Cinquieme;
 import com.example.ecole_en_ligne.classes.Quatrieme;
 import com.example.ecole_en_ligne.classes.Sixieme;

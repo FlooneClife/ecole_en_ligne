@@ -1,6 +1,7 @@
 package com.example.ecole_en_ligne.espaces.Parents;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,17 +16,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.espaces.Parents.ListeTableauBord.LesEnfants;
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class EspaceParents extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    NavigationView navigationView;
-    DrawerLayout drawerLayout;
-    TextView loginName;
-    ImageView menu;
-    ImageView deco;
-    Intent i;
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
+    private TextView loginName;
+    private ImageView menu;
+    private ImageView deco;
+    private Intent i;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
 
         i = getIntent();
         loginName = findViewById(R.id.loginName);
+        String myLogin = i.getStringExtra("Login");
         System.out.println(i.getStringExtra("Login"));
         loginName.setText(" "+i.getStringExtra("Login"));
 
@@ -44,7 +49,6 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
 
         menu = findViewById(R.id.menu);
         deco = findViewById(R.id.deconnexion);
-
 
         //------------------------------HEADER------------------------------
 

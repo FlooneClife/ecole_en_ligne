@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class EleveManager {
 //    public static final String ELEVE_KEY = "ID_ELEVE";
     private static final String ELEVE_TABLE_NAME = "Eleve";
@@ -123,46 +126,29 @@ public class EleveManager {
         return a;
     }
 
-    public String getNomEleveLoginParent(String login){
-        Eleve a=new Eleve("","","","","","","","", "", "");
-
+    public ArrayList<String> getNomEleveLoginParent(String login){
+        ArrayList<String> listNom = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGINPARENT+"=\""+login + "\"", null);
         if (c.moveToFirst()) {
-//            a.setId(c.getInt(c.getColumnIndex(ELEVE_KEY)));
-            a.setNom(c.getString(c.getColumnIndex(ELEVE_NOM)));
-            a.setPrenom(c.getString(c.getColumnIndex(ELEVE_PRENOM)));
-            a.setLogin(c.getString(c.getColumnIndex(ELEVE_LOGIN)));
-            a.setMdp(c.getString(c.getColumnIndex(ELEVE_MDP)));
-            a.setEmail(c.getString(c.getColumnIndex(ELEVE_EMAIL)));
-            a.setFormule(c.getString(c.getColumnIndex(ELEVE_FORMULE)));
-            a.setNivScol(c.getString(c.getColumnIndex(ELEVE_NIVEAU)));
-            a.setAnneeScol(c.getString(c.getColumnIndex(ELEVE_ANNEE)));
-            a.setLoginParent(c.getString(c.getColumnIndex(ELEVE_LOGINPARENT)));
-            a.setLastTimeOnline(c.getString(c.getColumnIndex(ELEVE_LASTTIMEONLINE)));
-            c.close();
+            do {
+                listNom.add(c.getString(c.getColumnIndex(EleveManager.ELEVE_NOM)));
+            }
+            while (c.moveToNext());
         }
-        return a.getNom();
+        return listNom;
     }
 
-    public String getPrenomEleveLoginParent(String login){
-        Eleve a=new Eleve("","","","","","","","", "", "");
-
+    public ArrayList<String> getPrenomEleveLoginParent(String login){
+        ArrayList<String> listPrenom = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGINPARENT+"=\""+login + "\"", null);
         if (c.moveToFirst()) {
-//            a.setId(c.getInt(c.getColumnIndex(ELEVE_KEY)));
-            a.setNom(c.getString(c.getColumnIndex(ELEVE_NOM)));
-            a.setPrenom(c.getString(c.getColumnIndex(ELEVE_PRENOM)));
-            a.setLogin(c.getString(c.getColumnIndex(ELEVE_LOGIN)));
-            a.setMdp(c.getString(c.getColumnIndex(ELEVE_MDP)));
-            a.setEmail(c.getString(c.getColumnIndex(ELEVE_EMAIL)));
-            a.setFormule(c.getString(c.getColumnIndex(ELEVE_FORMULE)));
-            a.setNivScol(c.getString(c.getColumnIndex(ELEVE_NIVEAU)));
-            a.setAnneeScol(c.getString(c.getColumnIndex(ELEVE_ANNEE)));
-            a.setLoginParent(c.getString(c.getColumnIndex(ELEVE_LOGINPARENT)));
-            a.setLastTimeOnline(c.getString(c.getColumnIndex(ELEVE_LASTTIMEONLINE)));
-            c.close();
+            do {
+                listPrenom.add(c.getString(c.getColumnIndex(EleveManager.ELEVE_PRENOM)));
+            }
+            while (c.moveToNext());
         }
-        return a.getPrenom();
+        c.close();
+        return listPrenom;
     }
 
     // sélection de tous les enregistrements de la table
@@ -171,7 +157,7 @@ public class EleveManager {
     }
 
     public boolean peutSeCo(String login, String mdp_taper){   //Fonction qui permet de vérifier les logins pour se connecter
-        Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGIN+"=\""+login + "\"", null);
+        Cursor c = db.rawQuery("SELECT * FROM " + ELEVE_TABLE_NAME + " WHERE " + ELEVE_LOGIN + "=\"" + login + "\"", null);
         if (c.moveToFirst()) {
             if (getEleve(login).getMdp().contentEquals(mdp_taper)) {
                 c.close();

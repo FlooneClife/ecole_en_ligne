@@ -23,12 +23,16 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.ArrayList;
 
 public class SuiviEnfantI extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    NavigationView navigationView;
-    DrawerLayout drawerLayout;
-    ImageView menu;
-    ImageView deco;
-    Intent i;
-    TextView loginName;
+
+    private NavigationView navigationView;
+    private DrawerLayout drawerLayout;
+    private ImageView menu;
+    private ImageView deco;
+    private Intent i;
+    private TextView loginName;
+    private String myLogin;
+    private ArrayList<String> listNom;
+    private ArrayList<String> listPrenom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +50,19 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        //loginName.setText(" " + i.getStringExtra("Login"));
+        myLogin = i.getStringExtra("Login");
+        //loginName.setText(" " + myLogin);
 
         menu = findViewById(R.id.menu);
         deco = findViewById(R.id.deconnexion);
 
         ParentManager pm = new ParentManager(this);
         EleveManager em = new EleveManager(this);
+
+        em.open();
+        listNom = em.getNomEleveLoginParent(myLogin);
+        listPrenom = em.getPrenomEleveLoginParent(myLogin);
+        em.close();
 
 
         //------------------------------HEADER------------------------------
