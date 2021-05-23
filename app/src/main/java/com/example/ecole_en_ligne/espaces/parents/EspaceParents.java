@@ -111,7 +111,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
             }
 
             case R.id.cours_exos_fait: {
-                Intent redir = new Intent(EspaceParents.this, EspaceParents.class);
+                Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Cours et Exercices effectués");
                 startActivity(redir);

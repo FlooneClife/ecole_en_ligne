@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -33,6 +34,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
     private String myLogin;
     private ArrayList<String> listNom;
     private ArrayList<String> listPrenom;
+    private ArrayList<String> listlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         em.open();
         listNom = em.getNomEleveLoginParent(myLogin);
         listPrenom = em.getPrenomEleveLoginParent(myLogin);
+        listlogin = em.getLoginEleveLoginParent(myLogin);
         em.close();
 
 
@@ -100,18 +103,21 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
 
         //TODO......
 
-        /*
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                        @Override
-                                        public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
-                                            if (position == 0){  //Si c'est l'eleve 1 qui est selectionné (se trouve a la position 0 dans la liste)
-                                                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                                                startActivity(redir);
-                                            }
 
-                                        }
-                                    }
-        );*/
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
+                    if (position == 0){
+                        if (i.getStringExtra("Content").contentEquals("Cours et Exercices effectués")){
+                            Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                            redir.putExtra("login",i.getStringExtra("Login"));
+                            redir.putExtra("loginEleve",listlogin.get(position));
+                            startActivity(redir);
+                        }
+                    }
+
+                }
+        });
 
 
 

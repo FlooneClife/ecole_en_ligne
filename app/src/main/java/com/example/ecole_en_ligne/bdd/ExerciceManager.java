@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
 public class ExerciceManager {
 
     private static final String EXERCICE_TABLE_NAME = "Exercice";
@@ -85,6 +87,30 @@ public class ExerciceManager {
     // sélection de tous les enregistrements de la table
     public Cursor getAllExercice() {
         return db.rawQuery("SELECT * FROM " + EXERCICE_TABLE_NAME, null);
+    }
+
+    public int nbExosFait(String login){
+        int cpt =0 ;
+        Cursor c = db.rawQuery("SELECT * FROM " + EXERCICE_TABLE_NAME+ " WHERE " + EXERCICE_TERMINE + "=" + 1 + " AND " + EXERCICE_LOGINELEVE +"="+ login, null);
+        if (c.moveToFirst()) {
+            do {
+                cpt ++;
+            }
+            while (c.moveToNext());
+        }
+        return cpt;
+    }
+
+    public int nbExosTotal(String login){
+        int cpt =0 ;
+        Cursor c = db.rawQuery("SELECT * FROM " + EXERCICE_TABLE_NAME+ " WHERE " + EXERCICE_LOGINELEVE + "=" + login, null);
+        if (c.moveToFirst()) {
+            do {
+                cpt ++;
+            }
+            while (c.moveToNext());
+        }
+        return cpt;
     }
 
     public int aTermine(Exercice e){
