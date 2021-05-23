@@ -1,6 +1,7 @@
 package com.example.ecole_en_ligne.espaces.eleves.matieres;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,8 @@ public class Français extends AppCompatActivity {
 
         Button valider = (Button) findViewById(R.id.valider);
         ImageView retour = (ImageView) findViewById(R.id.retour);
-
+        Intent i = getIntent();
+        myLogin = i.getStringExtra("Login");
         exoM = new ExerciceManager(this);
         em = new EleveManager(this);
         exoM.open();
