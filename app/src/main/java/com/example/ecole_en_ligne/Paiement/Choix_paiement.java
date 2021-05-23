@@ -22,6 +22,8 @@ public class Choix_paiement extends AppCompatActivity {
         ImageView retour = findViewById(R.id.retour);
 
         Intent i = getIntent();
+        int var = i.getIntExtra("variable", 2);
+        System.out.println("Choix :" + var);
 
 
         retour.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +38,8 @@ public class Choix_paiement extends AppCompatActivity {
             public void onClick(View v) {
                 Intent redir = new Intent(Choix_paiement.this, Paiement_carte.class);
                 redir.putExtra("loginParent", i.getStringExtra("loginParent"));
+                redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
+                redir.putExtra("variable", var);
                 startActivity(redir);
             }
         });
@@ -46,7 +50,7 @@ public class Choix_paiement extends AppCompatActivity {
                 Intent redir = new Intent(Choix_paiement.this, Paiement_prelev.class);
                 redir.putExtra("loginParent", i.getStringExtra("loginParent"));
                 redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
-                redir.putExtra("variable", i.getStringExtra("variable"));
+                redir.putExtra("variable", var);
                 startActivity(redir);
             }
         });

@@ -38,9 +38,10 @@ public class ValidationInscription extends AppCompatActivity {
         ArrayList<String> listNom;
         ArrayList<String> listPrenom;
 
-        String variable = i.getStringExtra("variable");
+        int variable = i.getIntExtra("variable", 2);
+        System.out.println("Fin :" + variable);
 
-        if (variable.contentEquals("parent")){
+        if (variable == 0){
             idUtilisateur.setText(i.getStringExtra("loginParent"));
             textidEnf.setText(R.string.inscriptionidEnf);
             em.open();
@@ -53,8 +54,10 @@ public class ValidationInscription extends AppCompatActivity {
                 text += listNom.get(k) + " " +listPrenom.get(k) + " : "+listId.get(k) + "\n";
             }
             idEnf.setText(text);
-        }else if (variable.contentEquals("eleve")){
+        }else if (variable == 1){
             idUtilisateur.setText(i.getStringExtra("loginEleve"));
+        } else if(variable == 2) {
+            System.err.println("Error getting var");
         }
 
 

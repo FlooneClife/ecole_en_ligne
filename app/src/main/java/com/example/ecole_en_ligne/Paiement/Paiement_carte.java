@@ -23,6 +23,8 @@ public class Paiement_carte extends AppCompatActivity {
         setContentView(R.layout.paiement_carte);
 
         Intent i = getIntent();
+        int var = i.getIntExtra("variable", 2);
+        System.out.println("Carte :" + var);
 
         ImageView retour = findViewById(R.id.retour);
         retour.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +40,8 @@ public class Paiement_carte extends AppCompatActivity {
             public void onClick(View v) {
                 Intent redir = new Intent(Paiement_carte.this, ValidationInscription.class);
                 redir.putExtra("loginParent", i.getStringExtra("loginParent"));
-                redir.putExtra("variable", i.getStringExtra("variable"));
                 redir.putExtra("loginEleve", i.getStringExtra("loginEleve"));
+                redir.putExtra("variable", var);
                 startActivity(redir);
                 finish();
             }

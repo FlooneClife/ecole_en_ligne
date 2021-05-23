@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.ecole_en_ligne.Common_bdd;
 import com.example.ecole_en_ligne.Paiement.Choix_paiement;
 import com.example.ecole_en_ligne.bdd.Eleve;
 import com.example.ecole_en_ligne.R;
@@ -152,10 +151,9 @@ public class Inscription_eleve extends AppCompatActivity {
                     } else{
                         Intent connexion = new Intent(Inscription_eleve.this, Choix_paiement.class);
                         connexion.putExtra("loginEleve", login.getText().toString());
-                        connexion.putExtra("variable", "eleve");
+                        connexion.putExtra("variable", 1);
                         em.close();
                         startActivity(connexion);
-                        finish();
                     }
                 }
             }
