@@ -87,6 +87,15 @@
                     android:text="@string/recommandations"
                     android:textSize="30dp" />
 
+
+                <TextView
+                    android:id="@+id/texteRecommandation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
+                    android:layout_toRightOf="@id/content"
+                    android:textSize="20dp" />
+
             </RelativeLayout>
 
         </androidx.core.widget.NestedScrollView>

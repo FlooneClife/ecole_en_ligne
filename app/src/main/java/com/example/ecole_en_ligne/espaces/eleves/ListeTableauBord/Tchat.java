@@ -46,6 +46,10 @@ public class Tchat extends AppCompatActivity implements NavigationView.OnNavigat
 
         loginName.setText(" " + myLogin);
 
+        navigationView = findViewById(R.id.navigation);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        navigationView.setNavigationItemSelectedListener(this);
+
         menu = findViewById(R.id.menu);
         retour = findViewById(R.id.retour);
 
