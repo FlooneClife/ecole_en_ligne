@@ -112,5 +112,6 @@
     <string name="abonnement">Mon abonnement</string>
     <string name="coursExoParent">Cours et Exercices effectués</string>
     <string name="exoRealises">Exercices effectués : (terminés / vus)</string>
+    <string name="recevoirCode">Les mots de passe de vos enfants vous sont envoyés par mail.</string>
 
 </resources>

@@ -38,8 +38,8 @@
         android:layout_height="match_parent"
         android:layout_below="@id/header"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".espaces.eleves.elementMenu.Cours_Exos"
-        tools:showIn="@layout/cours_exos">
+        tools:context=".Inscription.Ins_donnees_enf"
+        tools:showIn="@layout/paiement_carte">
 
         <LinearLayout
             android:layout_width="match_parent"

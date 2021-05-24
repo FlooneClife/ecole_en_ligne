@@ -32,7 +32,6 @@ public class Ins_donnees_enf extends AppCompatActivity {
     private EditText nom_enf;
     private EditText prenom_enf;
     private EditText email_enf;
-    private EditText mdp_enf;
     private Spinner annee_scol;
     private Spinner lien_parents;
     private Spinner niveau_scol;
@@ -40,6 +39,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
     private int nbEnfRestant;
     private int numEnfCourant;
     private String autoLogin;
+    private String autoMdp;
     private String lastLogin;
 
     private String defaultAnnee;
@@ -71,7 +71,6 @@ public class Ins_donnees_enf extends AppCompatActivity {
         nom_enf = findViewById(R.id.nomEnfant);
         prenom_enf = findViewById(R.id.prenomEnfant);
         email_enf = findViewById(R.id.emailEnfant);
-        mdp_enf = findViewById(R.id.mdpEnfant);
         annee_scol = findViewById(R.id.anneeScolaire);
         lien_parents = findViewById(R.id.lienParentee);
         niveau_scol = findViewById(R.id.niveauScolaire);
@@ -164,7 +163,6 @@ public class Ins_donnees_enf extends AppCompatActivity {
                 if (
                     ActionUtil.verifEmptyEdit(nom_enf) |
                     ActionUtil.verifEmptyEdit(prenom_enf) |
-                    ActionUtil.verifEmptyEdit(mdp_enf) |
                     ActionUtil.verifEmptyEdit(email_enf) |
                     ActionUtil.verifEmptySpinner(annee_scol, defaultAnnee) |
                     ActionUtil.verifEmptySpinner(lien_parents, defaultLien) |
@@ -175,9 +173,10 @@ public class Ins_donnees_enf extends AppCompatActivity {
                     em.close();
                 } else {
                     //generate login (sous la forme nom + 2 premières lettres prénom
-                    autoLogin = nom_enf.getText().toString() + prenom_enf.getText().charAt(0) + prenom_enf.getText().charAt(1);
+                    autoLogin = (nom_enf.getText().toString() + prenom_enf.getText().charAt(0) + prenom_enf.getText().charAt(1)).toLowerCase() + generate2RandomNumber();
+                    autoMdp = autoLogin;
                     System.out.println(autoLogin);
-                    em.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,mdp_enf.getText().toString(),email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString(), loginParent,""));
+                    em.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,autoMdp,email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString(), loginParent,""));
                     //--------------
                     if (nbEnfRestant > 0) {
                         //test
@@ -214,8 +213,10 @@ public class Ins_donnees_enf extends AppCompatActivity {
                 finish();
             }
         });
-
-
-
     }
+
+    private int generate2RandomNumber() {
+        return (int) Math.random() * 100;
+    }
+
 }
