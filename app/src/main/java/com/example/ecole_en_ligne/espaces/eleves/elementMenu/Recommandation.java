@@ -13,8 +13,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
+import com.example.ecole_en_ligne.bdd.EleveManager;
+import com.example.ecole_en_ligne.bdd.Recommandations;
+import com.example.ecole_en_ligne.bdd.RecommandationsManager;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
 import com.google.android.material.navigation.NavigationView;
+
+import org.w3c.dom.Text;
 
 public class Recommandation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -57,6 +62,29 @@ public class Recommandation extends AppCompatActivity implements NavigationView.
                 drawerLayout.openDrawer(navigationView);
             }
         });
+
+        //--------------RECOMMANDATION--------------
+
+        TextView text = findViewById(R.id.texteRecommandation);
+        String txt ="Mathématiques : Revoir les fonctions.\n\nAnglais : Revoir les conjugaisons.";
+
+        text.setText(txt);
+
+
+        RecommandationsManager rM = new RecommandationsManager(this);
+        EleveManager eM = new EleveManager(this);
+
+        eM.open();
+        String LoginEleveParent = eM.getLoginEleveParent(myLogin);
+        eM.close();
+
+        Recommandations r = new Recommandations(1,myLogin,LoginEleveParent,txt);
+        rM.open();
+        rM.addRecommandations(r);
+        rM.close();
+
+
+
 
     }
 

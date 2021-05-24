@@ -92,9 +92,10 @@
                     android:id="@+id/texteRecommandation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/x_cyan100"
-                    android:layout_toRightOf="@id/content"
-                    android:textSize="20dp" />
+                    android:textColor="@color/x_blue100"
+                    android:layout_below="@id/content"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"/>
 
             </RelativeLayout>
 

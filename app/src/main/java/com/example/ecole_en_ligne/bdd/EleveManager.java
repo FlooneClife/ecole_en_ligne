@@ -164,6 +164,20 @@ public class EleveManager {
         return listLogin;
     }
 
+    public String getLoginEleveParent(String login){
+
+        String loginP="";
+        Cursor c = db.rawQuery("SELECT * FROM "+ELEVE_TABLE_NAME+" WHERE "+ELEVE_LOGIN+"=\""+login + "\"", null);
+        if (c.moveToFirst()) {
+            do {
+                loginP=c.getString(c.getColumnIndex(EleveManager.ELEVE_LOGINPARENT));
+            }
+            while (c.moveToNext());
+        }
+        c.close();
+        return loginP;
+    }
+
     // sélection de tous les enregistrements de la table
     public Cursor getAllEleve() {
         return db.rawQuery("SELECT * FROM " + ELEVE_TABLE_NAME, null);

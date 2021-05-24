@@ -20,6 +20,7 @@ import com.example.ecole_en_ligne.bdd.Parent;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.ParentManager;
 import com.example.ecole_en_ligne.espaces.Parents.elementMenu.ExoEnfFait;
+import com.example.ecole_en_ligne.espaces.Parents.elementMenu.Recommandation_Eleve;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -108,6 +109,11 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
             public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
                 if (i.getStringExtra("Content").contentEquals("Cours et Exercices effectués")){
                     Intent redir = new Intent(SuiviEnfantI.this, ExoEnfFait.class);
+                    redir.putExtra("Login",i.getStringExtra("Login"));
+                    redir.putExtra("loginEleve",listlogin.get(position));
+                    startActivity(redir);
+                }else if (i.getStringExtra("Content").contentEquals("Recommandation")){
+                    Intent redir = new Intent(SuiviEnfantI.this, Recommandation_Eleve.class);
                     redir.putExtra("Login",i.getStringExtra("Login"));
                     redir.putExtra("loginEleve",listlogin.get(position));
                     startActivity(redir);
