@@ -54,10 +54,7 @@
         <activity android:name=".Paiement.Paiement_carte"/>
         <activity android:name=".Paiement.Paiement_prelev"/>
         <activity android:name=".Paiement.Choix_paiement"/>
-        <activity android:name=".espaces.eleves.ListeTableauBord.MesMatieres" />
         <activity android:name=".espaces.eleves.ListeTableauBord.MesRappels" />
-        <activity android:name=".espaces.eleves.ListeTableauBord.MesResultats" />
-        <activity android:name=".espaces.eleves.ListeTableauBord.RecapInscription" />
         <activity android:name=".espaces.eleves.ListeTableauBord.Tchat" />
         <activity android:name=".espaces.Parents.elementMenu.ExoEnfFait" />
     </application>

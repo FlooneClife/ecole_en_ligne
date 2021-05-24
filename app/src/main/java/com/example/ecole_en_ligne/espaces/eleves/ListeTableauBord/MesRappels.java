@@ -32,7 +32,7 @@ public class MesRappels extends AppCompatActivity implements NavigationView.OnNa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.liste_matieres);
+        setContentView(R.layout.mes_rappels);
 
         i = getIntent();
         loginName = findViewById(R.id.loginName);
