@@ -49,6 +49,9 @@ public class Recommandation_Eleve extends AppCompatActivity implements Navigatio
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView.setNavigationItemSelectedListener(this);
 
+        retour = findViewById(R.id.retour);
+        menu = findViewById(R.id.menu);
+
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

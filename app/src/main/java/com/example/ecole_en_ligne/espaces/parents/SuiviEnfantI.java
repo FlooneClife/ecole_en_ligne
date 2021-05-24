@@ -21,6 +21,7 @@ import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.ParentManager;
 import com.example.ecole_en_ligne.espaces.Parents.elementMenu.ExoEnfFait;
 import com.example.ecole_en_ligne.espaces.Parents.elementMenu.Recommandation_Eleve;
+import com.example.ecole_en_ligne.espaces.Parents.elementMenu.HistoriqueConnexionEleve;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -116,12 +117,15 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, Recommandation_Eleve.class);
                     redir.putExtra("Login",i.getStringExtra("Login"));
                     redir.putExtra("loginEleve",listlogin.get(position));
+                } else if (i.getStringExtra("Content").contentEquals("Moment de connexion")) {
+                    Intent redir = new Intent(SuiviEnfantI.this, HistoriqueConnexionEleve.class);
+                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("loginEleve", listlogin.get(position));
                     startActivity(redir);
                 }
             }
         });
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -141,9 +145,6 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
                     redir.putExtra("Login", myLogin);
                     redir.putExtra("Content", "Cours et Exercices effectués");
-                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
                     startActivity(redir);
                     finish();
                     break;
@@ -156,9 +157,6 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
                     redir.putExtra("Login", i.getStringExtra("Login"));
                     redir.putExtra("Content", "Moment de connexion");
-                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
                     startActivity(redir);
                     finish();
                     break;
@@ -171,9 +169,6 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
                     redir.putExtra("Login", i.getStringExtra("Login"));
                     redir.putExtra("Content", "Courbes de progressions");
-                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
                     startActivity(redir);
                     finish();
                     break;
@@ -186,9 +181,6 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
                     redir.putExtra("Login", i.getStringExtra("Login"));
                     redir.putExtra("Content", "Recommandation");
-                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
                     startActivity(redir);
                     finish();
                     break;
@@ -201,9 +193,6 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
                     redir.putExtra("Login", i.getStringExtra("Login"));
                     redir.putExtra("Content", "Définir un rappel");
-                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
                     startActivity(redir);
                     finish();
                     break;

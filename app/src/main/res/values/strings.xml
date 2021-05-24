@@ -8,7 +8,7 @@
 
     <string name="app_name">Xerneas école en ligne</string>
     <string name="nom_ecole">Groupe Xerneas</string>
-    <string name="desc_ecole">Accompagnement pédagogique pour les classes de la 6ème à la 3ème : Cours en ligne, exercices…</string>
+    <string name="desc_ecole">Accompagnement pédagogique pour les classes de la 6ème à la 3ème : cours en ligne et exercices</string>
     <string name="propos"><u>À propos</u></string>
 
     <!-- Text button -->
@@ -115,5 +115,7 @@
     <string name="coursExoParent">Cours et Exercices effectués</string>
     <string name="exoRealises">Exercices effectués : (terminés / vus)</string>
     <string name="recevoirCode">Les mots de passe de vos enfants vous sont envoyés par mail.</string>
+    <string name="derniereCoEnf">Dernière connexion de votre enfant</string>
+    <string name="aucuneCo">Aucune connexion recensée à ce jour.</string>
 
 </resources>
