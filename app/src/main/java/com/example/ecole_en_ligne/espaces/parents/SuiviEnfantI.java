@@ -108,7 +108,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
             public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
                 if (i.getStringExtra("Content").contentEquals("Cours et Exercices effectués")){
                     Intent redir = new Intent(SuiviEnfantI.this, ExoEnfFait.class);
-                    redir.putExtra("login",i.getStringExtra("Login"));
+                    redir.putExtra("Login",i.getStringExtra("Login"));
                     redir.putExtra("loginEleve",listlogin.get(position));
                     startActivity(redir);
                 }
