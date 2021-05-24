@@ -107,5 +107,10 @@
     <string name="progression">Progressions</string>
     <string name="recommandations">Recommandations</string>
     <string name="activitesRecentes">Activitées récentes</string>
+    <string name="tableauDeBord">Tableau de bord</string>
+    <string name="mesEnfants">Mes enfants</string>
+    <string name="abonnement">Mon abonnement</string>
+    <string name="coursExoParent">Cours et Exercices effectués</string>
+    <string name="exoRealises">Exercices effectués : (terminés / vus)</string>
 
 </resources>

@@ -66,6 +66,7 @@
                     android:id="@+id/enTantQue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
                     android:text="@string/enTantQue"
                     android:textSize="20dp" />
 
@@ -73,6 +74,7 @@
                     android:id="@+id/loginName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
                     android:layout_toRightOf="@id/enTantQue"
                     android:textSize="20dp" />
 
@@ -81,16 +83,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/enTantQue"
+                    android:textColor="@color/x_blue100"
                     android:layout_marginTop="30dp"
-                    android:text="Tableau de bord :"
+                    android:text="@string/tableauDeBord"
                     android:textSize="30dp" />
 
                 <TextView
                     android:id="@+id/monProfil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_blue100"
                     android:layout_below="@id/content"
-                    android:text="Mon Profil :"
+                    android:text="@string/monprofil"
                     android:textSize="15dp" />
 
                 <ListView

@@ -54,8 +54,6 @@ public class LesEnfants extends AppCompatActivity implements NavigationView.OnNa
                 drawerLayout.openDrawer(navigationView);
             }
         });
-
-
     }
 
     @Override
@@ -68,8 +66,6 @@ public class LesEnfants extends AppCompatActivity implements NavigationView.OnNa
                 finish();
                 break;
             }
-
-
             case R.id.cours_exos_fait: {
                 Intent redir = new Intent(LesEnfants.this, SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
@@ -78,7 +74,6 @@ public class LesEnfants extends AppCompatActivity implements NavigationView.OnNa
                 finish();
                 break;
             }
-
             case R.id.momentCO: {
                 Intent redir = new Intent(LesEnfants.this, SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
@@ -87,7 +82,6 @@ public class LesEnfants extends AppCompatActivity implements NavigationView.OnNa
                 finish();
                 break;
             }
-
             case R.id.courbes_progressionP: {
                 Intent redir = new Intent(LesEnfants.this, SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
@@ -112,15 +106,6 @@ public class LesEnfants extends AppCompatActivity implements NavigationView.OnNa
                 finish();
                 break;
             }
-            case R.id.activitesP: {
-                Intent redir = new Intent(LesEnfants.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Activités de l'enfant");
-                startActivity(redir);
-                finish();
-                break;
-            }
-
             case R.id.retour: {
                 finish();
                 break;

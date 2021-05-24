@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.bdd.Parent;
 import com.example.ecole_en_ligne.R;
@@ -28,7 +29,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     private ImageView menu;
-    private ImageView deco;
+    private ImageView retour;
     private Intent i;
     private TextView loginName;
     private String myLogin;
@@ -53,10 +54,11 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         myLogin = i.getStringExtra("Login");
-        //loginName.setText(" " + myLogin);
+        System.out.println(myLogin);
+        loginName.setText(" " + myLogin);
 
         menu = findViewById(R.id.menu);
-        deco = findViewById(R.id.retour);
+        retour = findViewById(R.id.retour);
 
         ParentManager pm = new ParentManager(this);
         EleveManager em = new EleveManager(this);
@@ -70,7 +72,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
 
         //------------------------------HEADER------------------------------
 
-        deco.setOnClickListener(new View.OnClickListener() {
+        retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -101,96 +103,110 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listEnf);
         list.setAdapter(adapter);
 
-        //TODO......
-
-
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
-                    if (position == 0){
-                        if (i.getStringExtra("Content").contentEquals("Cours et Exercices effectués")){
-                            Intent redir = new Intent(SuiviEnfantI.this, ExoEnfFait.class);
-                            redir.putExtra("login",i.getStringExtra("Login"));
-                            redir.putExtra("loginEleve",listlogin.get(position));
-                            startActivity(redir);
-                        }
-                    }
-
+            @Override
+            public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
+                if (i.getStringExtra("Content").contentEquals("Cours et Exercices effectués")){
+                    Intent redir = new Intent(SuiviEnfantI.this, ExoEnfFait.class);
+                    redir.putExtra("login",i.getStringExtra("Login"));
+                    redir.putExtra("loginEleve",listlogin.get(position));
+                    startActivity(redir);
                 }
+            }
         });
-
-
-
-
-
     }
-
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.tableau_bordP: {
-                Intent redir = new Intent(SuiviEnfantI.this, EspaceParents.class);
+                Intent redir = new Intent(getApplicationContext(), EspaceParents.class);
+                redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
                 finish();
                 break;
             }
-
-
             case R.id.cours_exos_fait: {
-                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Cours et Exercices effectués");
-                startActivity(redir);
-                finish();
-                break;
+                if (i.getStringExtra("Content").contentEquals("Cours et Exercices effectués")){
+                    break;
+                } else {
+                    Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                    redir.putExtra("Login", myLogin);
+                    redir.putExtra("Content", "Cours et Exercices effectués");
+                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    startActivity(redir);
+                    finish();
+                    break;
+                }
             }
-
             case R.id.momentCO: {
-                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Moment de connexion");
-                startActivity(redir);
-                finish();
-                break;
+                if (i.getStringExtra("Content").contentEquals("Moment de connexion")){
+                    break;
+                } else {
+                    Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Content", "Moment de connexion");
+                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    startActivity(redir);
+                    finish();
+                    break;
+                }
             }
-
             case R.id.courbes_progressionP: {
-                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Courbes de progressions");
-                startActivity(redir);
-                finish();
-                break;
+                if (i.getStringExtra("Content").contentEquals("Courbes de progressions")){
+                    break;
+                } else {
+                    Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Content", "Courbes de progressions");
+                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    startActivity(redir);
+                    finish();
+                    break;
+                }
             }
             case R.id.recommandationsP: {
-                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Recommandation");
-                startActivity(redir);
-                finish();
-                break;
+                if (i.getStringExtra("Content").contentEquals("Recommandation")){
+                    break;
+                } else {
+                    Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Content", "Recommandation");
+                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    startActivity(redir);
+                    finish();
+                    break;
+                }
             }
             case R.id.rappel: {
-                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Définir un rappel");
-                startActivity(redir);
-                finish();
-                break;
+                if (i.getStringExtra("Content").contentEquals("Définir un rappel")){
+                    break;
+                } else {
+                    Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
+                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Content", "Définir un rappel");
+                    Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                    startActivity(redir);
+                    finish();
+                    break;
+                }
             }
-            case R.id.activitesP: {
-                Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Activités de l'enfant");
-                startActivity(redir);
-                finish();
-                break;
-            }
-
-            case R.id.retour: {
+            case R.id.deconnexion: {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 finish();
                 break;
             }

@@ -36,6 +36,8 @@ public class RecapInscription extends AppCompatActivity implements NavigationVie
 
         menu = findViewById(R.id.menu);
         deco = findViewById(R.id.retour);
+        String myLogin = i.getStringExtra("Login");
+        loginName.setText(" " + myLogin);
 
 
         //------------------------------HEADER------------------------------
@@ -66,8 +68,6 @@ public class RecapInscription extends AppCompatActivity implements NavigationVie
                 finish();
                 break;
             }
-
-
             case R.id.cours_exos_fait: {
                 Intent redir = new Intent(RecapInscription.this, SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
@@ -76,7 +76,6 @@ public class RecapInscription extends AppCompatActivity implements NavigationVie
                 finish();
                 break;
             }
-
             case R.id.momentCO: {
                 Intent redir = new Intent(RecapInscription.this, SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
@@ -85,7 +84,6 @@ public class RecapInscription extends AppCompatActivity implements NavigationVie
                 finish();
                 break;
             }
-
             case R.id.courbes_progressionP: {
                 Intent redir = new Intent(RecapInscription.this, SuiviEnfantI.class);
                 //redir.putExtra("Login",i.getStringExtra("Login"));
@@ -110,15 +108,6 @@ public class RecapInscription extends AppCompatActivity implements NavigationVie
                 finish();
                 break;
             }
-            case R.id.activitesP: {
-                Intent redir = new Intent(RecapInscription.this, SuiviEnfantI.class);
-                //redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Activités de l'enfant");
-                startActivity(redir);
-                finish();
-                break;
-            }
-
             case R.id.retour: {
                 finish();
                 break;

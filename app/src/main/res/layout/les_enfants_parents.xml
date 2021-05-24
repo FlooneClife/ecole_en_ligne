@@ -26,7 +26,7 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="30dp"
-                android:src="@drawable/logout"
+                android:src="@drawable/arrow_back"
                 android:clickable="true" />
 
             <TextView
@@ -66,6 +66,7 @@
                     android:id="@+id/enTantQue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
                     android:text="@string/enTantQue"
                     android:textSize="20dp" />
 
@@ -73,6 +74,7 @@
                     android:id="@+id/loginNameP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
                     android:layout_toRightOf="@id/enTantQue"
                     android:textSize="20dp" />
 
@@ -82,7 +84,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/enTantQue"
                     android:layout_marginTop="30dp"
-                    android:text="Mes enfants :"
+                    android:textColor="@color/x_blue100"
+                    android:text="@string/mesEnfants"
                     android:textSize="30dp" />
 
 

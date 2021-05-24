@@ -84,7 +84,7 @@
                     android:layout_below="@id/enTantQue"
                     android:textColor="@color/x_blue100"
                     android:layout_marginTop="30dp"
-                    android:text="Tableau de bord :"
+                    android:text="@string/tableauDeBord"
                     android:textSize="30dp" />
 
                 <TextView

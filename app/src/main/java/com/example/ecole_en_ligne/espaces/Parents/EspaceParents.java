@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.espaces.Parents.ListeTableauBord.LesEnfants;
 import com.google.android.material.navigation.NavigationView;
@@ -40,8 +41,7 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
         i = getIntent();
         loginName = findViewById(R.id.loginName);
         String myLogin = i.getStringExtra("Login");
-        System.out.println(i.getStringExtra("Login"));
-        loginName.setText(" "+i.getStringExtra("Login"));
+        loginName.setText(" "+ myLogin);
 
         navigationView = findViewById(R.id.navigationP);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layoutP);
@@ -56,6 +56,9 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
         deco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 finish();
             }
         });
@@ -79,8 +82,6 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
         final ArrayAdapter<String> adapterP = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, profil);
         listP.setAdapter(adapterP);
 
-        //TODO.....
-
         listP.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                  @Override
                  public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
@@ -88,14 +89,10 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                          Intent redir = new Intent(EspaceParents.this, LesEnfants.class);
                          redir.putExtra("Login",i.getStringExtra("Login"));
                          startActivity(redir);
-                         finish();
                      }
-
                  }
              }
         );
-
-
     }
 
 
@@ -104,37 +101,27 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
 
         switch (item.getItemId()) {
             case R.id.tableau_bordP: {
-                Intent redir = new Intent(EspaceParents.this, EspaceParents.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                startActivity(redir);
-                finish();
                 break;
             }
-
             case R.id.cours_exos_fait: {
                 Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Cours et Exercices effectués");
                 startActivity(redir);
-                finish();
                 break;
             }
-
             case R.id.momentCO: {
                 Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Moment de connexion");
                 startActivity(redir);
-                finish();
                 break;
             }
-
             case R.id.courbes_progressionP: {
                 Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Courbes de progressions");
                 startActivity(redir);
-                finish();
                 break;
             }
             case R.id.recommandationsP: {
@@ -142,7 +129,6 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Recommandation");
                 startActivity(redir);
-                finish();
                 break;
             }
             case R.id.rappel: {
@@ -150,24 +136,16 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Définir un rappel");
                 startActivity(redir);
-                finish();
                 break;
             }
-            case R.id.activitesP: {
-                Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
-                redir.putExtra("Login",i.getStringExtra("Login"));
-                redir.putExtra("Content","Activités de l'enfant");
-                startActivity(redir);
-                finish();
-                break;
-            }
-
-            case R.id.retour: {
+            case R.id.deconnexion: {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 finish();
                 break;
             }
         }
-
         //close navigation drawer
         drawerLayout.closeDrawers();
         return true;
