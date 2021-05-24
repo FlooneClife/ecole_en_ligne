@@ -45,4 +45,5 @@ public class Exercice {
     public void setTermine(int termine) {
         this.termine = termine;
     }
+
 }

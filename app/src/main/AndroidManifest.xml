@@ -57,6 +57,10 @@
         <activity android:name=".espaces.eleves.ListeTableauBord.MesRappels" />
         <activity android:name=".espaces.eleves.ListeTableauBord.Tchat" />
         <activity android:name=".espaces.Parents.elementMenu.ExoEnfFait" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

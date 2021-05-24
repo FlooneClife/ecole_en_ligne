@@ -3,6 +3,8 @@
     <!-- merienda -->
     <!-- kalam -->
     <!-- heebo -->
+    <!-- voltaire -->
+    <!-- sniglet -->
 
     <string name="app_name">Xerneas école en ligne</string>
     <string name="nom_ecole">Groupe Xerneas</string>
@@ -106,7 +108,7 @@
     <string name="coursendirect">Cours en direct</string>
     <string name="progression">Progressions</string>
     <string name="recommandations">Recommandations</string>
-    <string name="activitesRecentes">Activitées récentes</string>
+    <string name="derniereCo">Dernière connexion</string>
     <string name="tableauDeBord">Tableau de bord</string>
     <string name="mesEnfants">Mes enfants</string>
     <string name="abonnement">Mon abonnement</string>

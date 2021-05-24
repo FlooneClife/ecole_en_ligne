@@ -16,7 +16,7 @@
         <item name="colorSecondaryVariant">@color/x_cyan200</item>
         <item name="colorOnSecondary">@color/black</item>
 
-        <item name="fontFamily">@font/heebo</item>
+        <item name="fontFamily">@font/sniglet</item>
 
     </style>
 

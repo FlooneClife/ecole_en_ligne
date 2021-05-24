@@ -81,10 +81,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/recevoirCode"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:textSize="18dp"
-                android:textColor="@color/x_blue100" />
+                android:text="@string/recevoirCode"
+                android:textColor="@color/x_blue100"
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="match_parent"

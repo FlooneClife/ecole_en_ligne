@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.ecole_en_ligne.MainActivity;
+import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,6 +31,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
     ActionBarDrawerToggle toggle;
     private String myLogin;
     Intent i;
+    private TextView dateCo;
 
     @Override
     public void onBackPressed() {
@@ -44,6 +46,7 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
         i = getIntent();
         myLogin = i.getStringExtra("Login");
         loginName = findViewById(R.id.loginName);
+        dateCo = findViewById(R.id.dateCo);
 
         navigationView = findViewById(R.id.navigation);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -53,6 +56,11 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
 
         menu = findViewById(R.id.menu);
         retour = findViewById(R.id.retour);
+
+        EleveManager em = new EleveManager(this);
+        em.open();
+        dateCo.setText(em.getEleve(myLogin).getLastTimeOnline());
+        em.close();
 
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
