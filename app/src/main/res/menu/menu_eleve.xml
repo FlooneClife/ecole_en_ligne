@@ -2,24 +2,31 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/tableau_bord"
+        android:icon="@drawable/tabbord"
         android:title="Tableau de bord" />
 
     <item android:id="@+id/cours_exos"
+        android:icon="@drawable/coursexos"
         android:title="Cours et Exercices" />
 
     <item android:id="@+id/cours_live"
+        android:icon="@drawable/live"
         android:title="Cours en direct" />
 
     <item android:id="@+id/recommandations"
+        android:icon="@drawable/loupe"
         android:title="Recommandations" />
 
     <item android:id="@+id/progression"
+        android:icon="@drawable/stonk"
         android:title="Progression" />
 
     <item android:id="@+id/activites"
+        android:icon="@drawable/clock"
         android:title="Dernières activités" />
 
     <item android:id="@+id/deconnexion"
+        android:icon="@drawable/logout"
         android:title="Se déconnecter" />
 
 </menu>

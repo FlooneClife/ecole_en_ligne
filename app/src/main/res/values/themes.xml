@@ -5,7 +5,7 @@
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
 
         <!-- Primary brand color. -->
-
+        <item name="android:textColorPrimary">@color/x_blue050</item>
         <item name="colorPrimary">@color/x_blue100</item>
         <item name="colorPrimaryVariant">@color/x_blue150</item>
         <item name="colorPrimaryDark">@color/x_blue050</item>

@@ -3,24 +3,31 @@
 
 
     <item android:id="@+id/tableau_bordP"
+        android:icon="@drawable/tabbord"
         android:title="Tableau de bord" />
 
     <item android:id="@+id/cours_exos_fait"
+        android:icon="@drawable/coursexos"
         android:title="Cours et Exercices réalisés" />
 
     <item android:id="@+id/courbes_progressionP"
+        android:icon="@drawable/stonk"
         android:title="Courbes de progression" />
 
     <item android:id="@+id/recommandationsP"
+        android:icon="@drawable/loupe"
         android:title="Recommandations" />
 
     <item android:id="@+id/rappel"
+        android:icon="@drawable/alarm"
         android:title="Définir un rappel" />
 
     <item android:id="@+id/momentCO"
-        android:title="Moments de connexion" />
+        android:icon="@drawable/clock"
+        android:title="Moment de connexion" />
 
     <item android:id="@+id/deconnexion"
+        android:icon="@drawable/logout"
         android:title="Se déconnecter" />
 
 </menu>
