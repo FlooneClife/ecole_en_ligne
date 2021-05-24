@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-public class RecommandationsManager {private static final String RECOMMANDATIONS_TABLE_NAME = "Rappels";
+public class RecommandationsManager {private static final String RECOMMANDATIONS_TABLE_NAME = "Recommandations";
     public static final String RECOMMANDATIONS_ID = "id";
     public static final String RECOMMANDATIONS_ELEVE = "loginEleve";
     public static final String RECOMMANDATIONS_PARENT = "loginParent";
