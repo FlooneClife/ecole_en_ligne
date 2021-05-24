@@ -9,7 +9,7 @@ public class RecommandationsManager {private static final String RECOMMANDATIONS
     public static final String RECOMMANDATIONS_ID = "id";
     public static final String RECOMMANDATIONS_ELEVE = "loginEleve";
     public static final String RECOMMANDATIONS_PARENT = "loginParent";
-    public static final String RECOMMANDATIONS_TEXT = "heure";
+    public static final String RECOMMANDATIONS_TEXT = "text";
 
     public static final String RECOMMANDATIONS_TABLE_CREATE =
             "CREATE TABLE " + RECOMMANDATIONS_TABLE_NAME + " (" +
