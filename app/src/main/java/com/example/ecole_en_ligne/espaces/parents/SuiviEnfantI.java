@@ -117,6 +117,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, Recommandation_Eleve.class);
                     redir.putExtra("Login",i.getStringExtra("Login"));
                     redir.putExtra("loginEleve",listlogin.get(position));
+                    startActivity(redir);
                 } else if (i.getStringExtra("Content").contentEquals("Moment de connexion")) {
                     Intent redir = new Intent(SuiviEnfantI.this, HistoriqueConnexionEleve.class);
                     redir.putExtra("Login", i.getStringExtra("Login"));

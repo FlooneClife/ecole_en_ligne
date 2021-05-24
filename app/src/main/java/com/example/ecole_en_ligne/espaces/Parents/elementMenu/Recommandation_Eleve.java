@@ -16,12 +16,6 @@ import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.Recommandations;
 import com.example.ecole_en_ligne.bdd.RecommandationsManager;
 import com.example.ecole_en_ligne.espaces.Parents.SuiviEnfantI;
-import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
-import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Activites;
-import com.example.ecole_en_ligne.espaces.eleves.elementMenu.CoursLive;
-import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Cours_Exos;
-import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Progression;
-import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Recommandation;
 import com.google.android.material.navigation.NavigationView;
 
 
