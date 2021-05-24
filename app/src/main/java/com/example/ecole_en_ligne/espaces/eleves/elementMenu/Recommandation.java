@@ -23,12 +23,12 @@ import org.w3c.dom.Text;
 
 public class Recommandation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    ImageView menu;
-    ImageView retour;
-    TextView loginName;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Intent i;
+    private ImageView menu;
+    private ImageView retour;
+    private TextView loginName;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Intent i;
     private String myLogin;
 
     @Override

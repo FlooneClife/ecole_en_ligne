@@ -22,12 +22,12 @@ import com.google.android.material.navigation.NavigationView;
 
 public class Recommandation_Eleve extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    ImageView menu;
-    ImageView retour;
-    TextView loginName;
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Intent i;
+    private ImageView menu;
+    private ImageView retour;
+    private TextView loginName;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private Intent i;
     private String myLogin;
 
     @Override
@@ -88,7 +88,7 @@ public class Recommandation_Eleve extends AppCompatActivity implements Navigatio
                 break;
             }
             case R.id.cours_exos_fait: {
-                Intent redir = new Intent(Recommandation_Eleve.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Cours et Exercices effectués");
                 Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
@@ -98,7 +98,7 @@ public class Recommandation_Eleve extends AppCompatActivity implements Navigatio
                 break;
             }
             case R.id.momentCO: {
-                Intent redir = new Intent(Recommandation_Eleve.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Moment de connexion");
                 Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
@@ -108,7 +108,7 @@ public class Recommandation_Eleve extends AppCompatActivity implements Navigatio
                 break;
             }
             case R.id.courbes_progressionP: {
-                Intent redir = new Intent(Recommandation_Eleve.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Courbes de progressions");
                 Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
@@ -121,7 +121,7 @@ public class Recommandation_Eleve extends AppCompatActivity implements Navigatio
                 break;
             }
             case R.id.rappel: {
-                Intent redir = new Intent(Recommandation_Eleve.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Définir un rappel");
                 Intent intent = new Intent(getApplicationContext(), EspaceParents.class);

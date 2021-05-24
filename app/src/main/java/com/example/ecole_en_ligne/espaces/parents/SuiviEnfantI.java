@@ -79,6 +79,10 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
         retour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent redir = new Intent(getApplicationContext(), EspaceParents.class);
+                redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
                 finish();
             }
         });
@@ -158,6 +162,7 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
                     redir.putExtra("Login", myLogin);
                     redir.putExtra("Content", "Cours et Exercices effectués");
+                    redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(redir);
                     finish();
                     break;
@@ -168,8 +173,9 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     break;
                 } else {
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Login", myLogin);
                     redir.putExtra("Content", "Moment de connexion");
+                    redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(redir);
                     finish();
                     break;
@@ -180,8 +186,9 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     break;
                 } else {
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Login", myLogin);
                     redir.putExtra("Content", "Courbes de progressions");
+                    redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(redir);
                     finish();
                     break;
@@ -192,9 +199,9 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     break;
                 } else {
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Login", myLogin);
                     redir.putExtra("Content", "Recommandation");
-                    startActivity(redir);
+                    redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     finish();
                     break;
                 }
@@ -204,8 +211,9 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     break;
                 } else {
                     Intent redir = new Intent(SuiviEnfantI.this, SuiviEnfantI.class);
-                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("Login", myLogin);
                     redir.putExtra("Content", "Définir un rappel");
+                    redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(redir);
                     finish();
                     break;

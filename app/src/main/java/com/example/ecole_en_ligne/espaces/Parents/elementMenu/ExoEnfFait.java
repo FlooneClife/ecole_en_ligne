@@ -86,36 +86,53 @@ public class ExoEnfFait extends AppCompatActivity implements NavigationView.OnNa
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.tableau_bordP: {
+                Intent redir = new Intent(getApplicationContext(), EspaceParents.class);
+                redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
+                finish();
                 break;
             }
             case R.id.cours_exos_fait: {
                 break;
             }
             case R.id.momentCO: {
-                Intent redir = new Intent(ExoEnfFait.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Moment de connexion");
+                Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 break;
             }
             case R.id.courbes_progressionP: {
-                Intent redir = new Intent(ExoEnfFait.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Courbes de progressions");
+                Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 break;
             }
             case R.id.recommandationsP: {
-                Intent redir = new Intent(ExoEnfFait.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Recommandation");
+                Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 break;
             }
             case R.id.rappel: {
-                Intent redir = new Intent(ExoEnfFait.this, SuiviEnfantI.class);
+                Intent redir = new Intent(getApplicationContext(), SuiviEnfantI.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 redir.putExtra("Content","Définir un rappel");
+                Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
                 startActivity(redir);
                 break;
             }
@@ -131,5 +148,4 @@ public class ExoEnfFait extends AppCompatActivity implements NavigationView.OnNa
         drawerLayout.closeDrawers();
         return true;
     }
-
 }
