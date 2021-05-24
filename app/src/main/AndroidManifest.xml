@@ -60,6 +60,7 @@
         <activity android:name=".espaces.eleves.ListeTableauBord.Tchat" />
         <activity android:name=".espaces.Parents.elementMenu.ExoEnfFait" />
         <activity android:name=".espaces.Parents.elementMenu.Recommandation_Eleve"/>
+        <activity android:name=".espaces.Parents.elementMenu.ProgressionEnf"/>
 
         <meta-data
             android:name="preloaded_fonts"

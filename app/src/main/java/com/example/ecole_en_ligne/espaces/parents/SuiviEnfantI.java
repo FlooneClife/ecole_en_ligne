@@ -21,6 +21,7 @@ import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.ParentManager;
 import com.example.ecole_en_ligne.espaces.Parents.elementMenu.DefinitionRappels;
 import com.example.ecole_en_ligne.espaces.Parents.elementMenu.ExoEnfFait;
+import com.example.ecole_en_ligne.espaces.Parents.elementMenu.ProgressionEnf;
 import com.example.ecole_en_ligne.espaces.Parents.elementMenu.Recommandation_Eleve;
 import com.example.ecole_en_ligne.espaces.Parents.elementMenu.HistoriqueConnexionEleve;
 import com.google.android.material.navigation.NavigationView;
@@ -126,6 +127,11 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     startActivity(redir);
                 } else if (i.getStringExtra("Content").contentEquals("Définir un rappel")) {
                     Intent redir = new Intent(SuiviEnfantI.this, DefinitionRappels.class);
+                    redir.putExtra("Login", i.getStringExtra("Login"));
+                    redir.putExtra("loginEleve", listlogin.get(position));
+                    startActivity(redir);
+                }else if (i.getStringExtra("Content").contentEquals("Courbes de progressions")) {
+                    Intent redir = new Intent(SuiviEnfantI.this, ProgressionEnf.class);
                     redir.putExtra("Login", i.getStringExtra("Login"));
                     redir.putExtra("loginEleve", listlogin.get(position));
                     startActivity(redir);
