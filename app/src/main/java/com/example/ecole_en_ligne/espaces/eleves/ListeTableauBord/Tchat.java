@@ -80,7 +80,7 @@ public class Tchat extends AppCompatActivity implements NavigationView.OnNavigat
                         affichage.setText(affichage.getText() + "\nProfesseur : Bien et vous ?");
                         break;
                     case "Bien merci." :
-                        affichage.setText(affichage.getText() + "\nProfesseur : Commencons à travailler !");
+                        affichage.setText(affichage.getText() + "\nProfesseur : Commençons à travailler !");
                         break;
 
                 }
