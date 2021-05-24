@@ -49,84 +49,100 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp" >
+
+            <TextView
+                android:id="@+id/enTantQue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enTantQue"
+                android:textColor="@color/x_cyan100"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/loginName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/enTantQue"
+                android:textColor="@color/x_cyan100"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/enTantQue"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/x_blue100"
+                android:text="Tchat"
+                android:textSize="30dp" />
+
+        </RelativeLayout>
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/header"
-            android:layout_margin="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="70dp"
+            android:descendantFocusability="blocksDescendants"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             tools:context=".espaces.eleves.ListeTableauBord.Tchat"
             tools:showIn="@layout/tchat_eleve">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:id="@+id/enTantQue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/enTantQue"
-                    android:textColor="@color/x_cyan100"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/loginName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/enTantQue"
-                    android:textColor="@color/x_cyan100"
-                    android:textSize="20dp" />
-
-                <TextView
-                    android:id="@+id/content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/enTantQue"
-                    android:layout_marginTop="30dp"
-                    android:textColor="@color/x_blue100"
-                    android:text="Tchat"
-                    android:textSize="30dp" />
-
-                <!--TODO-->
+                android:layout_height="match_parent"
+                android:descendantFocusability="blocksDescendants">
 
                 <TextView
                     android:id="@+id/EndroitMsg"
+                    android:descendantFocusability="blocksDescendants"
                     android:layout_width="match_parent"
-                    android:layout_height="450dp"
-                    android:layout_below="@id/content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:padding="5dp"
                     android:textColor="@color/x_blue100"
                     />
-
-                <EditText
-                    android:id="@+id/EntrerTexte"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Tapez un message..."
-                    android:layout_below="@id/EndroitMsg"
-                    android:background="@drawable/edit_text"
-                    android:gravity="left"
-                    android:textSize="20dp"
-                    android:padding="8dp"/>
-
-                <Button
-                    android:id="@+id/Entrer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_toRightOf="@+id/EntrerTexte"
-                    android:layout_below="@id/EndroitMsg"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/button_cyan_gradient"
-                    android:text="Entrer"
-                    android:textColor="@color/white" />
-
 
             </RelativeLayout>
 
         </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <EditText
+            android:id="@+id/EntrerTexte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Tapez un message..."
+            android:background="@drawable/edit_text"
+            android:layout_toLeftOf="@id/Entrer"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="left"
+            android:textSize="20dp"
+            android:padding="8dp" />
+
+        <ImageView
+            android:id="@+id/Entrer"
+            android:layout_width="110px"
+            android:layout_height="110px"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/send" />
+    </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"

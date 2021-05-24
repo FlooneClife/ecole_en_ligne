@@ -2,6 +2,7 @@ package com.example.ecole_en_ligne.espaces.eleves.ListeTableauBord;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -41,8 +42,9 @@ public class Tchat extends AppCompatActivity implements NavigationView.OnNavigat
 
         i = getIntent();
         loginName = findViewById(R.id.loginName);
+        myLogin = i.getStringExtra("Login");
 
-        loginName.setText(" "+i.getStringExtra("Login"));
+        loginName.setText(" " + myLogin);
 
         menu = findViewById(R.id.menu);
         retour = findViewById(R.id.retour);
@@ -66,31 +68,29 @@ public class Tchat extends AppCompatActivity implements NavigationView.OnNavigat
 
         EditText edit = findViewById(R.id.EntrerTexte);
         TextView affichage = findViewById(R.id.EndroitMsg);
-        Button entrer = findViewById(R.id.Entrer);
+        ImageView entrer = findViewById(R.id.Entrer);
 
         entrer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                affichage.setText(affichage.getText() + "\n"+i.getStringExtra("Login") + " : "+edit.getText().toString());
-                switch (edit.getText().toString()){
-                    case ("Bonjour.") :
+                affichage.setText(affichage.getText() + "\n" + i.getStringExtra("Login") + " : " + edit.getText().toString());
+                switch (edit.getText().toString().toLowerCase()) {
+                    case "bonjour":
+                    case "bonjour.":
                         affichage.setText(affichage.getText() + "\nProfesseur : Bonjour !");
                         break;
-                    case "Comment allez-vous ?" :
+                    case "comment allez-vous ?":
                         affichage.setText(affichage.getText() + "\nProfesseur : Bien et vous ?");
                         break;
-                    case "Bien merci." :
+                    case "bien merci":
+                    case "bien merci.":
                         affichage.setText(affichage.getText() + "\nProfesseur : Commençons à travailler !");
                         break;
-
                 }
                 edit.setText("");
             }
         });
-
-
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -136,6 +136,15 @@ public class Tchat extends AppCompatActivity implements NavigationView.OnNavigat
                 break;
             }
             case R.id.progression: {
+                //ouvrir page des progressions et courbes
+                Intent redir = new Intent(Tchat.this, Progression.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                startActivity(redir);
+                finish();
                 break;
             }
             case R.id.activites: {
@@ -162,4 +171,5 @@ public class Tchat extends AppCompatActivity implements NavigationView.OnNavigat
         drawerLayout.closeDrawers();
         return true;
     }
+
 }
