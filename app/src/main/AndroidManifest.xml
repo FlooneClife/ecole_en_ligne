@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_xerneas_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecole_en_ligne">
-        <activity android:name=".espaces.Parents.elementMenu.HistoriqueConnexionEleve"></activity>
+        <activity android:name=".espaces.Parents.elementMenu.DefinitionRappels"></activity>
+        <activity android:name=".espaces.Parents.elementMenu.HistoriqueConnexionEleve" />
         <activity
             android:name=".espaces.eleves.EspaceEleve"
             android:label="@string/title_activity_espace_eleve"

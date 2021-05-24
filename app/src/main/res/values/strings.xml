@@ -117,5 +117,8 @@
     <string name="recevoirCode">Les mots de passe de vos enfants vous sont envoyés par mail.</string>
     <string name="derniereCoEnf">Dernière connexion de votre enfant</string>
     <string name="aucuneCo">Aucune connexion recensée à ce jour.</string>
+    <string name="defRappel">Définir un rappel</string>
+    <string name="heure">Heure</string>
+    <string name="minutes">Minutes</string>
 
 </resources>
