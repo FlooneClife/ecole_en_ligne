@@ -73,9 +73,11 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
         //------------------------------LISTE PROFIL------------------------------
 
         String[] profil = new String[] {
-                "Mes enfants",
-                "Récapitulatifs d'inscription",
-                "Mon abonnement"
+                "Exercices réalisés par mes enfants",
+                "Progression de mes enfants",
+                "Recommandations données à mes enfants",
+                "Définir un rappel",
+                "Mon profil"
         };
 
         ListView listP = (ListView) findViewById(R.id.liste_profil);
@@ -86,7 +88,27 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                  @Override
                  public void onItemClick (AdapterView<?> adapter, View view, int position, long arg){
                      if (position == 0){  //Si c'est l'eleve 1 qui est selectionné (se trouve a la position 0 dans la liste)
-                         Intent redir = new Intent(EspaceParents.this, LesEnfants.class);
+                         Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                         redir.putExtra("Login",i.getStringExtra("Login"));
+                         redir.putExtra("Content","Cours et Exercices effectués");
+                         startActivity(redir);
+                     } else if (position == 1) {
+                         Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                         redir.putExtra("Login",i.getStringExtra("Login"));
+                         redir.putExtra("Content","Courbes de progressions");
+                         startActivity(redir);
+                     } else if(position == 2) {
+                         Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                         redir.putExtra("Login",i.getStringExtra("Login"));
+                         redir.putExtra("Content","Recommandation");
+                         startActivity(redir);
+                     } else if(position == 3) {
+                         Intent redir = new Intent(EspaceParents.this, SuiviEnfantI.class);
+                         redir.putExtra("Login",i.getStringExtra("Login"));
+                         redir.putExtra("Content","Définir un rappel");
+                         startActivity(redir);
+                     } else if(position == 4) {
+                         Intent redir = new Intent(EspaceParents.this, ProfilParent.class);
                          redir.putExtra("Login",i.getStringExtra("Login"));
                          startActivity(redir);
                      }
