@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
-    tools:context=".espaces.eleves.ProfilEleve">
+    tools:context=".espaces.Parents.ProfilParent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/espaceEleve"
+                android:text="@string/espaceParent"
                 android:layout_toRightOf="@id/retour"
                 android:textSize="30dp"
                 android:textColor="@color/white" />
@@ -45,7 +45,7 @@
             android:layout_below="@id/header"
             android:layout_margin="20dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".espaces.eleves.ProfilEleve"
+            tools:context=".espaces.Parents.ProfilParent"
             tools:showIn="@layout/profil_parent">
 
             <RelativeLayout

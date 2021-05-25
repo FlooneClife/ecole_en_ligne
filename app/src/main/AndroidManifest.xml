@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_xerneas_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecole_en_ligne">
-        <activity android:name=".espaces.eleves.ProfilEleve"></activity>
+        <activity android:name=".espaces.Parents.ProfilParent"></activity>
+        <activity android:name=".espaces.eleves.ProfilEleve" />
         <activity android:name=".espaces.Parents.elementMenu.DefinitionRappels" />
         <activity android:name=".espaces.Parents.elementMenu.HistoriqueConnexionEleve" />
         <activity

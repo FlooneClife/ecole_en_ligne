@@ -219,6 +219,14 @@ public class SuiviEnfantI extends AppCompatActivity implements NavigationView.On
                     break;
                 }
             }
+            case R.id.profil: {
+                Intent redir = new Intent(getApplicationContext(), ProfilParent.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                redir.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(redir);
+                finish();
+                break;
+            }
             case R.id.deconnexion: {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -25,6 +25,10 @@
         android:icon="@drawable/clock"
         android:title="Moment de connexion" />
 
+    <item android:id="@+id/profil"
+        android:icon="@drawable/human"
+        android:title="Profil" />
+
     <item android:id="@+id/deconnexion"
         android:icon="@drawable/logout"
         android:title="Se déconnecter" />

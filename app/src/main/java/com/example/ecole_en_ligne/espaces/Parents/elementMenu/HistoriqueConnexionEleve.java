@@ -15,6 +15,7 @@ import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.espaces.Parents.EspaceParents;
+import com.example.ecole_en_ligne.espaces.Parents.ProfilParent;
 import com.example.ecole_en_ligne.espaces.Parents.SuiviEnfantI;
 import com.google.android.material.navigation.NavigationView;
 
@@ -127,6 +128,16 @@ public class HistoriqueConnexionEleve extends AppCompatActivity implements Navig
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 startActivity(redir);
+                break;
+            }
+            case R.id.profil: {
+                Intent redir = new Intent(getApplicationContext(), ProfilParent.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceParents.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                startActivity(redir);
+                finish();
                 break;
             }
             case R.id.deconnexion: {

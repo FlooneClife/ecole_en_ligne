@@ -138,6 +138,12 @@ public class EspaceParents extends AppCompatActivity implements NavigationView.O
                 startActivity(redir);
                 break;
             }
+            case R.id.profil: {
+                Intent redir = new Intent(EspaceParents.this, ProfilParent.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
+                break;
+            }
             case R.id.deconnexion: {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
