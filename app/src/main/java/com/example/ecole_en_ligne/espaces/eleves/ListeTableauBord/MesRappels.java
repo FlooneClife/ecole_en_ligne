@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
+import com.example.ecole_en_ligne.espaces.eleves.ProfilEleve;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Activites;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.CoursLive;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Cours_Exos;
@@ -113,6 +114,14 @@ public class MesRappels extends AppCompatActivity implements NavigationView.OnNa
             case R.id.activites: {
                 //ouvrir page des dernières activites
                 Intent redir = new Intent(MesRappels.this, Activites.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
+                finish();
+                break;
+            }
+            case R.id.profil: {
+                //ouvrir page du profil
+                Intent redir = new Intent(getApplicationContext(), ProfilEleve.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
                 finish();

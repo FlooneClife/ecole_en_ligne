@@ -81,7 +81,8 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
                 "Mes cours en direct",  //1
                 "Ma progression",   //2
                 "Recommandations",  //3
-                "Accéder au tchat"  //4
+                "Accéder au tchat",  //4
+                "Voir mon profil",  //5
         };
 
         ListView listP = (ListView) findViewById(R.id.liste_profilE);
@@ -118,6 +119,11 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
                             redir.putExtra("Login", i.getStringExtra("Login"));
                             startActivity(redir);
                             break;
+                        } case 5 : {
+                        Intent redir = new Intent(EspaceEleve.this, ProfilEleve.class);
+                        redir.putExtra("Login", i.getStringExtra("Login"));
+                        startActivity(redir);
+                        break;
                         }
                     }
                 }
@@ -162,6 +168,13 @@ public class EspaceEleve extends AppCompatActivity implements NavigationView.OnN
             case R.id.activites: {
                 //ouvrir page des dernières activites
                 Intent redir = new Intent(EspaceEleve.this, Activites.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
+                break;
+            }
+            case R.id.profil: {
+                //ouvrir page du profil
+                Intent redir = new Intent(EspaceEleve.this, ProfilEleve.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 startActivity(redir);
                 break;

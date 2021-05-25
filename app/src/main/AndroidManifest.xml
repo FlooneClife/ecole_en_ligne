@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_xerneas_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecole_en_ligne">
-        <activity android:name=".espaces.Parents.elementMenu.DefinitionRappels"></activity>
+        <activity android:name=".espaces.eleves.ProfilEleve"></activity>
+        <activity android:name=".espaces.Parents.elementMenu.DefinitionRappels" />
         <activity android:name=".espaces.Parents.elementMenu.HistoriqueConnexionEleve" />
         <activity
             android:name=".espaces.eleves.EspaceEleve"
@@ -59,8 +60,8 @@
         <activity android:name=".espaces.eleves.ListeTableauBord.MesRappels" />
         <activity android:name=".espaces.eleves.ListeTableauBord.Tchat" />
         <activity android:name=".espaces.Parents.elementMenu.ExoEnfFait" />
-        <activity android:name=".espaces.Parents.elementMenu.Recommandation_Eleve"/>
-        <activity android:name=".espaces.Parents.elementMenu.ProgressionEnf"/>
+        <activity android:name=".espaces.Parents.elementMenu.Recommandation_Eleve" />
+        <activity android:name=".espaces.Parents.elementMenu.ProgressionEnf" />
 
         <meta-data
             android:name="preloaded_fonts"

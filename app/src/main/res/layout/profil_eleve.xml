@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    tools:context=".espaces.Parents.EspaceParents">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:padding="20dp"
+            android:orientation="horizontal"
+            android:background="@color/x_blue100" >
+
+            <ImageView
+                android:id="@+id/retour"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/arrow_back"
+                android:clickable="true" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/espaceEleve"
+                android:layout_toRightOf="@id/retour"
+                android:textSize="30dp"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/header"
+            android:layout_margin="20dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".espaces.Parents.EspaceParents"
+            tools:showIn="@layout/accueil_eleves">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/enTantQue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/enTantQue"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/loginName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/x_cyan100"
+                    android:layout_toRightOf="@id/enTantQue"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/enTantQue"
+                    android:textColor="@color/x_blue100"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/monprofil"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/nom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:textColor="@color/x_blue100"
+                    android:text="@string/nomPts"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/monNom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_toRightOf="@id/nom"
+                    android:textColor="@color/x_cyan100"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/prenom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nom"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:textColor="@color/x_blue100"
+                    android:text="@string/prenomPts"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/monPrenom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/monNom"
+                    android:layout_marginVertical="5dp"
+                    android:layout_toRightOf="@id/prenom"
+                    android:textColor="@color/x_cyan100"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/prenom"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:textColor="@color/x_blue100"
+                    android:text="@string/emailPts"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/monEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/monPrenom"
+                    android:layout_marginVertical="5dp"
+                    android:layout_toRightOf="@id/email"
+                    android:textColor="@color/x_cyan100"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/monEmailModif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_below="@id/monPrenom"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/button_blue_gradient"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/modifier"
+                    android:textColor="@color/white"
+                    android:layout_alignParentRight="true" />
+
+                <TextView
+                    android:id="@+id/mdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/email"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginVertical="5dp"
+                    android:textColor="@color/x_blue100"
+                    android:text="@string/mdpPts"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/monMdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/monEmail"
+                    android:layout_marginVertical="5dp"
+                    android:layout_toRightOf="@id/mdp"
+                    android:textColor="@color/x_cyan100"
+                    android:text="@string/stars"
+                    android:textSize="18dp" />
+
+                <Button
+                    android:id="@+id/monMdpModif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_below="@id/monEmailModif"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/button_blue_gradient"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/modifier"
+                    android:textColor="@color/white"
+                    android:layout_alignParentRight="true" />
+
+                <TextView
+                    android:id="@+id/modifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginVertical="30dp"
+                    android:layout_below="@id/mdp"
+                    android:textColor="@color/x_blue100"
+                    android:visibility="gone"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/editModifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_below="@id/modifier"
+                    android:background="@drawable/edit_text"
+                    android:gravity="left"
+                    android:textSize="20dp"
+                    android:visibility="gone"
+                    android:inputType="textPersonName" />
+
+                <Button
+                    android:id="@+id/buttonModifier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginHorizontal="30dp"
+                    android:layout_below="@id/editModifier"
+                    android:text="@string/valider"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/white"
+                    android:visibility="gone"
+                    android:background="@drawable/button_cyan_gradient" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -120,5 +120,15 @@
     <string name="defRappel">Définir un rappel</string>
     <string name="heure">Heure</string>
     <string name="minutes">Minutes</string>
+    <string name="nomPts">Nom :</string>
+    <string name="prenomPts">Prénom :</string>
+    <string name="emailPts">Email :</string>
+    <string name="modifier">Modifier</string>
+    <string name="mdpPts">Mot de passe :</string>
+    <string name="stars">******</string>
+    <string name="annuler">Annuler</string>
+    <string name="nouvelEmail">Veuillez entrer votre nouvel email</string>
+    <string name="emailConfirm">Confirmez votre email</string>
+    <string name="nouveauMdp">Veuillez entrer un nouveau mot de passe</string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
+import com.example.ecole_en_ligne.espaces.eleves.ProfilEleve;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -111,6 +112,18 @@ public class Progression extends AppCompatActivity implements NavigationView.OnN
             case R.id.activites: {
                 //ouvrir page des dernières activites
                 Intent redir = new Intent(Progression.this, Activites.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                startActivity(redir);
+                finish();
+                break;
+            }
+            case R.id.profil: {
+                //ouvrir page du profil
+                Intent redir = new Intent(getApplicationContext(), ProfilEleve.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
                 intent.putExtra("Login",i.getStringExtra("Login"));

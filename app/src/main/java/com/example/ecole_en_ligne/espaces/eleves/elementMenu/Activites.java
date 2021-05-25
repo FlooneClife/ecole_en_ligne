@@ -6,6 +6,7 @@ import android.os.Bundle;
 import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
+import com.example.ecole_en_ligne.espaces.eleves.ProfilEleve;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -133,6 +134,14 @@ public class Activites extends AppCompatActivity implements NavigationView.OnNav
                 break;
             }
             case R.id.activites: {
+                break;
+            }
+            case R.id.profil: {
+                //ouvrir page du profil
+                Intent redir = new Intent(getApplicationContext(), ProfilEleve.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                startActivity(redir);
+                finish();
                 break;
             }
             case R.id.deconnexion: {

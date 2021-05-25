@@ -17,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.ecole_en_ligne.MainActivity;
 import com.example.ecole_en_ligne.R;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
+import com.example.ecole_en_ligne.espaces.eleves.ProfilEleve;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Activites;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.CoursLive;
 import com.example.ecole_en_ligne.espaces.eleves.elementMenu.Cours_Exos;
@@ -154,6 +155,18 @@ public class Tchat extends AppCompatActivity implements NavigationView.OnNavigat
             case R.id.activites: {
                 //ouvrir page des dernières activites
                 Intent redir = new Intent(Tchat.this, Activites.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                startActivity(redir);
+                finish();
+                break;
+            }
+            case R.id.profil: {
+                //ouvrir page du profil
+                Intent redir = new Intent(getApplicationContext(), ProfilEleve.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
                 intent.putExtra("Login",i.getStringExtra("Login"));

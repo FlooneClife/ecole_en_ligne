@@ -17,6 +17,7 @@ import com.example.ecole_en_ligne.bdd.EleveManager;
 import com.example.ecole_en_ligne.bdd.Recommandations;
 import com.example.ecole_en_ligne.bdd.RecommandationsManager;
 import com.example.ecole_en_ligne.espaces.eleves.EspaceEleve;
+import com.example.ecole_en_ligne.espaces.eleves.ProfilEleve;
 import com.google.android.material.navigation.NavigationView;
 
 import org.w3c.dom.Text;
@@ -137,6 +138,18 @@ public class Recommandation extends AppCompatActivity implements NavigationView.
             case R.id.activites: {
                 //ouvrir page des dernières activites
                 Intent redir = new Intent(Recommandation.this, Activites.class);
+                redir.putExtra("Login",i.getStringExtra("Login"));
+                Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
+                intent.putExtra("Login",i.getStringExtra("Login"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                startActivity(redir);
+                finish();
+                break;
+            }
+            case R.id.profil: {
+                //ouvrir page du profil
+                Intent redir = new Intent(getApplicationContext(), ProfilEleve.class);
                 redir.putExtra("Login",i.getStringExtra("Login"));
                 Intent intent = new Intent(getApplicationContext(), EspaceEleve.class);
                 intent.putExtra("Login",i.getStringExtra("Login"));
