@@ -44,7 +44,7 @@ public class DefinitionRappels extends AppCompatActivity implements NavigationVi
     private Button validerDef;
     private Spinner heure;
     private Spinner minute;
-    private String addText;
+    private String addText = "";
     private int lastId = -1;
 
     @Override

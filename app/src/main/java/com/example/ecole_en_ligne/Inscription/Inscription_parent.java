@@ -57,7 +57,8 @@ public class Inscription_parent extends AppCompatActivity {
                     ActionUtil.verifEmptyEdit(login) |
                     ActionUtil.verifEmptyEdit(mdp) |
                     ActionUtil.verifEmailFormat(mail) |
-                    ActionUtil.verifEmptyEdit(nb_eleve)
+                    ActionUtil.verifEmptyEdit(nb_eleve) |
+                    Integer.parseInt(nb_eleve.getText().toString()) <= 0
                 ) {
                     Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs.", Toast.LENGTH_SHORT).show();
                     pm.close();

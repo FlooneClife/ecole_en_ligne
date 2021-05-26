@@ -163,7 +163,7 @@ public class Ins_donnees_enf extends AppCompatActivity {
                 if (
                     ActionUtil.verifEmptyEdit(nom_enf) |
                     ActionUtil.verifEmptyEdit(prenom_enf) |
-                    ActionUtil.verifEmptyEdit(email_enf) |
+                    ActionUtil.verifEmailFormat(email_enf) |
                     ActionUtil.verifEmptySpinner(annee_scol, defaultAnnee) |
                     ActionUtil.verifEmptySpinner(lien_parents, defaultLien) |
                     ActionUtil.verifEmptySpinner(niveau_scol, defaultNiveau) |
@@ -173,10 +173,13 @@ public class Ins_donnees_enf extends AppCompatActivity {
                     em.close();
                 } else {
                     //generate login (sous la forme nom + 2 premières lettres prénom
-                    autoLogin = (nom_enf.getText().toString() + prenom_enf.getText().charAt(0) + prenom_enf.getText().charAt(1)).toLowerCase() + generate2RandomNumber();
-                    autoMdp = autoLogin;
+                    long reussite;
+                    do {
+                        autoLogin = (nom_enf.getText().toString() + prenom_enf.getText().charAt(0) + prenom_enf.getText().charAt(1)).toLowerCase() + generate2RandomNumber();
+                        autoMdp = autoLogin;
+                        reussite = em.addEleve(new Eleve(nom_enf.getText().toString(), prenom_enf.getText().toString(), autoLogin, autoMdp, email_enf.getText().toString(), formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString(), loginParent, ""));
+                    } while (reussite == -1);
                     System.out.println("HERE'S YOUR LOGIN AND PASSWORD (BOTH ARE THE SAME): " + autoLogin);
-                    em.addEleve(new Eleve(nom_enf.getText().toString(),prenom_enf.getText().toString(),autoLogin,autoMdp,email_enf.getText().toString(),formule.getSelectedItem().toString(), niveau_scol.getSelectedItem().toString(), annee_scol.getSelectedItem().toString(), loginParent,""));
                     //--------------
                     if (nbEnfRestant > 0) {
                         //test

@@ -31,6 +31,7 @@ public class ValidationInscription extends AppCompatActivity {
         TextView idUtilisateur = findViewById(R.id.idUtilisateur);
         TextView textidEnf = findViewById(R.id.TexteIdEnfant);
         TextView idEnf = findViewById(R.id.idEnf);
+        TextView recevoirMdpEnfant = findViewById(R.id.recevoirMdpEnfant);
 
 
         EleveManager em = new EleveManager(this);
@@ -54,6 +55,7 @@ public class ValidationInscription extends AppCompatActivity {
                 text += listNom.get(k) + " " +listPrenom.get(k) + " : "+listId.get(k) + "\n";
             }
             idEnf.setText(text);
+            recevoirMdpEnfant.setText(R.string.recevoirCode);
         }else if (variable == 1){
             idUtilisateur.setText(i.getStringExtra("loginEleve"));
         } else if(variable == 2) {
