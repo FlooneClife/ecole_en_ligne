@@ -29,7 +29,7 @@ public class ExoEnfFait extends AppCompatActivity implements NavigationView.OnNa
     private ImageView menu;
     private Intent i;
     private TextView nbExosFaits;
-    private double percentage;
+    private int percentage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
