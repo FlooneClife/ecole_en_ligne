@@ -29,7 +29,7 @@ public class ExoEnfFait extends AppCompatActivity implements NavigationView.OnNa
     private ImageView menu;
     private Intent i;
     private TextView nbExosFaits;
-    private int percentage;
+    private double percentage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,18 +67,19 @@ public class ExoEnfFait extends AppCompatActivity implements NavigationView.OnNa
         ExerciceManager exM = new ExerciceManager(this);
 
         exM.open();
-        int nbExoFait = exM.nbExosFait(i.getStringExtra("loginEleve"));
-        int nbExoTotal = exM.nbExosTotal(i.getStringExtra("loginEleve"));
+        double nbExoFait = exM.nbExosFait(i.getStringExtra("loginEleve"));
+        double nbExoTotal = exM.nbExosTotal(i.getStringExtra("loginEleve"));
         exM.close();
 
         if(nbExoTotal != 0) {
-            percentage = (int)(nbExoFait / nbExoTotal) * 100;
+            percentage = ((nbExoFait / nbExoTotal) * 100);
+            System.out.println("POURCENTAGE : "+percentage);
         } else {
             percentage = 0;
         }
 
         texte.setText(R.string.exoRealises);
-        nbExosFaits.setText(nbExoFait + " / " + nbExoTotal + "\t\t\t(" + percentage + "%)");
+        nbExosFaits.setText((int)nbExoFait + " / " + (int)nbExoTotal + "\t\t\t(" + percentage + "%)");
 
 
     }
